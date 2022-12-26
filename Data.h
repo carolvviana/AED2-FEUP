@@ -10,6 +10,7 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include "Coordinate.h"
 using namespace std;
 
 class Data{

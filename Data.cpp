@@ -3,6 +3,7 @@
 //
 #include "Data.h"
 
+
 void Data :: readFile_airlines(string fname) {
     //variables
     string code, name, callsign, country_name;
@@ -42,6 +43,7 @@ void Data :: readFile_airports(string fname){
     //variables
     double latitude, longitude;
     string code, name, city, country_name;
+    Coordinate c;
     vector<string> v;
 
     //open file
@@ -58,6 +60,7 @@ void Data :: readFile_airports(string fname){
 
             code = v[0]; name = v[1]; city = v[2]; country_name = v[3];
             latitude = stod(v[4]); longitude = stod(v[5]);
+            c = Coordinate(latitude, longitude);
             v.clear();
 
             /*
