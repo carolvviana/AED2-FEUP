@@ -3,12 +3,9 @@
 //
 #include "Data.h"
 
-<<<<<<< HEAD
 
-void Data :: readFile_airlines(string fname) {
-=======
 void Data :: readFile_airlines() {
->>>>>>> 14f1b989f60e11c356c930eb5a2a6725cb629771
+
     //variables
     string code, name, callSign, countryName;
     vector <string> v;
@@ -42,12 +39,7 @@ void Data :: readFile_airports(){
     //variables
     int counter;
     double latitude, longitude;
-<<<<<<< HEAD
-    string code, name, city, country_name;
-    Coordinate c;
-=======
     string code, name, city, countryName;
->>>>>>> 14f1b989f60e11c356c930eb5a2a6725cb629771
     vector<string> v;
 
     //open file
