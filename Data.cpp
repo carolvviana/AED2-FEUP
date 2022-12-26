@@ -5,19 +5,19 @@
 
 Data::Data(){};
 
-unordered_map <string, Airport> Data::getAirports() {
+unordered_map <string, Airport*> Data::getAirports() {
     return airports_;
 }
 
-unordered_map<string, Airline> Data::getAirlines(){
+unordered_map<string, Airline*> Data::getAirlines(){
     return airlines_;
 }
 
-unordered_map<string, City> Data::getCities() {
+unordered_map<string, City*> Data::getCities() {
     return cities_;
 }
 
-Graph Data::getFlightG(){
+Graph* Data::getFlightG(){
     return flightG;
 }
 
@@ -45,7 +45,7 @@ void Data :: readFile_airlines() {
             callSign = v[2];
             countryName = v[3];
             v.clear();
-            Airline airline = Airline(code, name, callSign, countryName);
+            Airline *airline = new Airline(code, name, callSign, countryName);
             airlines_.insert({code,airline});
 
         }
@@ -74,10 +74,10 @@ void Data :: readFile_airports(){
             code = v[0]; name = v[1]; city = v[2]; countryName = v[3];
             latitude = stod(v[4]); longitude = stod(v[5]);
             v.clear();
-            City c = City(city, countryName);
-            Airport airport = Airport(code, name, city, latitude, longitude);
+            City *c =new  City(city, countryName);
+            Airport *airport =new Airport(code, name, city, latitude, longitude);
             cities_.insert({city, c});
-            c.addAirport(airport);
+            c->addAirport(*airport);
             airports_.insert({code, airport});
 
         }
@@ -89,10 +89,10 @@ void Data :: readFile_flights() {
     //variables
     string sourceCode, targetCode, airlineCode;
     vector<string> v;
-    flightG = Graph(airports_.size());
+    flightG = new Graph(airports_.size());
 
     for (auto it = airports_.begin(); it != airports_.end(); it++){
-        flightG.addNode(it->first, &it->second);
+        flightG->addNode(it->first, it->second);
     }
     //open file
     ifstream input("../csv/flightsv2.csv");

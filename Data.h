@@ -23,18 +23,18 @@ using namespace std;
 class Data{
 private:
 
-    unordered_map <string, Airline> airlines_;
-    unordered_map <string, City> cities_;
-    unordered_map <string, Airport> airports_;
-    Graph flightG = Graph(1);
+    unordered_map <string, Airline*> airlines_;
+    unordered_map <string, City*> cities_;
+    unordered_map <string, Airport*> airports_;
+    Graph *flightG = new Graph(1);
 
 public:
 
     Data();
-    unordered_map <string, Airport> getAirports();
-    unordered_map <string, Airline> getAirlines();
-    unordered_map <string, City> getCities();
-    Graph getFlightG();
+    unordered_map <string, Airport*> getAirports();
+    unordered_map <string, Airline*> getAirlines();
+    unordered_map <string, City*> getCities();
+    Graph* getFlightG();
 
     //file reading methods
     void readFile_airlines();

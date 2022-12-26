@@ -8,11 +8,11 @@ int main() {
     d.readFile_airports();
 
     d.readFile_flights();
-    /*
-    Graph g = d.getFlightG();
-    g.bfs("MAG");
-    g.~Graph();
-     */
+
+    Graph* g = d.getFlightG();
+    g->print();
+    //g.~Graph();
+
     cout << d.getAirports().size();
 
     return 0;
