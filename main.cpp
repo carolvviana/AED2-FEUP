@@ -10,6 +10,7 @@ int main() {
     d.readFile_flights();
 
     Graph* g = d.getFlightG();
+    cout << g->distance("CDG", "OPO") << endl;
     g->print();
     //g.~Graph();
 

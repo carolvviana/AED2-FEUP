@@ -59,8 +59,8 @@ void Data :: readFile_airports(){
     vector<string> v;
 
     //open file
-    //ifstream input(AIRPORTS);
-    ifstream input("../csv/airportsv2.csv");
+    ifstream input(AIRPORTS);
+    //ifstream input("../csv/airportsv2.csv");
     if(input.is_open()) {
         string line;
         getline(input, line); //skips first line
@@ -110,7 +110,7 @@ void Data :: readFile_flights() {
 
             sourceCode = v[0]; targetCode = v[1]; airlineCode = v[2];
             v.clear();
-            //flightG.addEdge(sourceCode, targetCode, airlineCode);
+            flightG->addEdge(sourceCode, targetCode, airlineCode);
 
 
         }

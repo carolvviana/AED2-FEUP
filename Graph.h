@@ -35,6 +35,7 @@ class Graph {
         Airport* airport; // Information about the stop
         list<Edge> adj; // The list of outgoing edges (to adjacent nodes)
         bool visited; // As the node been visited on a search?
+        int distance;
     };
 
     int n;
@@ -95,12 +96,15 @@ public:
      * Resets all the nodes to be unvisited.
      */
     void unvisit();
+    void undistance();
 
     /**
      * Clears this graph.
      */
     void clear();
     void print();
+
+    int distance(string origin, string dest);
 };
 
 
