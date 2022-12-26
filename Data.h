@@ -1,7 +1,3 @@
-//
-// Created by carol on 13/12/2022.
-//
-
 #ifndef AEDP2_DATA_H
 #define AEDP2_DATA_H
 
@@ -10,19 +6,34 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
-#include "Coordinate.h"
+
+
+#include "Airline.h"
+#include "Airport.h"
+#include "City.h"
+#include <unordered_map>
+
+#define AIRLINES "../csv/airlines.csv"
+#define AIRPORTS "../csv/airports.csv"
+#define FLIGHTS "../csv/flights.csv"
+
 using namespace std;
 
 class Data{
 private:
-
+    int nAirports;
+    unordered_map <string, Airline> airlines_;
+    unordered_map <string, City> cities_;
+    unordered_map <string, Airport> airports_;
 
 public:
 
     //file reading methods
-    void readFile_airlines(string fname);
-    void readFile_airports(string fname);
-    void readFile_flights(string fname);
+    void readFile_airlines();
+    void readFile_airports();
+    void readFile_flights();
+
+
 
 };
 
