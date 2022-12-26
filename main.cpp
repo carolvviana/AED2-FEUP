@@ -1,6 +1,8 @@
 #include "Interface.h"
 using namespace std;
 int main() {
+    cout<< "hello world";
+    /*
     Data d = Data();
     Interface iFace = Interface();
     iFace.setData(d);
@@ -13,4 +15,5 @@ int main() {
     }
 
     return 0;
-}
+    */
+     }
