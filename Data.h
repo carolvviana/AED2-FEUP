@@ -11,6 +11,7 @@
 #include "Airline.h"
 #include "Airport.h"
 #include "City.h"
+#include "Graph.h"
 #include <unordered_map>
 
 #define AIRLINES "../csv/airlines.csv"
@@ -21,12 +22,19 @@ using namespace std;
 
 class Data{
 private:
-    int nAirports;
+
     unordered_map <string, Airline> airlines_;
     unordered_map <string, City> cities_;
     unordered_map <string, Airport> airports_;
+    Graph flightG = Graph(1);
 
 public:
+
+    Data();
+    unordered_map <string, Airport> getAirports();
+    unordered_map <string, Airline> getAirlines();
+    unordered_map <string, City> getCities();
+    Graph getFlightG();
 
     //file reading methods
     void readFile_airlines();

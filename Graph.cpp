@@ -80,5 +80,15 @@ void Graph::unvisit() {
 void Graph::clear() {
     this->nodes.clear();
 }
+void Graph:: print(){
+    auto it = nodes.begin();
+    while (it != nodes.end()){
+        cout << *(it->second.airport) <<'\n';
+        for (auto i: it->second.adj){
+            cout << i.dest << " | " << i.airline << '\n';
+        }
+        it++;
+    }
+}
 
 

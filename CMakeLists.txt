@@ -7,7 +7,14 @@ add_executable(AEDP2
         main.cpp
         Coordinate.cpp
         Coordinate.h
+        City.cpp
+        City.h
+        Airline.cpp
+        Airline.h
+        Airport.cpp
+        Airport.h
         Data.cpp
         Data.h
-        Interface.cpp
-        Interface.h)
+        Graph.cpp
+        Graph.h
+        )

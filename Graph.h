@@ -100,6 +100,7 @@ public:
      * Clears this graph.
      */
     void clear();
+    void print();
 };
 
 

@@ -3,6 +3,23 @@
 //
 #include "Data.h"
 
+Data::Data(){};
+
+unordered_map <string, Airport> Data::getAirports() {
+    return airports_;
+}
+
+unordered_map<string, Airline> Data::getAirlines(){
+    return airlines_;
+}
+
+unordered_map<string, City> Data::getCities() {
+    return cities_;
+}
+
+Graph Data::getFlightG(){
+    return flightG;
+}
 
 void Data :: readFile_airlines() {
 
@@ -37,13 +54,13 @@ void Data :: readFile_airlines() {
 
 void Data :: readFile_airports(){
     //variables
-    int counter;
     double latitude, longitude;
     string code, name, city, countryName;
     vector<string> v;
 
     //open file
-    ifstream input(AIRPORTS);
+    //ifstream input(AIRPORTS);
+    ifstream input("../csv/airportsv2.csv");
     if(input.is_open()) {
         string line;
         getline(input, line); //skips first line
@@ -56,27 +73,31 @@ void Data :: readFile_airports(){
 
             code = v[0]; name = v[1]; city = v[2]; countryName = v[3];
             latitude = stod(v[4]); longitude = stod(v[5]);
-            c = Coordinate(latitude, longitude);
             v.clear();
             City c = City(city, countryName);
             Airport airport = Airport(code, name, city, latitude, longitude);
             cities_.insert({city, c});
             c.addAirport(airport);
             airports_.insert({code, airport});
-            counter++;
 
         }
-        nAirports = counter;
+
     }
     else cout<<"Could not open the file\n";
 }
-void Data :: readFile_flights(){
+void Data :: readFile_flights() {
     //variables
-    string source_code, target_code, airline_code;
+    string sourceCode, targetCode, airlineCode;
     vector<string> v;
+    flightG = Graph(airports_.size());
 
+    for (auto it = airports_.begin(); it != airports_.end(); it++){
+        flightG.addNode(it->first, &it->second);
+    }
     //open file
-    ifstream input(FLIGHTS);
+    ifstream input("../csv/flightsv2.csv");
+    //ifstream input(FLIGHTS);
+
     if(input.is_open()) {
         string line;
         getline(input, line); //skips first line
@@ -87,12 +108,10 @@ void Data :: readFile_flights(){
             string token;
             while (getline(iss, token, ',')) { v.push_back(token); }
 
-            source_code = v[0]; target_code = v[1]; airline_code = v[2];
+            sourceCode = v[0]; targetCode = v[1]; airlineCode = v[2];
             v.clear();
+            //flightG.addEdge(sourceCode, targetCode, airlineCode);
 
-            /*
-             * CRIAR AQUI OS OBJETOS
-             */
 
         }
     }

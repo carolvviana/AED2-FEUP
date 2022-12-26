@@ -2,10 +2,18 @@
 #include "Data.h"
 using namespace std;
 int main() {
-    cout<< "hello world";
+    cout<< "hello world\n";
     Data d = Data();
     d.readFile_airlines();
     d.readFile_airports();
+
+    d.readFile_flights();
+    /*
+    Graph g = d.getFlightG();
+    g.bfs("MAG");
+    g.~Graph();
+     */
+    cout << d.getAirports().size();
 
     return 0;
 
