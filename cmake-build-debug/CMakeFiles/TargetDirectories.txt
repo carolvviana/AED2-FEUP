@@ -1,9 +1,3 @@
-<<<<<<< HEAD
 C:/Users/User/Desktop/AED/AEDP2/cmake-build-debug/CMakeFiles/AEDP2.dir
 C:/Users/User/Desktop/AED/AEDP2/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/User/Desktop/AED/AEDP2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-=======
-C:/AED/Projeto2/AEDP2/cmake-build-debug/CMakeFiles/AEDP2.dir
-C:/AED/Projeto2/AEDP2/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/AED/Projeto2/AEDP2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
->>>>>>> ccbae2f384955173b2f062ea1daf4d55ef42eb8a

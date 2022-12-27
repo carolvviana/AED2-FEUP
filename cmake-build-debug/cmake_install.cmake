@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Install script for directory: C:/Users/User/Desktop/AED/AEDP2
-=======
-# Install script for directory: C:/AED/Projeto2/AEDP2
->>>>>>> ccbae2f384955173b2f062ea1daf4d55ef42eb8a
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,9 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-<<<<<<< HEAD
 file(WRITE "C:/Users/User/Desktop/AED/AEDP2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
-=======
-file(WRITE "C:/AED/Projeto2/AEDP2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
->>>>>>> ccbae2f384955173b2f062ea1daf4d55ef42eb8a
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
