@@ -101,4 +101,33 @@ int Graph::distance(string origin, string dest) {
     return nodes[dest].distance;
 }
 
+vector<Node> Graph::makePath(string origin, string destination) {
+
+    vector<Node> path = {};
+    /*
+    if (!nodes[origin].available || !nodes[destination].available) {
+        cout << "Origem/Destino nao disponivel" << endl;
+        return path;
+    }
+     */
+    /*
+    switch (type) {
+        case 1: BFS(origin); break;
+        case 2: dijkstraMeters(origin); break;
+        case 3: dijkstraLines(origin); break;
+        case 4: dijkstraZones(origin); break;
+    }
+    */
+    //if (nodes[destination].customWeight.meters == INF) return path;
+    bfs(origin);
+    string dest = destination;
+    path.push_back(nodes[dest]);
+    while (dest != origin) {
+        dest = nodes[dest].parent;
+        path.push_back(nodes[dest]);
+    }
+    return path;
+}
+
+
 
