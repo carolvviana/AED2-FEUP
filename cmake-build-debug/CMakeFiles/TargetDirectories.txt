@@ -1,3 +1,0 @@
-C:/AED/Projeto2/AEDP2/cmake-build-debug/CMakeFiles/AEDP2.dir
-C:/AED/Projeto2/AEDP2/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/AED/Projeto2/AEDP2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
