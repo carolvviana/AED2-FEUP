@@ -1,7 +1,3 @@
-//
-// Created by carol on 13/12/2022.
-//
-
 #include <cmath>
 #include "Coordinate.h"
 

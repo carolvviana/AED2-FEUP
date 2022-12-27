@@ -17,4 +17,4 @@ add_executable(AEDP2
         Data.h
         Graph.cpp
         Graph.h
-        )
+        ApMethods.cpp ApMethods.h)
