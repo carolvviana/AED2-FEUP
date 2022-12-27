@@ -1,4 +1,13 @@
 "C:\Program Files\JetBrains\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S C:\Users\User\Desktop\AED\AEDP2 -B C:\Users\User\Desktop\AED\AEDP2\cmake-build-debug
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/User/Desktop/AED/AEDP2/cmake-build-debug
+CMake Error: Parse error in cache file C:/Users/User/Desktop/AED/AEDP2/cmake-build-debug/CMakeCache.txt on line 2. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file C:/Users/User/Desktop/AED/AEDP2/cmake-build-debug/CMakeCache.txt on line 6. Offending entry: >>>>>>> ccbae2f384955173b2f062ea1daf4d55ef42eb8a
+CMake Error: Parse error in cache file C:/Users/User/Desktop/AED/AEDP2/cmake-build-debug/CMakeCache.txt on line 22. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file C:/Users/User/Desktop/AED/AEDP2/cmake-build-debug/CMakeCache.txt on line 26. Offending entry: >>>>>>> ccbae2f384955173b2f062ea1daf4d55ef42eb8a
+CMake Error: Parse error in cache file C:/Users/User/Desktop/AED/AEDP2/cmake-build-debug/CMakeCache.txt on line 32. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file C:/Users/User/Desktop/AED/AEDP2/cmake-build-debug/CMakeCache.txt on line 36. Offending entry: >>>>>>> ccbae2f384955173b2f062ea1daf4d55ef42eb8a
+CMake Error: Parse error in cache file C:/Users/User/Desktop/AED/AEDP2/cmake-build-debug/CMakeCache.txt on line 278. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file C:/Users/User/Desktop/AED/AEDP2/cmake-build-debug/CMakeCache.txt on line 282. Offending entry: >>>>>>> ccbae2f384955173b2f062ea1daf4d55ef42eb8a
+CMake Error: Parse error in cache file C:/Users/User/Desktop/AED/AEDP2/cmake-build-debug/CMakeCache.txt on line 367. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file C:/Users/User/Desktop/AED/AEDP2/cmake-build-debug/CMakeCache.txt on line 371. Offending entry: >>>>>>> ccbae2f384955173b2f062ea1daf4d55ef42eb8a
+CMake Error: The current CMakeCache.txt directory C:/Users/User/Desktop/AED/AEDP2/cmake-build-debug/CMakeCache.txt is different than the directory c:/AED/Projeto2/AEDP2/cmake-build-debug where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt
+CMake Error: The source "C:/Users/User/Desktop/AED/AEDP2/CMakeLists.txt" does not match the source "C:/AED/Projeto2/AEDP2/CMakeLists.txt" used to generate cache.  Re-run cmake with a different source directory.

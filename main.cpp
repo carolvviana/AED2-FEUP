@@ -1,6 +1,24 @@
 #include "Interface.h"
+#include "Data.h"
 using namespace std;
 int main() {
+    cout<< "hello world\n";
+    Data d = Data();
+    d.readFile_airlines();
+    d.readFile_airports();
+
+    d.readFile_flights();
+
+    Graph* g = d.getFlightG();
+    cout << g->distance("CDG", "OPO") << endl;
+    g->print();
+    //g.~Graph();
+
+    cout << d.getAirports().size();
+
+    return 0;
+
+    /*
     Data d = Data();
     Interface iFace = Interface();
     iFace.setData(d);
@@ -13,4 +31,5 @@ int main() {
     }
 
     return 0;
-}
+    */
+     }
