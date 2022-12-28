@@ -7,29 +7,39 @@
 #include <sstream>
 #include <iostream>
 
+
 #include "Airline.h"
 #include "Airport.h"
 #include "City.h"
+#include "Graph.h"
 #include <unordered_map>
 
 #define AIRLINES "../csv/airlines.csv"
 #define AIRPORTS "../csv/airports.csv"
 #define FLIGHTS "../csv/flights.csv"
+
 using namespace std;
 
 class Data{
 private:
-    int nAirports;
-    unordered_map <string, Airline> airlines_;
-    unordered_map <string, City> cities_;
-    unordered_map <string, Airport> airports_;
+
+    static unordered_map <string, Airline*> airlines_;
+    static unordered_map <string, City*> cities_;
+    static unordered_map <string, Airport*> airports_;
+    static Graph *flightG; //= new Graph(1);
 
 public:
 
+    //Data();
+    static unordered_map <string, Airport*> getAirports();
+    static unordered_map <string, Airline*> getAirlines();
+    static unordered_map <string, City*> getCities();
+    static Graph* getFlightG();
+
     //file reading methods
-    void readFile_airlines();
-    void readFile_airports();
-    void readFile_flights();
+    static void readFile_airlines();
+    static void readFile_airports();
+    static void readFile_flights();
 
 
 

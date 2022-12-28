@@ -17,7 +17,6 @@ private:
     string city_;
     //City city_;
     Coordinate coordinate_;
-    int index_;
 
 public:
     //Airport(string code, string name, City city, double lati, double longi, int index);
@@ -27,13 +26,13 @@ public:
     //City getCity();
     string getCity();
     Coordinate getCoordinate();
-    int getIndex();
+    //int getIndex();
     void setCode(string code);
     void setName(string name);
     //void setCity(City city);
     void setCity(string city);
     void setCoordinate(double lati, double longi);
-    void setIndex(int index);
+    //void setIndex(int index);
 
     friend std::ostream& operator <<(std::ostream& out ,Airport& airport);
 

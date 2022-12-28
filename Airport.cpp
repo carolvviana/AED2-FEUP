@@ -13,13 +13,13 @@ string Airport :: getName(){return name_;}
 //City Airport :: getCity(){return city_;}
 string Airport :: getCity(){return city_;}
 Coordinate Airport :: getCoordinate(){return coordinate_;}
-int Airport :: getIndex(){return index_;}
+//int Airport :: getIndex(){return index_;}
 void Airport :: setCode(string code){code_ = code;}
 void Airport :: setName(string name){name_ = name;}
 //void Airport :: setCity(City city){city_ = city;}
 void Airport :: setCity(string city){city_ = city;}
 void Airport :: setCoordinate(double lati, double longi){coordinate_ = Coordinate(lati, longi);}
-void Airport :: setIndex(int index){index_= index;}
+//void Airport :: setIndex(int index){index_= index;}
 
 std::ostream& operator <<(std::ostream& out , Airport& airport) {
     out << airport.getCode() << " | " << airport.getName();
