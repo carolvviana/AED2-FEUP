@@ -3,7 +3,7 @@
 //
 #include "Data.h"
 
-//Data::Data(){};
+Data::Data(){};
 
 unordered_map <string, Airport*> Data::getAirports() {
     return airports_;
@@ -117,4 +117,3 @@ void Data :: readFile_flights() {
     }
     else cout<<"Could not open the file\n";
 }
-

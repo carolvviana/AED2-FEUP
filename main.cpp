@@ -1,4 +1,4 @@
-#include "Interface.h"
+//#include "Interface.h"
 #include "Data.h"
 #include "ApMethods.h"
 
@@ -6,23 +6,25 @@ using namespace std;
 
 int main() {
     cout<< "hello world\n";
-    Data d; //= Data();
-    ApMethods ap;
-    ap.setData(d);
-
-
+    Data d= Data();
     d.readFile_airlines();
     d.readFile_airports();
-
     d.readFile_flights();
 
     Graph* g = d.getFlightG();
     cout << g->distance("CDG", "OPO") << endl;
     g->print();
+    //g->printShortestDistance("CDG", "OPO", 3019);
     //g.~Graph();
 
-    ap.setGraph(*g); //é isto? assin. sofia
-
+    ApMethods ap;
+    ap.setData(d);
+    ap.setGraph(g);
+    string apc ="MAG";
+    cout << "Nr of flights: " << ap.nFlightsAirport(apc) << endl;
+    cout << "Nr of airlines: " << ap.nAirlines(apc) << endl;
+    cout << "Nr of cities: " << ap.nCities(apc) << endl;
+    cout << "Nr of countries: " << ap.nCountries(apc) << endl;
     cout << d.getAirports().size();
 
     return 0;

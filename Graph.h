@@ -10,9 +10,6 @@
 
 using namespace std;
 
-
-#define INF (std::numeric_limits<double>::max()/2)
-
 /**
  * A graph class.
  * In the context of this program this is going to represent the STCP network.
@@ -105,6 +102,11 @@ public:
     void print();
 
     int distance(string origin, string dest);
+    vector<Node> makePath(string origin, string destination);
+
+    void printShortestDistance(string src, string dest, int v);
+    bool BFS(string src, string dest, int v, unordered_map <string, vector<string>> predi, unordered_map <string, int> disti);
+    void dfs(const std::string& cStop, bool firstIteration);
 };
 
 

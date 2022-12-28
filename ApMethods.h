@@ -13,12 +13,14 @@ using namespace std;
 
 class ApMethods {
 private:
-    static Data d_;
-    static Graph g_;
+    Data d_ ;
+    Graph* g_ = new Graph(1);
 
 public:
-    static void setGraph(Graph g);
-    static void setData(Data d);
+    ApMethods();
+    ApMethods(Data d, Graph* g);
+    void setGraph(Graph* g);
+    void setData(Data d);
     int nFlightsAirport(string code/*Airport* ap*/); //Quantos voos existem a partir de um dado aeroporto?
     int nAirlines (string code); // De quantas companhias aéreas diferentes?
     int nCities (string code); //Para quantos destinos diferentes?
