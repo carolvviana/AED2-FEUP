@@ -25,9 +25,9 @@ public:
     int nAirlines (string code); // De quantas companhias aéreas diferentes?
     int nCities (string code); //Para quantos destinos diferentes?
     int nCountries (string code); //De quantos países diferentes?
-    int nAirportsWithMaxFlights(Airport* ap, int y);//Quantos aeroportos, cidades ou países são atingíveis usando um máximo de Y voos?
-    int nCitiesWithMaxFlights(Airport* ap, int y);
-    int nCountriesWithMaxFlights(Airport *ap, int y);
+    int nAirportsWithMaxFlights(string code, int y);//Quantos aeroportos, cidades ou países são atingíveis usando um máximo de Y voos?
+    int nCitiesWithMaxFlights(string code, int y);
+    int nCountriesWithMaxFlights(string code, int y);
 
 };
 

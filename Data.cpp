@@ -95,8 +95,8 @@ void Data :: readFile_flights() {
         flightG->addNode(it->first, it->second);
     }
     //open file
-    ifstream input("../csv/flightsv2.csv");
-    //ifstream input(FLIGHTS);
+    //ifstream input("../csv/flightsv2.csv");
+    ifstream input(FLIGHTS);
 
     if(input.is_open()) {
         string line;

@@ -45,9 +45,32 @@ int ApMethods::nCountries (string code){
     }
     return aux.size();}
 
-//int ApMethods::nAirportsWithMaxFlights(Airport* ap, int y){} //Quantos aeroportos, cidades ou países são atingíveis usando um máximo de Y voos?
 
-//int ApMethods::nCitiesWithMaxFlights(Airport* ap, int y){}
+//Quantos aeroportos, cidades ou países são atingíveis usando um máximo de Y voos?
+int ApMethods::nAirportsWithMaxFlights(string code, int y){
+    g_->bfs(code);
+    set<string> aux = g_->apMethodsHelper(y);
+    return aux.size();
+}
 
-//int ApMethods::nCountriesWithMaxFlights(Airport *ap, int y){}
+int ApMethods::nCitiesWithMaxFlights(string code, int y){
+    set<string> auxCity = {};
+    g_->bfs(code);
+    set<string> auxAP = g_->apMethodsHelper(y);
+    for (auto ap : auxAP){
+        auxCity.insert(this->d_.getAirports().at(ap)->getCity());
+    }
+    return auxCity.size();
+}
+
+
+int ApMethods::nCountriesWithMaxFlights(string code, int y){
+    set<string> auxCountry = {};
+    g_->bfs(code);
+    set<string> auxAP = g_->apMethodsHelper(y);
+    for (auto ap : auxAP){
+        auxCountry.insert(this->d_.getCities().at(this->d_.getAirports().at(ap)->getCity())->getCountry());
+    }
+    return auxCountry.size();
+}
 

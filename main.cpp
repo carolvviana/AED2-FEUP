@@ -12,20 +12,28 @@ int main() {
     d.readFile_flights();
 
     Graph* g = d.getFlightG();
-    cout << g->distance("CDG", "OPO") << endl;
-    g->print();
+    g->bfs("OPO");
+    //cout << g->distance("CDG", "OPO") << endl;
+    //g->print();
     //g->printShortestDistance("CDG", "OPO", 3019);
     //g.~Graph();
 
     ApMethods ap;
     ap.setData(d);
     ap.setGraph(g);
-    string apc ="MAG";
-    cout << "Nr of flights: " << ap.nFlightsAirport(apc) << endl;
-    cout << "Nr of airlines: " << ap.nAirlines(apc) << endl;
-    cout << "Nr of cities: " << ap.nCities(apc) << endl;
-    cout << "Nr of countries: " << ap.nCountries(apc) << endl;
-    cout << d.getAirports().size();
+    string apc ="OPO";
+    int y = 3;
+
+    //cout << "Nr of flights: " << ap.nFlightsAirport(apc) << endl;
+    //cout << "Nr of airlines: " << ap.nAirlines(apc) << endl;
+    //cout << "Nr of cities: " << ap.nCities(apc) << endl;
+    //cout << "Nr of countries: " << ap.nCountries(apc) << endl;
+
+    cout << endl;
+    //cout << "Nr of airport with " << y <<" flights: " << ap.nAirportsWithMaxFlights(apc,y) << endl;
+    //cout << "Nr of cities with " << y <<" flights: " << ap.nCitiesWithMaxFlights(apc,y) << endl;
+    //cout << "Nr of countries with " << y <<" flights: " << ap.nCountriesWithMaxFlights(apc,y) << endl;
+    //cout << d.getAirports().size();
 
     return 0;
 

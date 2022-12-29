@@ -58,7 +58,7 @@ void Graph::bfs(const string& airportCode) {
 
         auto node = nodes.at(u);
 
-        //cout << *(node.airport) << '\n'; // show node order
+        cout << *(node.airport) << '\n'; // show node order
 
         for (const auto& e : node.adj) {
             string airportD = e.dest;
@@ -100,6 +100,7 @@ int Graph::distance(string origin, string dest) {
     bfs(origin);
     return nodes[dest].distance;
 }
+
 
 //vector<Node> Graph::makePath(string origin, string destination) {
 
@@ -238,4 +239,15 @@ vector<string> Graph::dfs(const string& cAp, bool firstIteration) {
         if (!dNode.visited)
             dfs(dAp, false);
     }
+}
+
+set<string> Graph::apMethodsHelper(int y) {
+    set<string> aux = {};
+
+    for (auto a: nodes) {
+        if (a.second.distance <= y && a.second.distance > 0) {
+            aux.insert(a.first);
+        }
+    }
+    return aux;
 }
