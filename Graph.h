@@ -38,6 +38,7 @@ class Graph {
     int n;
     bool hasDir; // false: undirect; true: directed
     unordered_map<string, Node> nodes;
+    vector<vector<string>> paths = {}; //caminhos para chegar ao destino
 
 public:
     // Constructor: nr nodes and direction (default: directed)
@@ -102,11 +103,11 @@ public:
     void print();
 
     int distance(string origin, string dest);
-    vector<Node> makePath(string origin, string destination);
+    //vector<Node> makePath(string origin, string destination);
 
-    void printShortestDistance(string src, string dest, int v);
-    bool BFS(string src, string dest, int v, unordered_map <string, vector<string>> predi, unordered_map <string, int> disti);
-    void dfs(const std::string& cStop, bool firstIteration);
+    //void printShortestDistance(string src, string dest, int v);
+    //bool BFS(string src, string dest, int v, unordered_map <string, vector<string>> predi, unordered_map <string, int> disti);
+    vector<string> dfs(const std::string& cStop, bool firstIteration);
 };
 
 

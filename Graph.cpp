@@ -220,19 +220,22 @@ void Graph :: printShortestDistance(string src, string dest, int v)
     for (int i = path.size() - 1; i >= 0; i--)
         cout << path[i] << " ";
 }*/
-void Graph::dfs(const string& cStop, bool firstIteration) {
+vector<string> Graph::dfs(const string& cAp, bool firstIteration) {
     if (firstIteration)
         this->unvisit();
 
-    Node& cNode = nodes[cStop];
+    vector<vector<string>> paths ={};
+    vector<string> path =  {};
+
+    Node& cNode = nodes[cAp];
     std::cout << *(cNode.airport) << '\n'; // show node order
     cNode.visited = true;
 
     for (const auto& e : cNode.adj) {
-        string dStop = e.dest;
-        Node& dNode = nodes[dStop];
+        string dAp = e.dest;
+        Node& dNode = nodes[dAp];
 
         if (!dNode.visited)
-            dfs(dStop, false);
+            dfs(dAp, false);
     }
 }
