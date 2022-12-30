@@ -12,11 +12,19 @@ int main() {
     d.readFile_flights();
 
     Graph* g = d.getFlightG();
-    g->bfs("OPO");
+    //g->bfs("OPO");
     //cout << g->distance("CDG", "OPO") << endl;
     //g->print();
     //g->printShortestDistance("CDG", "OPO", 3019);
     //g.~Graph();
+    //g->printPath("OPO", "YYZ");
+    //vector<string> path  = g->makePath("OPO", "YYZ");
+    auto a = d.getCities()["Porto"];
+    cout << d.getCountries()["Portugal"]->cities_.size() << endl;
+    cout << d.getCountries()["United States"]->cities_.size() << endl;
+
+    d.flight("Portugal","Los Angeles",3, 2);
+
 
     ApMethods ap;
     ap.setData(d);

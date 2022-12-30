@@ -5,8 +5,10 @@ City::City(string name, string country): name_(name), country_(country){};
 
 string City::getName() {return name_;}
 string City::getCountry() {return country_;}
-vector<Airport> City::getAirports() {return airports_;}
+//vector<Airport> City::getAirports() {return airports_;}
+vector<string> City::getAirports() {return airports_;}
 
 void City::setName(string name){name_ = name;}
 void City::setCountry(string country) {country_ = country;}
-void City::addAirport(Airport ap) {airports_.push_back(ap);}
+//void City::addAirport(Airport ap) {airports_.push_back(ap);}
+void City::addAirport(string ap) {airports_.push_back(ap);}

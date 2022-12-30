@@ -26,6 +26,7 @@ private:
     unordered_map <string, Airline*> airlines_ ;
     unordered_map <string, City*> cities_;
     unordered_map <string, Airport*> airports_;
+    unordered_map <string, Country*> countries_;
     Graph *flightG = new Graph(1);
 
 public:
@@ -34,6 +35,7 @@ public:
     unordered_map <string, Airport*> getAirports();
     unordered_map <string, Airline*> getAirlines();
     unordered_map <string, City*> getCities();
+    unordered_map <string, Country*> getCountries();
     Graph* getFlightG();
 
     //file reading methods
@@ -41,6 +43,9 @@ public:
     void readFile_airports();
     void readFile_flights();
 
+    vector<string> city2Airport(string city);
+    vector<string> country2Airport(string country);
+    void flight(string origin, string dest, int oType, int dType);
 
 
 };

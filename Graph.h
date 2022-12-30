@@ -33,6 +33,7 @@ class Graph {
         list<Edge> adj; // The list of outgoing edges (to adjacent nodes)
         bool visited; // As the node been visited on a search?
         int distance;
+        string parent;
     };
 
     int n;
@@ -103,12 +104,14 @@ public:
     void print();
 
     int distance(string origin, string dest);
-    //vector<Node> makePath(string origin, string destination);
-
+    vector<string> makePath(string origin, string destination);
+    void printPath(string origin, string destination);
+    void printPath(vector<string> path);
     //void printShortestDistance(string src, string dest, int v);
     //bool BFS(string src, string dest, int v, unordered_map <string, vector<string>> predi, unordered_map <string, int> disti);
-    vector<string> dfs(const std::string& cStop, bool firstIteration);
+    //vector<string> dfs(const std::string& cStop, bool firstIteration);
     set<string> apMethodsHelper(int y);
+    vector<string> dfs(const string& cAp, bool firstIteration, int& distance, vector<string>& path, vector<vector<string>>& paths, const string& destAp, int d);
 };
 
 

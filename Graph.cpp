@@ -54,11 +54,12 @@ void Graph::bfs(const string& airportCode) {
     nodes[airportCode].distance = 0;
 
     while (!q.empty()) { // while there are still unvisited nodes
+
         string u = q.front(); q.pop();
 
         auto node = nodes.at(u);
 
-        cout << *(node.airport) << '\n'; // show node order
+        //cout << *(node.airport) << '\n'; // show node order
 
         for (const auto& e : node.adj) {
             string airportD = e.dest;
@@ -66,6 +67,7 @@ void Graph::bfs(const string& airportCode) {
             if (!nodes[airportD].visited) {
                 q.push(airportD);
                 nodes[airportD].visited = true;
+                nodes[airportD].parent = u;
                 nodes[airportD].distance = nodes[u].distance+1;
             }
         }
@@ -102,9 +104,9 @@ int Graph::distance(string origin, string dest) {
 }
 
 
-//vector<Node> Graph::makePath(string origin, string destination) {
+vector<string> Graph::makePath(string origin, string destination) {
 
-    //vector<Node> path = {};
+    vector<string> path = {};
     /*
     if (!nodes[origin].available || !nodes[destination].available) {
         cout << "Origem/Destino nao disponivel" << endl;
@@ -120,15 +122,30 @@ int Graph::distance(string origin, string dest) {
     }
     */
     //if (nodes[destination].customWeight.meters == INF) return path;
-/*    bfs(origin);
+    //bfs(origin);
+    bfs(origin);
     string dest = destination;
-    path.push_back(nodes[dest]);
+    path.push_back(dest);
     while (dest != origin) {
         dest = nodes[dest].parent;
-        path.push_back(nodes[dest]);
+        path.push_back(dest);
     }
+    reverse(path.begin(), path.end());
     return path;
-}*/
+}
+void Graph::printPath(string origin, string destination){
+    vector<string> path = makePath(origin, destination);
+    printPath(path);
+}
+
+void Graph::printPath(vector<string> path){
+    //cout << "Best path from " << path.front() << " to " << path.back() << ":" << endl;
+    for (int i = 0; i < path.size()-1; i++){
+        cout << path[i] << " -> ";
+    }
+    cout << path.back() << endl;
+}
+
 /*
  bool Graph :: BFS(string src, string dest, int v, unordered_map <string, vector<string>> predi, unordered_map <string, int> disti)
 {
@@ -221,25 +238,54 @@ void Graph :: printShortestDistance(string src, string dest, int v)
     for (int i = path.size() - 1; i >= 0; i--)
         cout << path[i] << " ";
 }*/
-vector<string> Graph::dfs(const string& cAp, bool firstIteration) {
+/*
+vector<string> Graph::dfs(const string& cAp, bool firstIteration, int& distance, vector<string> &path, vector<vector<string>> &paths) {
     if (firstIteration)
         this->unvisit();
 
-    vector<vector<string>> paths ={};
-    vector<string> path =  {};
 
     Node& cNode = nodes[cAp];
     std::cout << *(cNode.airport) << '\n'; // show node order
     cNode.visited = true;
 
     for (const auto& e : cNode.adj) {
+        distance--;
         string dAp = e.dest;
+        path.push_back(dAp);
         Node& dNode = nodes[dAp];
 
         if (!dNode.visited)
             dfs(dAp, false);
     }
 }
+*/
+vector<string> Graph::dfs(const string& cAp, bool firstIteration, int& distance, vector<string>& path, vector<vector<string>>& paths, const string& destAp, int d) {
+    if (firstIteration) { this->unvisit();}
+
+
+    Node& cNode = nodes[cAp];
+    std::cout << *(cNode.airport) << '\n'; // show node order
+    cNode.visited = true;
+
+    if (distance == 0){
+        if (cAp == destAp){
+            paths.push_back(path);
+        }
+        path.clear();
+    }
+    if (cNode.adj.empty()) distance++;
+    for (const auto& e : cNode.adj) {
+        distance--;
+        string dAp = e.dest;
+        Node& dNode = nodes[dAp];
+        path.push_back(dAp);
+        if (distance > 0 && !dNode.visited)
+            dfs(dAp, false, distance, path, paths, destAp, d);
+    }
+}
+
+
+
 
 set<string> Graph::apMethodsHelper(int y) {
     set<string> aux = {};
