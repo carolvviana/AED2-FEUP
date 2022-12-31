@@ -86,7 +86,7 @@ void Data :: readFile_airports(){
             cities_[city]->addAirport(code);
             countries_[countryName]->cities_.push_back(city);
             airports_.insert({code, airport});
-            airportCoord_.push_back(Coordinate(latitude, longitude));
+            airportCoord_.push_back({code, Coordinate(latitude, longitude)});
         }
 
     }
@@ -140,54 +140,77 @@ vector<string> Data::country2Airport(string country){
     return aps;
 }
 struct {
-    bool operator()(Coordinate c1, Coordinate c2){
-        return c1.getLati() < c2.getLati();
+    bool operator()(pair<string, Coordinate> c1, pair<string, Coordinate> c2){
+        if (c1.second.getLati() < c2.second.getLati())
+            return true;
+        return false;
     }
 } compByLat;
 
 struct {
-    bool operator()(Coordinate c1, Coordinate c2){
-        return c1.getLongi() < c2.getLongi();
+    bool operator()(pair<string, Coordinate> c1, pair<string, Coordinate> c2){
+        return c1.second.getLongi() < c2.second.getLongi();
     }
 } compByLong;
 
-int binarySearchLowBoundLati(vector<Coordinate>& c, const Coordinate& co){
-    int low = 0, high = c.size() -1;
-    while (low <= high){
-        int mid = low + (high - low)/2;
-        if (co.getLati() < c[mid].getLati()) low = mid;
-        else if (co.getLati() > c[mid].getLati()) high = mid-1;
+int binarySearchLowBoundLati(const vector<pair<string,Coordinate>> &v, Coordinate key){
+    int res = -1;
+    int low = 0, high = (int)v.size() - 1;
+    while (low <= high) {
+        int middle = low + (high - low) / 2;
+
+        if (v[middle].second.getLati() > key.getLati()) {
+            high = middle - 1;
+        }
+
+        else if (v[middle].second.getLati() <= key.getLati()) {
+            res = middle;
+            low = middle + 1;
+        }
     }
+
+    if ( res == -1) return -1; // not found
+    else return res;
+}
+int binarySearchLowBoundLongi(const vector<pair<string,Coordinate>> &v, Coordinate key){
+    int res = -1;
+    int low = 0, high = (int)v.size() - 1;
+    while (low <= high) {
+        int middle = low + (high - low) / 2;
+
+        if (v[middle].second.getLongi() > key.getLongi()) {
+            high = middle - 1;
+        }
+
+        else if (v[middle].second.getLongi() <= key.getLongi()) {
+            res = middle;
+            low = middle + 1;
+        }
+    }
+
+    if ( res == -1) return -1; // not found
+    else return res;
 }
 
-int binarySearchHighBoundLati(const vector<Coordinate> &v, Coordinate key) {
+int binarySearchHighBoundLati(const vector<pair<string,Coordinate>> &v, Coordinate key) {
     int low = 0, high = v.size();
     int res = high;
     while (low <= high) {
         int middle = low + (high - low) / 2;
-        if (key.getLati() <= v[middle].getLati()) { res = middle; high = middle -1 ;}
-        else if (key.getLati() > v[middle].getLati()) low = middle + 1;
+        if (key.getLati() <= v[middle].second.getLati()) { res = middle; high = middle -1 ;}
+        else if (key.getLati() > v[middle].second.getLati()) low = middle + 1;
         // res = middle;
     }
     if (res == v.size()) return -1; // not found
     else return res;
 }
-int binarySearchLowBoundLongi(vector<Coordinate>& c, const Coordinate& co){
-    int low = 0, high = c.size() -1;
-    while (low <= high){
-        int mid = low + (high - low)/2;
-        if (co.getLati() < c[mid].getLati()) low = mid;
-        else if (co.getLati() > c[mid].getLati()) high = mid-1;
-    }
-}
-
-int binarySearchHighBoundLongi(const vector<Coordinate> &v, Coordinate key) {
+int binarySearchHighBoundLongi(const vector<pair<string,Coordinate>> &v, Coordinate key) {
     int low = 0, high = v.size();
     int res = high;
     while (low <= high) {
         int middle = low + (high - low) / 2;
-        if (key.getLati() <= v[middle].getLati()) { res = middle; high = middle -1 ;}
-        else if (key.getLati() > v[middle].getLati()) low = middle + 1;
+        if (key.getLongi() <= v[middle].second.getLongi()) { res = middle; high = middle -1 ;}
+        else if (key.getLongi() > v[middle].second.getLongi()) low = middle + 1;
         // res = middle;
     }
     if (res == v.size()) return -1; // not found
@@ -195,34 +218,55 @@ int binarySearchHighBoundLongi(const vector<Coordinate> &v, Coordinate key) {
 }
 
 string Data :: coord2Airport(string c){
+    vector<pair<string, Coordinate>> airportCoord(airportCoord_);
     string v = ",";
     size_t pos = c.find(v);
     Coordinate co = Coordinate(stod(c.substr(0, pos)), stod(c.substr(pos+1)));
 
-    sort(airportCoord_.begin(), airportCoord_.end(), compByLat);
+    sort(airportCoord.begin(), airportCoord.end(), compByLat);
 
-    int positionLowBoundLati = binarySearchLowBoundLati(airportCoord_, co);
-    int positionHighBoundLati = binarySearchHighBoundLati(airportCoord_, co);
-    airportCoord_.erase(airportCoord_.begin(), airportCoord_.begin()+positionLowBoundLati);
-    airportCoord_.erase(airportCoord_.begin()+positionHighBoundLati);
+    int positionLowBoundLati = binarySearchLowBoundLati(airportCoord, co);
+    int positionHighBoundLati = binarySearchHighBoundLati(airportCoord, co);
+    airportCoord.erase(airportCoord.begin(), airportCoord.begin()+positionLowBoundLati);
+    airportCoord.erase(airportCoord.begin()+positionHighBoundLati);
 
-    sort(airportCoord_.begin(), airportCoord_.end(), compByLong);
+    sort(airportCoord.begin(), airportCoord.end(), compByLong);
 
-    int positionLowBoundLongi = binarySearchLowBoundLongi(airportCoord_, co);
-    int positionHighBoundLongi = binarySearchHighBoundLongi(airportCoord_, co);
-    airportCoord_.erase(airportCoord_.begin(), airportCoord_.begin()+positionLowBoundLongi);
-    airportCoord_.erase(airportCoord_.begin()+positionHighBoundLongi);
+    int positionLowBoundLongi = binarySearchLowBoundLongi(airportCoord, co);
+    int positionHighBoundLongi = binarySearchHighBoundLongi(airportCoord, co);
+    airportCoord.erase(airportCoord.begin(), airportCoord.begin()+positionLowBoundLongi);
+    airportCoord.erase(airportCoord.begin()+positionHighBoundLongi);
 
-    double dist_min = airportCoord_[0].distance_between_coordinates(co);
-    double dist_max = airportCoord_[1].distance_between_coordinates(co);
-
-    Coordinate coord_min = airportCoord_[0];
+    double dist_min = airportCoord[0].second.distance_between_coordinates(co);
+    double dist_max = airportCoord[1].second.distance_between_coordinates(co);
 
     if (dist_min < dist_max){
-        auto it = find_if(airports_.begin(), airports_.end(), [coord_min]() {return this.coo;});
+        return airportCoord[0].first;
     }
+    else return airportCoord[1].first;
 
-    //STD::LOWERBOUND NO MAP({coord, codigo aero})
+    //STD::LOWERBOUND NO MAP({coord, codigo aero})*/
+
+    /*
+    string v = ",";
+    size_t pos = c.find(v);
+    Coordinate co = Coordinate(stod(c.substr(0, pos)), stod(c.substr(pos+1)));
+    pair<string, Coordinate> p = {"", co};
+
+    auto it_great = lower_bound(airportCoord_.begin(), airportCoord_.end(), p, compByLat); // coordenada maior ou igual
+    auto it_low = lower_bound(airportCoord_.begin(), airportCoord_.end(), p, compByLat2); // coordenada menor ou igual
+
+    auto e = it_low->first;
+    auto d = it_great->first;
+    auto a =  it_low->second;
+    auto b = it_great->second;
+    double dist_min = it_low->second.distance_between_coordinates(co);
+    double dist_max = it_great->second.distance_between_coordinates(co);
+
+    if (dist_min < dist_max){
+        return it_low->first;
+    }
+    else return it_great->first;*/
 }
 
 //ints
@@ -235,14 +279,14 @@ void Data::flight(string origin, string dest, int oType, int dType){
         case 1: oAp.push_back(origin); o = "Airport"; break; //aeroporto
         case 2: oAp = city2Airport(origin); o = "City"; break; //cidade
         case 3: oAp = country2Airport(origin); o = "Country"; break; // país
-        case 4: break; //coordenadas
+        case 4: oAp.push_back(coord2Airport(origin)); o = "Coordinate"; break; //coordenadas
     }
 
     switch (dType) { //origem
         case 1: dAp.push_back(dest); break; //aeroporto
         case 2: dAp = city2Airport(dest); break; //cidade
         case 3: dAp = country2Airport(dest); break; // país
-        case 4: break; //coordenadas
+        case 4: dAp.push_back(coord2Airport(dest)); break; //coordenadas
     }
 
     for (auto i = oAp.begin(); i !=  oAp.end(); i++){

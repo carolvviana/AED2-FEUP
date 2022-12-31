@@ -24,7 +24,7 @@ int main() {
     cout << d.getCountries()["Portugal"]->cities_.size() << endl;
     cout << d.getCountries()["United States"]->cities_.size() << endl;
 
-    d.flight("Paris","Lisbon",2, 2);
+    d.flight("49,2.5","66,-23",4, 4);
 
 
     ApMethods ap;

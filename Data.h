@@ -13,6 +13,7 @@
 #include "City.h"
 #include "Graph.h"
 #include <unordered_map>
+#include <map>
 
 #define AIRLINES "../csv/airlines.csv"
 #define AIRPORTS "../csv/airports.csv"
@@ -28,7 +29,7 @@ private:
     unordered_map <string, Airport*> airports_;
     unordered_map <string, Country*> countries_;
     Graph *flightG = new Graph(1);
-    vector<Coordinate> airportCoord_;
+    vector<pair<string, Coordinate>> airportCoord_;
 
 public:
 
