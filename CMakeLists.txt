@@ -18,4 +18,7 @@ add_executable(AEDP2
         Graph.cpp
         Graph.h
         ApMethods.cpp
-        ApMethods.h)
+        ApMethods.h
+        Statistics.cpp
+        Interface.cpp
+        Interface.h)

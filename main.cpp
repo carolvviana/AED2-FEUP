@@ -1,6 +1,7 @@
 //#include "Interface.h"
 #include "Data.h"
 #include "ApMethods.h"
+#include "Interface.h"
 
 using namespace std;
 
@@ -12,6 +13,18 @@ int main() {
     d.readFile_flights();
 
     Graph* g = d.getFlightG();
+
+    Interface iFace = Interface();
+    iFace.setData(d);
+
+    try {
+        iFace.welcomePage();
+    }
+    catch (int exit) {
+        return 0;
+    }
+
+
     //g->bfs("OPO");
     //cout << g->distance("CDG", "OPO") << endl;
     //g->print();
@@ -21,11 +34,17 @@ int main() {
     //vector<string> path  = g->makePath("OPO", "YYZ");
     //auto a = d.getCities()["Toquio"];
     //cout << d.getCities()["Toquio"]->getName();
-    cout << d.getCountries()["Portugal"]->cities_.size() << endl;
-    cout << d.getCountries()["United States"]->cities_.size() << endl;
-
-    d.flight("49,2.5","66,-23",4, 4);
-
+    //cout << d.getCountries()["Portugal"]->cities_.size() << endl;
+    //cout << d.getCountries()["United States"]->cities_.size() << endl;
+    auto b = d.country2Airport("Portugal");
+    //d.flight("49,2.5","66,-23",4, 4);
+    string s = "Portugal";
+    cout << "Aiports: " << d.nAirports1(s) << endl;
+    cout << "Cities: " << d.nCities1(s) << endl;
+    //cout << "Countries: " << d.nCountries1() << endl;
+    cout << "Airlines: " << d.nAirlines1(s) << endl;
+    cout << "Flights: " << d.nFlights1(s) << endl;
+    cout << "Destinations: " << d.nDestinations1(s) << endl;
 
     ApMethods ap;
     ap.setData(d);

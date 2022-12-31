@@ -68,7 +68,7 @@ public:
     int nAirports2(string city);
     int nFlights2(string city);
     int nAirlines2(string city);
-    int nDestinations2(string country);
+    int nDestinations2(string city);
     //airports
     int nFlights3(string airport);
     int nAirlines3(string airport);

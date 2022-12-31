@@ -28,7 +28,7 @@ public:
     void globalStatistic();
     void countryStatistic();
     void cityStatistic();
-    void airlineStatistic();
+    //void airlineStatistic();
     void airportStatistic();
     /*
     //2

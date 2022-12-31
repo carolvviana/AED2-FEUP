@@ -64,8 +64,8 @@ void Data :: readFile_airports(){
     vector<string> v;
 
     //open file
-    ifstream input(AIRPORTS);
-    //ifstream input("../csv/airportsv2.csv");
+    //ifstream input(AIRPORTS);
+    ifstream input("../csv/airportsv2.csv");
     if(input.is_open()) {
         string line;
         getline(input, line); //skips first line
@@ -84,7 +84,7 @@ void Data :: readFile_airports(){
             cities_.insert({city, c});
             countries_.insert({countryName,new Country{countryName, {}}});
             cities_[city]->addAirport(code);
-            countries_[countryName]->cities_.push_back(city);
+            countries_[countryName]->cities_.insert(city);
             airports_.insert({code, airport});
             airportCoord_.push_back({code, Coordinate(latitude, longitude)});
         }
@@ -102,8 +102,8 @@ void Data :: readFile_flights() {
         flightG->addNode(it->first, it->second);
     }
     //open file
-    //ifstream input("../csv/flightsv2.csv");
-    ifstream input(FLIGHTS);
+    ifstream input("../csv/flightsv2.csv");
+    //ifstream input(FLIGHTS);
 
     if(input.is_open()) {
         string line;

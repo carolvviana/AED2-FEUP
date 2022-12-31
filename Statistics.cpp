@@ -54,14 +54,26 @@ int Data::nFlights1(string country){
     return counter;
 }
 int Data::nAirlines1(string country){
-    int counter = 0;
-    for(auto a: country2Airport(country)){counter += nAirlines3(a);}
-    return counter;
+    //int counter = 0;
+    //for(auto a: country2Airport(country)){counter += nAirlines3(a);}
+    //return counter;
+    set<string> s = {};
+    for(auto a: country2Airport(country)){
+        set<string> aux = getDifAirlines(a);
+        s.insert(aux.begin(),aux.end());
+    }
+    return s.size();
 }
 int Data::nDestinations1(string country){
-    int counter = 0;
-    for(auto a: country2Airport(country)){counter += nDestinations3(a);}
-    return counter;
+    //int counter = 0;
+    //for(auto a: country2Airport(country)){counter += nDestinations3(a);}
+    //return counter;
+    set<string> s = {};
+    for(auto a: country2Airport(country)){
+        set<string> aux = getDifDestinations(a);
+        s.insert(aux.begin(),aux.end());
+    }
+    return s.size();
 }
 //
 

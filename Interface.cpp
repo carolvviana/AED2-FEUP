@@ -1,9 +1,7 @@
-//
-// Created by carol on 13/12/2022.
-//
 #include "Interface.h"
 #include <iostream>
 #include <regex>
+//FAZER COUTS PARA CADA FUNÇÃO
 
 using namespace std;
 
@@ -58,7 +56,7 @@ void Interface::getFlights() {
         cout << "Choose option:";
         cin >> inputTypeO;
         switch (inputTypeO) {
-            case ('1'||'2'||'3'||'4'):
+            case ('1'||'2'||'3'||'4'): //nao funcionou
                 cout << endl << "Insert origin:" << endl;
                 cin >> inputOrigin;
                 flag = 0;
@@ -121,14 +119,20 @@ void Interface::getStatistics(){
         switch (inputType) {
             case ('1'):
                 globalStatistic();
+                return getStatistics();
             case ('2'):
                 countryStatistic();
+                return getStatistics();
             case ('3'):
                 cityStatistic();
+                return getStatistics();
             case ('4'):
-                airlineStatistic();
+                //airlineStatistic();
+                return getStatistics();
+                break;
             case ('5'):
                 airportStatistic();
+                return getStatistics();
             case ('b'):
                 return;
             case ('e'):
@@ -187,8 +191,11 @@ void Interface::globalStatistic(){
 void Interface::countryStatistic(){
     cout << endl << "=========COUNTRY STATISTICS=========" << endl;
     cout << endl;
+    cout << "Insert the name of the country:" << endl;
+    string c;
+    cin >> c;
     cout << "Choose the statistic:" << endl;
-    cout << endl << "Options:\n\t1-Total airports\n\t2-Total cities\n\t3-Total countries\n\t4-Total airlines\n\t5-Total flights\n\tb-Back\n\te-Exit"<<endl;
+    cout << endl << "Options:\n\t1-Total airports\n\t2-Total flights\n\t3-Total airlines\n\t4-Total destinations\n\t5-Total cities\n\tb-Back\n\te-Exit"<<endl;
 
     char option;
     while (true){
@@ -196,15 +203,15 @@ void Interface::countryStatistic(){
         cin >> option;
         switch (option) {
             case ('1'):
-                d_.totalAirports();
+                d_.nAirports1(c);
             case ('2'):
-                d_.totalCities();
+                d_.nFlights1(c);
             case ('3'):
-                d_.totalCountries();
+                d_.nAirlines1(c);
             case ('4'):
-                d_.totalAirlines();
+                d_.nDestinations1(c);
             case ('5'):
-                d_.totalFlights();
+                d_.nCities1(c);
             case ('b'):
                 return;
             case ('e'):
@@ -222,11 +229,14 @@ void Interface::countryStatistic(){
  *
  * COMPLEXIDADE: O(n).
  */
-void Interface::cityStatistic(){
+void Interface::cityStatistic(){ //DONE
     cout << endl << "=========CITY STATISTICS=========" << endl;
     cout << endl;
+    cout << "Insert the name of the city:" << endl;
+    string c;
+    cin >> c;
     cout << "Choose the statistic:" << endl;
-    cout << endl << "Options:\n\t1-Total airports\n\t2-Total countries\n\t3-Total airlines\n\t4-Total flights\n\tb-Back\n\te-Exit"<<endl;
+    cout << endl << "Options:\n\t1-Total airports\n\t2-Total flights\n\t3-Total airlines\n\t4-Total destinations\n\tb-Back\n\te-Exit"<<endl;
 
     char option;
     while (true){
@@ -234,13 +244,13 @@ void Interface::cityStatistic(){
         cin >> option;
         switch (option) {
             case ('1'):
-                d_.totalAirports();
+                d_.nAirports2(c);
             case ('2'):
-                d_.totalCountries();
+                d_.nFlights2(c);
             case ('3'):
-                d_.totalAirlines();
+                d_.nAirlines2(c);
             case ('4'):
-                d_.totalFlights();
+                d_.nDestinations2(c);
             case ('b'):
                 return;
             case ('e'):
@@ -258,7 +268,7 @@ void Interface::cityStatistic(){
  *
  * COMPLEXIDADE: O(n).
  */
-void Interface::airlineStatistic(){
+/*void Interface::airlineStatistic(){ //AINDA NAO ESTA FEITO
     cout << endl << "=========AIRLINE STATISTICS=========" << endl;
     cout << endl;
     cout << "Choose the statistic:" << endl;
@@ -288,35 +298,36 @@ void Interface::airlineStatistic(){
                 cout << endl << "Not a valid option" << endl;
         }
     }
-}
+}*/
 
 
 /**
- * Função imprime o menu das estatísticas a nível de Aeroporto que permite ao utilizador escolher a estatística que quer obter ou voltar atrás no programa.
+ * Função imprime o menu das estatísticas a nível de Aeroporto que permite ao utilizador escolher a estatística que quer obter e o respetivo aeroporto ou voltar atrás no programa.
  *
  * COMPLEXIDADE: O(n).
  */
-void Interface::airportStatistic(){
+void Interface::airportStatistic(){ //DONE
     cout << endl << "=========AIRPORT STATISTICS=========" << endl;
     cout << endl;
-    cout << "Choose the statistic:" << endl;
-    cout << endl << "Options:\n\t1-Total airports\n\t2-Total cities\n\t3-Total countries\n\t4-Total airlines\n\t5-Total flights\n\tb-Back\n\te-Exit"<<endl;
+    string ap;
+    cout << "Insert the airport code:" << endl;
+    cin >> ap;
+    cout << endl << "Choose the statistic:" << endl;
+    cout << endl << "Options:\n\t1-Total flights\n\t2-Total airlines\n\t3-Total destinations\n\tb-Back\n\te-Exit"<<endl;
 
     char option;
+
     while (true){
         cout << "Choose option:";
         cin >> option;
+
         switch (option) {
             case ('1'):
-                d_.totalAirports();
+                d_.nFlights3(ap);
             case ('2'):
-                d_.totalCities();
+                d_.nAirlines3(ap);
             case ('3'):
-                d_.totalCountries();
-            case ('4'):
-                d_.totalAirlines();
-            case ('5'):
-                d_.totalFlights();
+                d_.nDestinations3(ap);
             case ('b'):
                 return;
             case ('e'):

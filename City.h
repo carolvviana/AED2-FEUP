@@ -3,11 +3,12 @@
 #include <iostream>
 #include "Airport.h"
 #include <vector>
+#include <set>
 
 using namespace std;
 struct Country {
     string name_;
-    vector<string> cities_ = {};
+    set<string> cities_;
 };
 
 class City {
