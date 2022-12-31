@@ -105,7 +105,6 @@ int Graph::distance(string origin, string dest) {
 
 
 vector<string> Graph::makePath(string origin, string destination) {
-
     vector<string> path = {};
     /*
     if (!nodes[origin].available || !nodes[destination].available) {
@@ -113,16 +112,6 @@ vector<string> Graph::makePath(string origin, string destination) {
         return path;
     }
      */
-    /*
-    switch (type) {
-        case 1: BFS(origin); break;
-        case 2: dijkstraMeters(origin); break;
-        case 3: dijkstraLines(origin); break;
-        case 4: dijkstraZones(origin); break;
-    }
-    */
-    //if (nodes[destination].customWeight.meters == INF) return path;
-    //bfs(origin);
     bfs(origin);
     string dest = destination;
     path.push_back(dest);
@@ -133,6 +122,7 @@ vector<string> Graph::makePath(string origin, string destination) {
     reverse(path.begin(), path.end());
     return path;
 }
+
 void Graph::printPath(string origin, string destination){
     vector<string> path = makePath(origin, destination);
     printPath(path);

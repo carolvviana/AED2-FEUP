@@ -22,12 +22,13 @@ using namespace std;
 
 class Data{
 private:
-
+    int nf = 0;
     unordered_map <string, Airline*> airlines_ ;
     unordered_map <string, City*> cities_;
     unordered_map <string, Airport*> airports_;
     unordered_map <string, Country*> countries_;
     Graph *flightG = new Graph(1);
+    vector<Coordinate> airportCoord_;
 
 public:
 
@@ -45,8 +46,37 @@ public:
 
     vector<string> city2Airport(string city);
     vector<string> country2Airport(string country);
+    string coord2Airport(string c);
     void flight(string origin, string dest, int oType, int dType);
 
+
+    /*STATISTICS*/
+    //global
+    int totalAirports();
+    int totalCities();
+    int totalCountries();
+    int totalAirlines();
+    int totalFlights();
+    //country
+    int nCities1(string country);
+    int nAirports1(string country);
+    int nFlights1(string country);
+    int nAirlines1(string country);
+    int nDestinations1(string country);
+    //city
+    int nAirports2(string city);
+    int nFlights2(string city);
+    int nAirlines2(string city);
+    int nDestinations2(string country);
+    //airports
+    int nFlights3(string airport);
+    int nAirlines3(string airport);
+    int nDestinations3(string airport);
+    //airline
+
+    //aux
+    set<string> getDifAirlines(string airport);
+    set<string> getDifDestinations(string airport);
 
 };
 

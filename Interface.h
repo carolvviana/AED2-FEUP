@@ -19,10 +19,17 @@ public:
     //0
     void welcomePage();
     //1
-    void readFiles();
+    void getFlights();
     void credits() const;
 
     void exitProgram() const;
+    void getStatistics();
+
+    void globalStatistic();
+    void countryStatistic();
+    void cityStatistic();
+    void airlineStatistic();
+    void airportStatistic();
     /*
     //2
     void mainMenu();

@@ -86,7 +86,7 @@ void Data :: readFile_airports(){
             cities_[city]->addAirport(code);
             countries_[countryName]->cities_.push_back(city);
             airports_.insert({code, airport});
-
+            airportCoord_.push_back(Coordinate(latitude, longitude));
         }
 
     }
@@ -118,6 +118,7 @@ void Data :: readFile_flights() {
             sourceCode = v[0]; targetCode = v[1]; airlineCode = v[2];
             v.clear();
             flightG->addEdge(sourceCode, targetCode, airlineCode);
+            nf++;
 
 
         }
@@ -137,6 +138,91 @@ vector<string> Data::country2Airport(string country){
             aps.push_back(ap);
     }
     return aps;
+}
+struct {
+    bool operator()(Coordinate c1, Coordinate c2){
+        return c1.getLati() < c2.getLati();
+    }
+} compByLat;
+
+struct {
+    bool operator()(Coordinate c1, Coordinate c2){
+        return c1.getLongi() < c2.getLongi();
+    }
+} compByLong;
+
+int binarySearchLowBoundLati(vector<Coordinate>& c, const Coordinate& co){
+    int low = 0, high = c.size() -1;
+    while (low <= high){
+        int mid = low + (high - low)/2;
+        if (co.getLati() < c[mid].getLati()) low = mid;
+        else if (co.getLati() > c[mid].getLati()) high = mid-1;
+    }
+}
+
+int binarySearchHighBoundLati(const vector<Coordinate> &v, Coordinate key) {
+    int low = 0, high = v.size();
+    int res = high;
+    while (low <= high) {
+        int middle = low + (high - low) / 2;
+        if (key.getLati() <= v[middle].getLati()) { res = middle; high = middle -1 ;}
+        else if (key.getLati() > v[middle].getLati()) low = middle + 1;
+        // res = middle;
+    }
+    if (res == v.size()) return -1; // not found
+    else return res;
+}
+int binarySearchLowBoundLongi(vector<Coordinate>& c, const Coordinate& co){
+    int low = 0, high = c.size() -1;
+    while (low <= high){
+        int mid = low + (high - low)/2;
+        if (co.getLati() < c[mid].getLati()) low = mid;
+        else if (co.getLati() > c[mid].getLati()) high = mid-1;
+    }
+}
+
+int binarySearchHighBoundLongi(const vector<Coordinate> &v, Coordinate key) {
+    int low = 0, high = v.size();
+    int res = high;
+    while (low <= high) {
+        int middle = low + (high - low) / 2;
+        if (key.getLati() <= v[middle].getLati()) { res = middle; high = middle -1 ;}
+        else if (key.getLati() > v[middle].getLati()) low = middle + 1;
+        // res = middle;
+    }
+    if (res == v.size()) return -1; // not found
+    else return res;
+}
+
+string Data :: coord2Airport(string c){
+    string v = ",";
+    size_t pos = c.find(v);
+    Coordinate co = Coordinate(stod(c.substr(0, pos)), stod(c.substr(pos+1)));
+
+    sort(airportCoord_.begin(), airportCoord_.end(), compByLat);
+
+    int positionLowBoundLati = binarySearchLowBoundLati(airportCoord_, co);
+    int positionHighBoundLati = binarySearchHighBoundLati(airportCoord_, co);
+    airportCoord_.erase(airportCoord_.begin(), airportCoord_.begin()+positionLowBoundLati);
+    airportCoord_.erase(airportCoord_.begin()+positionHighBoundLati);
+
+    sort(airportCoord_.begin(), airportCoord_.end(), compByLong);
+
+    int positionLowBoundLongi = binarySearchLowBoundLongi(airportCoord_, co);
+    int positionHighBoundLongi = binarySearchHighBoundLongi(airportCoord_, co);
+    airportCoord_.erase(airportCoord_.begin(), airportCoord_.begin()+positionLowBoundLongi);
+    airportCoord_.erase(airportCoord_.begin()+positionHighBoundLongi);
+
+    double dist_min = airportCoord_[0].distance_between_coordinates(co);
+    double dist_max = airportCoord_[1].distance_between_coordinates(co);
+
+    Coordinate coord_min = airportCoord_[0];
+
+    if (dist_min < dist_max){
+        auto it = find_if(airports_.begin(), airports_.end(), [coord_min]() {return this.coo;});
+    }
+
+    //STD::LOWERBOUND NO MAP({coord, codigo aero})
 }
 
 //ints

@@ -19,11 +19,12 @@ int main() {
     //g.~Graph();
     //g->printPath("OPO", "YYZ");
     //vector<string> path  = g->makePath("OPO", "YYZ");
-    auto a = d.getCities()["Porto"];
+    //auto a = d.getCities()["Toquio"];
+    //cout << d.getCities()["Toquio"]->getName();
     cout << d.getCountries()["Portugal"]->cities_.size() << endl;
     cout << d.getCountries()["United States"]->cities_.size() << endl;
 
-    d.flight("Portugal","Los Angeles",3, 2);
+    d.flight("Paris","Lisbon",2, 2);
 
 
     ApMethods ap;
