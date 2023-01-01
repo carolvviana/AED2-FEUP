@@ -13,7 +13,7 @@ int main() {
     d.readFile_flights();
 
     Graph* g = d.getFlightG();
-
+/*
     Interface iFace = Interface();
     iFace.setData(d);
 
@@ -23,7 +23,7 @@ int main() {
     catch (int exit) {
         return 0;
     }
-
+*/
 
     //g->bfs("OPO");
     //cout << g->distance("CDG", "OPO") << endl;
@@ -38,13 +38,13 @@ int main() {
     //cout << d.getCountries()["United States"]->cities_.size() << endl;
     auto b = d.country2Airport("Portugal");
     //d.flight("49,2.5","66,-23",4, 4);
-    string s = "Portugal";
-    cout << "Aiports: " << d.nAirports1(s) << endl;
-    cout << "Cities: " << d.nCities1(s) << endl;
+    string s = "Porto";
+    cout << "Aiports: " << d.nAirports2(s) << endl;
+    //cout << "Cities: " << d.nCities1(s) << endl;
     //cout << "Countries: " << d.nCountries1() << endl;
-    cout << "Airlines: " << d.nAirlines1(s) << endl;
-    cout << "Flights: " << d.nFlights1(s) << endl;
-    cout << "Destinations: " << d.nDestinations1(s) << endl;
+    cout << "Airlines: " << d.nAirlines2(s) << endl;
+    cout << "Flights: " << d.nFlights2(s) << endl;
+    cout << "Destinations: " << d.nDestinations2(s) << endl;
 
     ApMethods ap;
     ap.setData(d);

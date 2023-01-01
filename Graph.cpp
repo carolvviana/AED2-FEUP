@@ -113,6 +113,7 @@ vector<string> Graph::makePath(string origin, string destination) {
     }
      */
     bfs(origin);
+    //bfs com limitação das companhias????
     string dest = destination;
     path.push_back(dest);
     while (dest != origin) {

@@ -3,6 +3,7 @@
 //
 #include "Data.h"
 //aux
+//returns different airlines at an airport
 set<string> Data::getDifAirlines(string airport){
     set<string> al = {};
     for (auto e : flightG->nodeAt(airport).adj){
@@ -10,6 +11,7 @@ set<string> Data::getDifAirlines(string airport){
     }
     return al;
 }
+//return different destinations from an airport
 set<string> Data::getDifDestinations(string airport){
     set<string> al = {};
     for (auto e : flightG->nodeAt(airport).adj){
@@ -19,16 +21,21 @@ set<string> Data::getDifDestinations(string airport){
 }
 
 //globais
+//doc
 int Data::totalAirports(){return airports_.size();}
 int Data::totalCities(){return cities_.size();}
 int Data::totalCountries(){return countries_.size();}
 int Data::totalAirlines(){return airlines_.size();}
 int Data::totalFlights(){return nf;}
+
 //airports
+//doc
 int Data::nFlights3(string airport){return flightG->nodeAt(airport).adj.size();}
 int Data::nAirlines3(string airport){return getDifAirlines(airport).size();}
 int Data::nDestinations3(string airport){return getDifDestinations(airport).size();}
+
 //city
+//doc
 int Data::nAirports2(string city){return city2Airport(city).size();}
 int Data::nFlights2(string city){
     int counter = 0;
@@ -36,16 +43,29 @@ int Data::nFlights2(string city){
     return counter;
 }
 int Data::nAirlines2(string city){
-    int counter = 0;
-    for(auto a: city2Airport(city)){counter += nAirlines3(a);}
-    return counter;
+    //int counter = 0;
+    //for(auto a: city2Airport(city)){counter += nAirlines3(a);}
+    //return counter;
+    set<string> s = {};
+    for(auto a: city2Airport(city)){
+        set<string> aux = getDifAirlines(a);
+        s.insert(aux.begin(),aux.end());
+    }
+    return s.size();
 }
 int Data::nDestinations2(string city){
-    int counter = 0;
-    for(auto a: city2Airport(city)){counter += nDestinations3(a);}
-    return counter;
+    //int counter = 0;
+    //for(auto a: city2Airport(city)){counter += nDestinations3(a);}
+    //return counter;
+    set<string> s = {};
+    for(auto a: city2Airport(city)){
+        set<string> aux = getDifDestinations(a);
+        s.insert(aux.begin(),aux.end());
+    }
+    return s.size();
 }
 //country
+//doc
 int Data::nCities1(string country){return countries_[country]->cities_.size();}
 int Data::nAirports1(string country){return country2Airport(country).size();}
 int Data::nFlights1(string country){
@@ -75,6 +95,6 @@ int Data::nDestinations1(string country){
     }
     return s.size();
 }
-//
+
 
 
