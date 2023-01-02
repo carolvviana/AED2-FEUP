@@ -279,27 +279,31 @@ void Data::flight(string origin, string dest, int oType, int dType, vector<strin
         case 5: dAp = (coord2AirportWithDistance(dest,dRadius)); break;
     }
 
-    for (auto i = oAp.begin(); i !=  oAp.end(); i++){
+    for (auto i = oAp.begin(); i !=  oAp.end(); i++) {
         //flightG->bfs(*i);
-        for (auto j = dAp.begin(); j != dAp.end(); j++){
-            vector<string> a = flightG->makePath(*i,*j,filters);
+        for (auto j = dAp.begin(); j != dAp.end(); j++) {
+            vector<string> a = flightG->makePath(*i, *j, filters);
             if (!a.empty()) { paths.push_back(a); }
         }
     }
 
-    sort(paths.begin(), paths.end(), [](vector<string> &a, vector<string> &b){return a.size() < b.size();}); // colocar menor à frente
-    int min  = paths[0].size();
-    //auto aux = remove_if(paths.begin(), paths.end(), [min](vector<string> &a) {return a.size() > min;});
-    auto aux = find_if(paths.begin(), paths.end(), [min](vector<string> &a) {return a.size() > min;});
-    paths.erase(aux,paths.end());
-    cout << "Best ways to travel from " << origin << " to " << dest << ": " << endl;
-
-    for (auto it = paths.begin(); it != paths.end(); it++){
-        cout << "- ";
-        flightG->printPath(*it);
-        //cout << "------" << endl;
+    if (paths.empty()){
+        cout << "There are no paths from " << origin << " to " << dest << "..." << endl;
     }
 
+    else {
+        sort(paths.begin(), paths.end(),
+             [](vector<string> &a, vector<string> &b) { return a.size() < b.size(); }); // colocar menor à frente
+        int min = paths[0].size();
+        //auto aux = remove_if(paths.begin(), paths.end(), [min](vector<string> &a) {return a.size() > min;});
+        auto aux = find_if(paths.begin(), paths.end(), [min](vector<string> &a) { return a.size() > min; });
+        paths.erase(aux, paths.end());
+        cout << "Best ways to travel from " << origin << " to " << dest << ": " << endl;
 
-
+        for (auto it = paths.begin(); it != paths.end(); it++) {
+            cout << "- ";
+            flightG->printPath(*it);
+            //cout << "------" << endl;
+        }
+    }
 }
