@@ -18,6 +18,15 @@ int main() {
     cout << "Flights: " << d.nFlights2(airline) << endl;
     cout << "Destinations: " << d.nDestinations2(airline) << endl;
 */
+    auto f =  d.getCountries()["Australia"];
+    for (string city : f->cities_ ){
+        if(d.getCities()[city]->getAirports().size() > 1){
+            cout << city << endl;
+        }
+    }
+
+    auto c = d.getCities()["Albany"];
+
     Interface iFace = Interface();
     iFace.setData(d);
 
