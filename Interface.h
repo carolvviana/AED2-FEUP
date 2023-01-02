@@ -30,35 +30,8 @@ public:
     void cityStatistic();
     //void airlineStatistic();
     void airportStatistic();
-    /*
-    //2
-    void mainMenu();
-    //3
-    void studentsMenu() const;
-    void timetablesMenu() const;
-    void requestsMenu() ;
-    //4-students
-    void studentsInfo() const;
-    void studentsList() const;
-    //4-classes
-
-    //4-timetables
-
-    //4-requests
-    void createRMenu() ;
-    void processRMenu() ;
-    //extra
     void lastPage() const;
 
-    //sorter menu
-    void sortMenuList(list<Student*> l) const;
-    void sortMenuSet(set<Student*,studentComparatorAlpha1> s) const;
-    //general
-    void exitProgram() const;
-    void quitMenu() const;
-    //utils
-    vector<UCClass*> createVec() const;
-*/
 };
 
 

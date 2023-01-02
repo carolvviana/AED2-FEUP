@@ -21,7 +21,7 @@ class Graph {
      * An edge between 2 nodes on this graph.
      */
     struct Edge {
-        string dest; // Stop destination
+        string dest;
         string airline;
     };
 
@@ -29,7 +29,7 @@ class Graph {
      * A node on the graph.
      */
     struct Node {
-        Airport* airport; // Information about the stop
+        Airport* airport;
         list<Edge> adj; // The list of outgoing edges (to adjacent nodes)
         bool visited; // As the node been visited on a search?
         int distance;
@@ -45,6 +45,7 @@ public:
     // Constructor: nr nodes and direction (default: directed)
     explicit Graph(int nodes, bool dir = true);
     ~Graph();
+
 
     /**
      * Adds a node to this graph, using the given stopCode as a key and the Stop as the value.
@@ -112,6 +113,7 @@ public:
     //vector<string> dfs(const std::string& cStop, bool firstIteration);
     set<string> apMethodsHelper(int y);
     vector<string> dfs(const string& cAp, bool firstIteration, int& distance, vector<string>& path, vector<vector<string>>& paths, const string& destAp, int d);
+
 };
 
 

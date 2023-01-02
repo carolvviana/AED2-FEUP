@@ -19,7 +19,7 @@ public:
     double getLati() const;
     double getLongi() const;
 
-    double distance_between_coordinates(Coordinate cord2);
+    double distance_between_coordinates(Coordinate cord2) const;
 
     friend std::ostream &operator<<(std::ostream &os, const Coordinate &coordinate);
 

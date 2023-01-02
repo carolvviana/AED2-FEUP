@@ -64,8 +64,8 @@ void Data :: readFile_airports(){
     vector<string> v;
 
     //open file
-    //ifstream input(AIRPORTS);
-    ifstream input("../csv/airportsv2.csv");
+    ifstream input(AIRPORTS);
+    //ifstream input("../csv/airportsv2.csv");
     if(input.is_open()) {
         string line;
         getline(input, line); //skips first line
@@ -102,8 +102,8 @@ void Data :: readFile_flights() {
         flightG->addNode(it->first, it->second);
     }
     //open file
-    ifstream input("../csv/flightsv2.csv");
-    //ifstream input(FLIGHTS);
+    //ifstream input("../csv/flightsv2.csv");
+    ifstream input(FLIGHTS);
 
     if(input.is_open()) {
         string line;
@@ -245,48 +245,38 @@ string Data :: coord2Airport(string c){
     }
     else return airportCoord[1].first;
 
-    //STD::LOWERBOUND NO MAP({coord, codigo aero})*/
-
-    /*
+}
+vector<string> Data :: coord2AirportWithDistance(string c, int x){
+    vector<string> r;
     string v = ",";
     size_t pos = c.find(v);
     Coordinate co = Coordinate(stod(c.substr(0, pos)), stod(c.substr(pos+1)));
-    pair<string, Coordinate> p = {"", co};
 
-    auto it_great = lower_bound(airportCoord_.begin(), airportCoord_.end(), p, compByLat); // coordenada maior ou igual
-    auto it_low = lower_bound(airportCoord_.begin(), airportCoord_.end(), p, compByLat2); // coordenada menor ou igual
-
-    auto e = it_low->first;
-    auto d = it_great->first;
-    auto a =  it_low->second;
-    auto b = it_great->second;
-    double dist_min = it_low->second.distance_between_coordinates(co);
-    double dist_max = it_great->second.distance_between_coordinates(co);
-
-    if (dist_min < dist_max){
-        return it_low->first;
+    for (pair<string, Coordinate> p : airportCoord_){
+        if (p.second.distance_between_coordinates(co) <= x*10*10*10) r.push_back(p.first);
     }
-    else return it_great->first;*/
+    return r;
 }
 
 //ints
-void Data::flight(string origin, string dest, int oType, int dType){
+void Data::flight(string origin, string dest, int oType, int dType, int oRadius = 0, int dRadius = 0){
     vector<string> oAp = {};
     vector<string> dAp = {};
-    string o,d;
     vector<vector<string>> paths = {};
     switch (oType) { //origem
-        case 1: oAp.push_back(origin); o = "Airport"; break; //aeroporto
-        case 2: oAp = city2Airport(origin); o = "City"; break; //cidade
-        case 3: oAp = country2Airport(origin); o = "Country"; break; // país
-        case 4: oAp.push_back(coord2Airport(origin)); o = "Coordinate"; break; //coordenadas
+        case 1: oAp.push_back(origin); break; //aeroporto
+        case 2: oAp = city2Airport(origin); break; //cidade
+        case 3: oAp = country2Airport(origin); break; // país
+        case 4: oAp.push_back(coord2Airport(origin)); break; //coordenadas
+        case 5: oAp = (coord2AirportWithDistance(origin,oRadius)); break;
     }
 
-    switch (dType) { //origem
+    switch (dType) { //destination
         case 1: dAp.push_back(dest); break; //aeroporto
         case 2: dAp = city2Airport(dest); break; //cidade
         case 3: dAp = country2Airport(dest); break; // país
         case 4: dAp.push_back(coord2Airport(dest)); break; //coordenadas
+        case 5: dAp = (coord2AirportWithDistance(dest,dRadius)); break;
     }
 
     for (auto i = oAp.begin(); i !=  oAp.end(); i++){

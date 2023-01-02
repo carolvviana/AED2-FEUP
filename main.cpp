@@ -6,13 +6,16 @@
 using namespace std;
 
 int main() {
+
     cout<< "hello world\n";
     Data d= Data();
     d.readFile_airlines();
     d.readFile_airports();
     d.readFile_flights();
-
     Graph* g = d.getFlightG();
+    string airline = "TAP";
+    cout << "Flights: " << d.nFlights2(airline) << endl;
+    cout << "Destinations: " << d.nDestinations2(airline) << endl;
 /*
     Interface iFace = Interface();
     iFace.setData(d);
@@ -24,7 +27,7 @@ int main() {
         return 0;
     }
 */
-
+/*
     //g->bfs("OPO");
     //cout << g->distance("CDG", "OPO") << endl;
     //g->print();
@@ -62,7 +65,7 @@ int main() {
     //cout << "Nr of cities with " << y <<" flights: " << ap.nCitiesWithMaxFlights(apc,y) << endl;
     //cout << "Nr of countries with " << y <<" flights: " << ap.nCountriesWithMaxFlights(apc,y) << endl;
     //cout << d.getAirports().size();
-
+*/
     return 0;
 
     /*

@@ -112,6 +112,11 @@ vector<string> Graph::makePath(string origin, string destination) {
         return path;
     }
      */
+
+
+    /*if (set.size() == 0)bfs_with_filter;
+    else bfs;*/
+
     bfs(origin);
     //bfs com limitação das companhias????
     string dest = destination;
@@ -275,10 +280,7 @@ vector<string> Graph::dfs(const string& cAp, bool firstIteration, int& distance,
     }
 }
 
-
-
-
-set<string> Graph::apMethodsHelper(int y) {
+set<string> Graph:: apMethodsHelper(int y) {
     set<string> aux = {};
 
     for (auto a: nodes) {

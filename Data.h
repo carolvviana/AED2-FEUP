@@ -48,7 +48,8 @@ public:
     vector<string> city2Airport(string city);
     vector<string> country2Airport(string country);
     string coord2Airport(string c);
-    void flight(string origin, string dest, int oType, int dType);
+    vector<string> coord2AirportWithDistance(string c, int x);
+    void flight(string origin, string dest, int oType, int dType, int oRadius, int dRadius);
 
 
     /*STATISTICS*/
@@ -74,11 +75,13 @@ public:
     int nAirlines3(string airport);
     int nDestinations3(string airport);
     //airline
-
+    int nFlights4(string airline);
+    int nDestinations4(string airline);
     //aux
     set<string> getDifAirlines(string airport);
     set<string> getDifDestinations(string airport);
 
+    int nFlightsFromAirportWithAirlines(string airport, set<string> airline);
 };
 
 

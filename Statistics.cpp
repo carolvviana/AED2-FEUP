@@ -2,6 +2,7 @@
 // Created by Guilherme Monteiro on 30/12/2022.
 //
 #include "Data.h"
+#include "Graph.h"
 //aux
 //returns different airlines at an airport
 set<string> Data::getDifAirlines(string airport){
@@ -43,9 +44,6 @@ int Data::nFlights2(string city){
     return counter;
 }
 int Data::nAirlines2(string city){
-    //int counter = 0;
-    //for(auto a: city2Airport(city)){counter += nAirlines3(a);}
-    //return counter;
     set<string> s = {};
     for(auto a: city2Airport(city)){
         set<string> aux = getDifAirlines(a);
@@ -54,9 +52,6 @@ int Data::nAirlines2(string city){
     return s.size();
 }
 int Data::nDestinations2(string city){
-    //int counter = 0;
-    //for(auto a: city2Airport(city)){counter += nDestinations3(a);}
-    //return counter;
     set<string> s = {};
     for(auto a: city2Airport(city)){
         set<string> aux = getDifDestinations(a);
@@ -74,9 +69,6 @@ int Data::nFlights1(string country){
     return counter;
 }
 int Data::nAirlines1(string country){
-    //int counter = 0;
-    //for(auto a: country2Airport(country)){counter += nAirlines3(a);}
-    //return counter;
     set<string> s = {};
     for(auto a: country2Airport(country)){
         set<string> aux = getDifAirlines(a);
@@ -85,9 +77,6 @@ int Data::nAirlines1(string country){
     return s.size();
 }
 int Data::nDestinations1(string country){
-    //int counter = 0;
-    //for(auto a: country2Airport(country)){counter += nDestinations3(a);}
-    //return counter;
     set<string> s = {};
     for(auto a: country2Airport(country)){
         set<string> aux = getDifDestinations(a);
@@ -96,5 +85,48 @@ int Data::nDestinations1(string country){
     return s.size();
 }
 
+//airline
+int Data::nFlights4(std::string airline) { //quantos voos existem de uma determinada airline
+    int counter = 0;
+    //open file
+    //ifstream input("../csv/flightsv2.csv");
+    ifstream input(FLIGHTS);
+    if(input.is_open()) {
+        string line;
+        getline(input, line); //skips first line
+        while ( getline(input, line)) {
+            if ((line.substr(8)) == airline) counter++;
+        }
+        return counter;
+    }
+    else cout<<"Could not open the file\n";
+}
+int Data::nDestinations4(std::string airline) { // quantos destinos diferentes tem uma determinada airline
+    set<string> destinations;
+    //open file
+    //ifstream input("../csv/flightsv2.csv");
+    ifstream input(FLIGHTS);
 
+    if(input.is_open()) {
+        string line;
+        getline(input, line); //skips first line
+        while ( getline(input, line)) {
+            if ((line.substr(8)) == airline) {
+                destinations.insert(line.substr(4,3));
+            }
+        }
+        return destinations.size();
+    }
+    else cout<<"Could not open the file\n";
+}
+
+int Data::nFlightsFromAirportWithAirlines(string airport, set<string> airlines){
+    int count = 0;
+    for (string airline : airlines) {
+        for (auto e: flightG->nodeAt(airport).adj) {
+            if (e.airline == airline) count++;
+        }
+    }
+    return count;
+}
 

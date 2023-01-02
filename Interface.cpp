@@ -48,17 +48,43 @@ void Interface::getFlights() {
     cout << endl << "=========GET FLIGHTS=========" << endl;
     cout << endl;
     cout << "Choose the type of origin:" << endl;
-    cout << endl << "Options:\n\t1-Airport\n\t2-City\n\t3-Country\n\t4-Coordinates\n\tb-Back\n\te-Exit"<<endl;
+    cout << endl << "Options:\n\t1-Airport\n\t2-City\n\t3-Country\n\t4-Coordinates\n\t5-Coordinate & Radius\n\tb-Back\n\te-Exit"<<endl;
     int flag = 1;
     char inputTypeO;
     string inputOrigin;
+    int inputRadiusO = 0;
     while (flag){
         cout << "Choose option:";
         cin >> inputTypeO;
         switch (inputTypeO) {
-            case ('1'||'2'||'3'||'4'): //nao funcionou
-                cout << endl << "Insert origin:" << endl;
+            case ('1'):
+                cout << endl << "Insert origin airport:" << endl;
                 cin >> inputOrigin;
+                flag = 0;
+                break;
+            case ('2'):
+                cout << endl << "Insert origin city:" << endl;
+                cin >> inputOrigin;
+                flag = 0;
+                break;
+
+            case ('3'):
+                cout << endl << "Insert origin country:" << endl;
+                cin >> inputOrigin;
+                flag = 0;
+                break;
+
+            case ('4'):
+                cout << endl << "Insert origin coordinates: [Format: x.(...),y.(...)]" << endl;
+                cin >> inputOrigin;
+                flag = 0;
+                break;
+
+            case ('5'):
+                cout << endl << "Insert origin coordinates: [Format: x.(...),y.(...)]" << endl;
+                cin >> inputOrigin;
+                cout << endl << "Insert radius:" << endl;
+                cin >> inputRadiusO;
                 flag = 0;
                 break;
 
@@ -75,19 +101,47 @@ void Interface::getFlights() {
 
     cout << endl;
     cout << "Choose the type of destination:" << endl;
-    cout << endl << "Options:\n\t1-Airport\n\t2-City\n\t3-Country\n\t4-Coordinates\n\tb-Back\n\te-Exit"<<endl;
+    cout << endl << "Options:\n\t1-Airport\n\t2-City\n\t3-Country\n\t4-Coordinates\n\t5-Coordinates & radius\n\tb-Back\n\te-Exit"<<endl;
 
     char inputTypeD;
     string inputDestination;
+    int inputRadiusD = 0;
     while (true){
         cout << "Choose option:";
         cin >> inputTypeD;
         switch (inputTypeD) {
-            case ('1'||'2'||'3'||'4'):
-                cout << endl << "Insert destination:" << endl;
+            case ('1'):
+                cout << endl << "Insert destination airport:" << endl;
                 cin >> inputDestination;
-                d_.flight(inputOrigin, inputDestination, inputTypeO, inputTypeD);
-
+                d_.flight(inputOrigin, inputDestination, inputTypeO-48, inputTypeD-48, inputRadiusO ,inputRadiusD);
+                lastPage();
+                return welcomePage();
+            case ('2'):
+                cout << endl << "Insert destination city:" << endl;
+                cin >> inputDestination;
+                d_.flight(inputOrigin, inputDestination, inputTypeO-48, inputTypeD-48,inputRadiusO ,inputRadiusD);
+                lastPage();
+                return welcomePage();
+            case ('3'):
+                cout << endl << "Insert destination country:" << endl;
+                cin >> inputDestination;
+                d_.flight(inputOrigin, inputDestination, inputTypeO-48, inputTypeD-48,inputRadiusO ,inputRadiusD);
+                lastPage();
+                return welcomePage();
+            case ('4'):
+                cout << endl << "Insert destination coordinates: [Format: x.(...),y.(...)]" << endl;
+                cin >> inputDestination;
+                d_.flight(inputOrigin, inputDestination, inputTypeO-48, inputTypeD-48,inputRadiusO ,inputRadiusD);
+                lastPage();
+                return welcomePage();
+            case ('5'):
+                cout << endl << "Insert destination coordinates: [Format: x.(...),y.(...)]" << endl;
+                cin >> inputDestination;
+                cout << endl << "Insert radius:" << endl;
+                cin >> inputRadiusD;
+                d_.flight(inputOrigin, inputDestination, inputTypeO-48, inputTypeD-48, inputRadiusO,inputRadiusD);
+                lastPage();
+                return welcomePage();
             case ('b'):
                 return;
 
@@ -323,11 +377,11 @@ void Interface::airportStatistic(){ //DONE
 
         switch (option) {
             case ('1'):
-                d_.nFlights3(ap);
+                cout << "Number of flights:" << d_.nFlights3(ap) << endl;
             case ('2'):
-                d_.nAirlines3(ap);
+                cout << "Number of airlines:" << d_.nAirlines3(ap) << endl;
             case ('3'):
-                d_.nDestinations3(ap);
+                cout << "Number of destinations:" << d_.nDestinations3(ap) << endl;
             case ('b'):
                 return;
             case ('e'):
@@ -359,6 +413,30 @@ void Interface::credits() const {
         cout << "Choose option:";
         cin >> input;
 
+        switch (input) {
+            case ('b'):
+                return;
+            case ('e'):
+                return exitProgram();
+            default:
+                cout << endl << "Not a valid option" << endl;
+        }
+    }
+}
+
+//extra
+/**
+ * Função que representa a ultima pagina do menu. Dispoe de duas ultimas opções - voltar atrás e fechar o programa.
+ *
+ * COMPLEXIDADE: O(n).
+ */
+void Interface::lastPage() const {
+    cout << endl << endl;
+    cout << endl << "Options:\n\tb-Back\n\te-Exit"<<endl;
+    char input;
+    while (true){
+        cout << "Choose option:";
+        cin >> input;
         switch (input) {
             case ('b'):
                 return;

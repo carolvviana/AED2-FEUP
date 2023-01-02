@@ -20,7 +20,7 @@ double Coordinate::getLongi() const {
     return longi;
 }
 
-double Coordinate::distance_between_coordinates(Coordinate cord2 ){
+double Coordinate::distance_between_coordinates(Coordinate cord2 ) const{
 
     const double radius_earth = 6371000;
 
