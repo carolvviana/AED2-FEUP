@@ -539,27 +539,71 @@ void Interface::lastPage() const {
     }
 }
 
+/**
+ * Função que dispoe opções de métodos para o aeroporto escolhido ou voltar atrás no programa.
+ *
+ * COMPLEXIDADE: O(n).
+ */
 void Interface::getApMethods(){
     cout << endl << "=========AIRPORT METHODS=========" << endl;
     cout << endl;
-    string ap;
-    cout << "Insert the airport code:" << endl;
-    cin >> ap;
     cout << endl << "Choose the method:" << endl;
-    cout << endl << "Options:\n\t1-Total flights from airport\n\t2-Total airlines\n\t3-Total destinations\n\tb-Back\n\te-Exit"<<endl;
+    cout << endl << "Options:\n\t1-Total flights from airport\n\t2-Total airlines from airport\n\t3-Total city destinations from airport\n\t4-Total country destinations from airport\n\t5-Number of reachable airports with maximum of Y flights\n\t6-Number of reachable cities with maximum of Y flights\n\t7-Number of reachable countries with maximum of Y flights\n\tb-Back\n\te-Exit"<<endl;
     char option;
+    int max;
+    string ap;
     while (true){
         cout << "Choose option:";
         cin >> option;
         switch (option) {
             case ('1'):
+                cout << "Insert the airport code:" << endl;
+                cin >> ap;
                 cout << "Number of flights: " << apm_.nFlightsAirport(ap) << endl;
                 lastPage();
-                return getStatistics();
+                return getApMethods();
             case ('2'):
-                //cout << "Number of destinations: " << d_.nDestinations4(al) << endl;
+                cout << "Insert the airport code:" << endl;
+                cin >> ap;
+                cout << "Number of airlines: " << apm_.nAirlines(ap) << endl;
                 lastPage();
-                return getStatistics();
+                return getApMethods();
+            case ('3'):
+                cout << "Insert the airport code:" << endl;
+                cin >> ap;
+                cout << "Number of city destinations: " << apm_.nCities(ap) << endl;
+                lastPage();
+                return getApMethods();
+            case ('4'):
+                cout << "Insert the airport code:" << endl;
+                cin >> ap;
+                cout << "Number of country destinations: " << apm_.nCountries(ap) << endl;
+                lastPage();
+                return getApMethods();
+            case ('5'):
+                cout << "Insert the origin airport code:" << endl;
+                cin >> ap;
+                cout << "Insert the maximum number of flights:" << endl;
+                cin >> max;
+                cout << "Number of reachable airports: " << apm_.nAirportsWithMaxFlights(ap,max) << endl;
+                lastPage();
+                return getApMethods();
+            case ('6'):
+                cout << "Insert the origin airport code:" << endl;
+                cin >> ap;
+                cout << "Insert the maximum number of flights:" << endl;
+                cin >> max;
+                cout << "Number of reachable cities: " << apm_.nCitiesWithMaxFlights(ap,max) << endl;
+                lastPage();
+                return getApMethods();
+            case ('7'):
+                cout << "Insert the origin airport code:" << endl;
+                cin >> ap;
+                cout << "Insert the maximum number of flights:" << endl;
+                cin >> max;
+                cout << "Number of reachable countries: " << apm_.nCountriesWithMaxFlights(ap,max) << endl;
+                lastPage();
+                return getApMethods();
             case ('b'):
                 return;
             case ('e'):
