@@ -14,7 +14,7 @@ Interface::Interface() = default;
  */
 void Interface::welcomePage() {
     cout << endl << "=========WELCOME PAGE=========" << endl;
-    cout << endl << "Options:\n\t1-Get flights\n\t2-Get statistics\n\t3-Credits\n\te-Exit"<<endl;
+    cout << endl << "Options:\n\t1-Get flights\n\t2-Get statistics\n\t3-Airport methods\n\t4-Credits\n\te-Exit"<<endl;
     char input;
     while (true){
         cout << "Choose option:";
@@ -28,6 +28,9 @@ void Interface::welcomePage() {
                 getStatistics();
                 return welcomePage();
             case ('3'):
+                getApMethods();
+                return welcomePage();
+            case ('4'):
                 credits();
                 return welcomePage();
             case ('e'):
@@ -41,7 +44,7 @@ void Interface::welcomePage() {
 //1
 
 /**
- * Função imprime o menu principal que permite ao utilizador escolher o tipo de origem e de destino dos voos e inseri-los. Também pode voltar atrás no programa.
+ * Função imprime o menu principal que permite ao utilizador escolher o tipo de origem e de destino dos voos e inseri-los, com ou sem filtros. Também pode voltar atrás no programa.
  *
  * COMPLEXIDADE: O(n).
  */
@@ -64,7 +67,7 @@ void Interface::getFlights() {
                 flag = 0;
                 break;
             case ('2'):
-                cout << endl << "Insert origin city:" << endl;
+                cout << endl << "Insert origin city: [Format: <city>,<country> (because of repeated city names)]" << endl;
                 getline(cin >>ws, inputOrigin);
                 //cin >> inputOrigin;
                 flag = 0;
@@ -121,24 +124,24 @@ void Interface::getFlights() {
                 break;
 
             case ('2'):
-                cout << endl << "Insert destination city:" << endl;
+                cout << endl << "Insert destination city: [Format: <city>,<country> (because of repeated city names)]" << endl;
                 getline(cin >>ws, inputDestination);
-                flag = 0;
+                flag2 = 0;
                 break;
             case ('3'):
                 cout << endl << "Insert destination country:" << endl;
                 getline(cin >>ws, inputDestination);
-                flag = 0;
+                flag2 = 0;
                 break;
             case ('4'):
                 cout << endl << "Insert destination coordinates: [Format: x.(...),y.(...)]" << endl;
                 cin >> inputDestination;
-                flag = 0;
+                flag2 = 0;
                 break;
             case ('5'):
                 cout << endl << "Insert destination coordinates: [Format: x.(...),y.(...)]" << endl;
                 cin >> inputDestination;
-                flag = 0;
+                flag2 = 0;
                 cout << endl << "Insert radius:" << endl;
                 cin >> inputRadiusD;
                 break;
@@ -158,20 +161,24 @@ void Interface::getFlights() {
     cout << endl << "Options:\n\t1-Yes\n\t2-No\n\t" <<endl;
     char yn;
     vector<string> filters = {};
-    while(true) {
+    bool flag3 = true;
+    while(flag3) {
+        cout << "Choose option:";
         cin >> yn;
         switch (yn) {
             case ('1'):
                 filters = createVec();
+                flag3 = 0;
                 break;
             case ('2'):
+                flag3 = 0;
                 break;
             default:
                 cout << "Not a valid option." << endl;
         }
     }
 
-        d_.flight(inputOrigin, inputDestination, inputTypeO-48, inputTypeD-48, inputRadiusO ,inputRadiusD, filters);
+        d_.flight(inputOrigin, inputDestination, inputTypeO-48, inputTypeD-48, filters,inputRadiusO ,inputRadiusD);
         lastPage();
         return welcomePage();
 }
@@ -329,7 +336,7 @@ void Interface::countryStatistic(){
 void Interface::cityStatistic(){ //DONE
     cout << endl << "=========CITY STATISTICS=========" << endl;
     cout << endl;
-    cout << "Insert the name of the city:" << endl;
+    cout << "Insert the name of the city: [Format: <city>,<country> (because of repeated city names)]" << endl;
     string c;
     getline(cin >>ws, c);
     cout << "Choose the statistic:" << endl;
@@ -341,7 +348,7 @@ void Interface::cityStatistic(){ //DONE
         cin >> option;
         switch (option) {
             case ('1'):
-                cout << "Number of airports. " << d_.nAirports2(c) << endl;
+                cout << "Number of airports: " << d_.nAirports2(c) << endl;
                 lastPage();
                 return getStatistics();
             case ('2'):
@@ -483,17 +490,16 @@ void Interface::credits() const {
 }
 
 /**
- * Função que permite ao utilizador criar vetores de pointers para objetos do tipo UCClass, atraves do input.
+ * Função que permite ao utilizador submeter companhias aéreas como filtros
  *
- * COMPLEXIDADE: O(n^2).
- * @return vetor de pointers para objetos do tipo UCClass obtido através da UC escolhida pelo user
+ * COMPLEXIDADE: O(n).
+ * @return vetor de strings com as companhias como filtros
  */
 vector<string> Interface::createVec() {
     bool flag = true;
     vector<string> v = {};
-    cout << "Type airlines to filter and hit 'd' when done.\n\n";
+    cout << "Type airlines to filter and hit Enter and 'd' when done.\n\n";
 
-    string ucCode, classCode;
     while(flag){
         string inp = "";
         cin >> inp;
@@ -504,6 +510,7 @@ vector<string> Interface::createVec() {
             else cout << "Not a valid airline."<< endl;
         }
     }
+    cout << "Filters applied." << endl;
     return v;
 }
 
@@ -532,6 +539,43 @@ void Interface::lastPage() const {
     }
 }
 
+void Interface::getApMethods(){
+    cout << endl << "=========AIRPORT METHODS=========" << endl;
+    cout << endl;
+    string ap;
+    cout << "Insert the airport code:" << endl;
+    cin >> ap;
+    cout << endl << "Choose the method:" << endl;
+    cout << endl << "Options:\n\t1-Total flights from airport\n\t2-Total airlines\n\t3-Total destinations\n\tb-Back\n\te-Exit"<<endl;
+    char option;
+    while (true){
+        cout << "Choose option:";
+        cin >> option;
+        switch (option) {
+            case ('1'):
+                cout << "Number of flights: " << apm_.nFlightsAirport(ap) << endl;
+                lastPage();
+                return getStatistics();
+            case ('2'):
+                //cout << "Number of destinations: " << d_.nDestinations4(al) << endl;
+                lastPage();
+                return getStatistics();
+            case ('b'):
+                return;
+            case ('e'):
+                return exitProgram();
+
+            default:
+                cout << endl << "Not a valid option" << endl;
+        }
+    }
+}
+
+/**
+ * Função que imprime ao utilizador a saída do programa.
+ *
+ * COMPLEXIDADE: O(1).
+ */
 void Interface::exitProgram() const {
     cout << endl << "Exiting program..." << endl;
     throw 200;

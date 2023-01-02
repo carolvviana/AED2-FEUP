@@ -49,7 +49,7 @@ public:
     vector<string> country2Airport(string country);
     string coord2Airport(string c);
     vector<string> coord2AirportWithDistance(string c, int x);
-    void flight(string origin, string dest, int oType, int dType, int oRadius, int dRadius, vector<string> filters);
+    void flight(string origin, string dest, int oType, int dType,vector<string>& filters,  int oRadius, int dRadius);
 
 
     /*STATISTICS*/

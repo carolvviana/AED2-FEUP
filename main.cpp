@@ -13,11 +13,14 @@ int main() {
     d.readFile_airports();
     d.readFile_flights();
     Graph* g = d.getFlightG();
+
+    ApMethods apm = ApMethods();
+    apm.setData(d);
     /*
     string airline = "TAP";
     cout << "Flights: " << d.nFlights2(airline) << endl;
     cout << "Destinations: " << d.nDestinations2(airline) << endl;
-*/
+*//*
     auto f =  d.getCountries()["Australia"];
     for (string city : f->cities_ ){
         if(d.getCities()[city]->getAirports().size() > 1){
@@ -25,10 +28,11 @@ int main() {
         }
     }
 
-    auto c = d.getCities()["Albany"];
+    auto c = d.getCities()["Albany"];*/
 
     Interface iFace = Interface();
     iFace.setData(d);
+    iFace.setApm(apm);
 
     try {
         iFace.welcomePage();

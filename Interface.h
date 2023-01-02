@@ -6,14 +6,17 @@
 #define AEDP2_INTERFACE_H
 
 #include "Data.h"
+#include "ApMethods.h"
 
 using namespace std;
 class Interface {
 
 public:
     Data d_;
+    ApMethods apm_;
 
     void setData(Data d){d_ = d;}
+    void setApm(ApMethods apm){apm_=apm;}
     Interface();
     //Data getData(){return d;}
     //0
@@ -24,6 +27,7 @@ public:
 
     void exitProgram() const;
     void getStatistics();
+    void getApMethods();
 
     void globalStatistic();
     void countryStatistic();

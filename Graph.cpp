@@ -74,7 +74,7 @@ void Graph::bfs(const string& airportCode) {
     }
 }
 
-void Graph::bfsWithFilters(const string& airportCode, vector<string> airlines) {
+void Graph::bfsWithFilters(const string& airportCode, vector<string>& airlines) {
     this->unvisit();
     this->undistance();
 
@@ -91,14 +91,17 @@ void Graph::bfsWithFilters(const string& airportCode, vector<string> airlines) {
 
         //cout << *(node.airport) << '\n'; // show node order
 
-        for (const auto& e : node.adj) {
-            string airportD = e.dest;
 
-            if (!nodes[airportD].visited) { //o segundo switch vai ser tipo o 1o. chamamos a função flight depois dos 2 switches(e de perguntar pelo filtro)
-                q.push(airportD);
-                nodes[airportD].visited = true;
-                nodes[airportD].parent = u;
-                nodes[airportD].distance = nodes[u].distance+1;
+        for (const auto& e : node.adj) {
+            if(find(airlines.begin(), airlines.end(),e.airline)!= airlines.end()) {
+                string airportD = e.dest;
+
+                if (!nodes[airportD].visited) { //o segundo switch vai ser tipo o 1o. chamamos a função flight depois dos 2 switches(e de perguntar pelo filtro)
+                    q.push(airportD);
+                    nodes[airportD].visited = true;
+                    nodes[airportD].parent = u;
+                    nodes[airportD].distance = nodes[u].distance + 1;
+                }
             }
         }
     }
@@ -134,7 +137,7 @@ int Graph::distance(string origin, string dest) {
 }
 
 
-vector<string> Graph::makePath(string origin, string destination, vector<string> airlines) {
+vector<string> Graph::makePath(string origin, string destination, vector<string>& airlines) {
     vector<string> path = {};
     /*
     if (!nodes[origin].available || !nodes[destination].available) {
@@ -151,6 +154,7 @@ vector<string> Graph::makePath(string origin, string destination, vector<string>
     path.push_back(dest);
     while (dest != origin) {
         dest = nodes[dest].parent;
+        if (dest == "") return {};
         path.push_back(dest);
     }
     reverse(path.begin(), path.end());
@@ -165,10 +169,11 @@ void Graph::printPath(string origin, string destination){
 
 void Graph::printPath(vector<string> path){
     //cout << "Best path from " << path.front() << " to " << path.back() << ":" << endl;
-    for (int i = 0; i < path.size()-1; i++){
-        cout << path[i] << " -> ";
-    }
-    cout << path.back() << endl;
+        for (int i = 0; i < path.size() - 1; i++) {
+            cout << path[i] << " -> ";
+        }
+        cout << path.back() << endl;
+
 }
 
 /*

@@ -10,6 +10,7 @@ ApMethods:: ApMethods(Data d, Graph *g): g_(g), d_(d){};
 void ApMethods::setGraph(Graph* g) { g_= g; }
 void ApMethods::setData(Data d) {d_ = d;}
 
+
 //Quantos voos existem a partir de um dado aeroporto?
 int ApMethods::nFlightsAirport(string code/*Airport* ap*/){
     //Graph::Node& node = g_.nodeAt(code).adj.size()

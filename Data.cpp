@@ -79,16 +79,16 @@ void Data :: readFile_airports(){
             code = v[0]; name = v[1]; city = v[2]; countryName = v[3];
             latitude = stod(v[4]); longitude = stod(v[5]);
             v.clear();
-            City *c =new  City(city, countryName);
+            City *c = new City(city, countryName);
             Airport *airport =new Airport(code, name, city, latitude, longitude);
-            cities_.insert({city, c});
+            string key = city + ',' + countryName;
+            cities_.insert({key, c});
             countries_.insert({countryName,new Country{countryName, {}}});
-            cities_[city]->addAirport(code);
-            countries_[countryName]->cities_.insert(city);
+            cities_[key]->addAirport(code);
+            countries_[countryName]->cities_.insert(key);
             airports_.insert({code, airport});
             airportCoord_.push_back({code, Coordinate(latitude, longitude)});
         }
-
     }
     else cout<<"Could not open the file\n";
 }
@@ -259,7 +259,7 @@ vector<string> Data :: coord2AirportWithDistance(string c, int x){
 }
 
 //ints
-void Data::flight(string origin, string dest, int oType, int dType, int oRadius = 0, int dRadius = 0, vector<string> filters = {}){
+void Data::flight(string origin, string dest, int oType, int dType, vector<string>& filters , int oRadius = 0, int dRadius = 0){
     vector<string> oAp = {};
     vector<string> dAp = {};
     vector<vector<string>> paths = {};
@@ -282,7 +282,8 @@ void Data::flight(string origin, string dest, int oType, int dType, int oRadius 
     for (auto i = oAp.begin(); i !=  oAp.end(); i++){
         //flightG->bfs(*i);
         for (auto j = dAp.begin(); j != dAp.end(); j++){
-            paths.push_back(flightG->makePath(*i,*j,filters));
+            vector<string> a = flightG->makePath(*i,*j,filters);
+            if (!a.empty()) { paths.push_back(a); }
         }
     }
 
