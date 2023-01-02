@@ -28,9 +28,10 @@ public:
     void globalStatistic();
     void countryStatistic();
     void cityStatistic();
-    //void airlineStatistic();
+    void airlineStatistic();
     void airportStatistic();
     void lastPage() const;
+    vector<string> createVec();
 
 };
 

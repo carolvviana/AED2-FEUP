@@ -120,6 +120,8 @@ int Data::nDestinations4(std::string airline) { // quantos destinos diferentes t
     else cout<<"Could not open the file\n";
 }
 
+//as duas de cima
+
 int Data::nFlightsFromAirportWithAirlines(string airport, set<string> airlines){
     int count = 0;
     for (string airline : airlines) {

@@ -74,6 +74,36 @@ void Graph::bfs(const string& airportCode) {
     }
 }
 
+void Graph::bfsWithFilters(const string& airportCode, vector<string> airlines) {
+    this->unvisit();
+    this->undistance();
+
+    queue<string> q; // queue of unvisited nodes
+    q.push(airportCode);
+    nodes[airportCode].visited = true;
+    nodes[airportCode].distance = 0;
+
+    while (!q.empty()) { // while there are still unvisited nodes
+
+        string u = q.front(); q.pop();
+
+        auto node = nodes.at(u);
+
+        //cout << *(node.airport) << '\n'; // show node order
+
+        for (const auto& e : node.adj) {
+            string airportD = e.dest;
+
+            if (!nodes[airportD].visited) { //o segundo switch vai ser tipo o 1o. chamamos a função flight depois dos 2 switches(e de perguntar pelo filtro)
+                q.push(airportD);
+                nodes[airportD].visited = true;
+                nodes[airportD].parent = u;
+                nodes[airportD].distance = nodes[u].distance+1;
+            }
+        }
+    }
+}
+
 Graph::Node& Graph::nodeAt(const string &key) {
     return this->nodes[key];
 }
@@ -104,7 +134,7 @@ int Graph::distance(string origin, string dest) {
 }
 
 
-vector<string> Graph::makePath(string origin, string destination) {
+vector<string> Graph::makePath(string origin, string destination, vector<string> airlines) {
     vector<string> path = {};
     /*
     if (!nodes[origin].available || !nodes[destination].available) {
@@ -112,13 +142,11 @@ vector<string> Graph::makePath(string origin, string destination) {
         return path;
     }
      */
+    if (airlines.size() == 0) bfs(origin);
+    else bfsWithFilters(origin, airlines);
 
+    //bfs(origin);
 
-    /*if (set.size() == 0)bfs_with_filter;
-    else bfs;*/
-
-    bfs(origin);
-    //bfs com limitação das companhias????
     string dest = destination;
     path.push_back(dest);
     while (dest != origin) {
@@ -128,11 +156,12 @@ vector<string> Graph::makePath(string origin, string destination) {
     reverse(path.begin(), path.end());
     return path;
 }
-
+/*
 void Graph::printPath(string origin, string destination){
     vector<string> path = makePath(origin, destination);
     printPath(path);
 }
+ */
 
 void Graph::printPath(vector<string> path){
     //cout << "Best path from " << path.front() << " to " << path.back() << ":" << endl;

@@ -259,7 +259,7 @@ vector<string> Data :: coord2AirportWithDistance(string c, int x){
 }
 
 //ints
-void Data::flight(string origin, string dest, int oType, int dType, int oRadius = 0, int dRadius = 0){
+void Data::flight(string origin, string dest, int oType, int dType, int oRadius = 0, int dRadius = 0, vector<string> filters = {}){
     vector<string> oAp = {};
     vector<string> dAp = {};
     vector<vector<string>> paths = {};
@@ -280,9 +280,9 @@ void Data::flight(string origin, string dest, int oType, int dType, int oRadius 
     }
 
     for (auto i = oAp.begin(); i !=  oAp.end(); i++){
-        flightG->bfs(*i);
+        //flightG->bfs(*i);
         for (auto j = dAp.begin(); j != dAp.end(); j++){
-            paths.push_back(flightG->makePath(*i,*j));
+            paths.push_back(flightG->makePath(*i,*j,filters));
         }
     }
 

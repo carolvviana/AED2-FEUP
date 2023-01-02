@@ -13,10 +13,11 @@ int main() {
     d.readFile_airports();
     d.readFile_flights();
     Graph* g = d.getFlightG();
+    /*
     string airline = "TAP";
     cout << "Flights: " << d.nFlights2(airline) << endl;
     cout << "Destinations: " << d.nDestinations2(airline) << endl;
-/*
+*/
     Interface iFace = Interface();
     iFace.setData(d);
 
@@ -26,7 +27,7 @@ int main() {
     catch (int exit) {
         return 0;
     }
-*/
+
 /*
     //g->bfs("OPO");
     //cout << g->distance("CDG", "OPO") << endl;

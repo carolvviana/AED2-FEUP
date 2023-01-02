@@ -105,9 +105,11 @@ public:
     void print();
 
     int distance(string origin, string dest);
-    vector<string> makePath(string origin, string destination);
+    vector<string> makePath(string origin, string destination, vector<string> airlines);
     void printPath(string origin, string destination);
     void printPath(vector<string> path);
+
+    void bfsWithFilters(const string& airportCode, vector<string> airlines);
     //void printShortestDistance(string src, string dest, int v);
     //bool BFS(string src, string dest, int v, unordered_map <string, vector<string>> predi, unordered_map <string, int> disti);
     //vector<string> dfs(const std::string& cStop, bool firstIteration);
