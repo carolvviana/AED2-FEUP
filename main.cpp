@@ -16,6 +16,7 @@ int main() {
 
     ApMethods apm = ApMethods();
     apm.setData(d);
+    apm.setGraph(g);
     /*
     string airline = "TAP";
     cout << "Flights: " << d.nFlights2(airline) << endl;

@@ -21,7 +21,7 @@ public:
     ApMethods(Data d, Graph* g);
     void setGraph(Graph* g);
     void setData(Data d);
-    int nFlightsAirport(string code/*Airport* ap*/); //Quantos voos existem a partir de um dado aeroporto?
+    int nFlightsAirport(string code); //Quantos voos existem a partir de um dado aeroporto?
     int nAirlines (string code); // De quantas companhias aéreas diferentes?
     int nCities (string code); //Para quantos destinos diferentes?
     int nCountries (string code); //De quantos países diferentes?
