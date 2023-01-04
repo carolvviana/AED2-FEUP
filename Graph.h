@@ -48,20 +48,20 @@ public:
 
 
     /**
-     * Adds a node to this graph, using the given stopCode as a key and the Stop as the value.
+     * Adiciona um node a este grafo, usando o código de aeroporto como a key e o aeroporto como value.
      *
-     * @param stopCode the code of the Stop being added
-     * @param stop the Stop being added
+     * COMPLEXIDADE: O(1)
+     *
+     * @param airportCode string codigo do aeroporto a ser usado como key
+     * @param airport pointer do aeroporto a ser adicionado
      */
     void addNode(const string& airportCode, Airport* airport);
 
     /**
-     * Adds an edge on the graph connecting the two given nodes (represented here by their stop codes), it is a valid edge.
-     * Associated with the edge itself is the code of the BusLine that edge belongs to.
-     *
-     * @param oStop the origin stop of this edge
-     * @param dStop the destination stop of this edge
-     * @param lineCode the line code associated with the given edge
+     * Adiciona uma aresta conectando dois nós do grafo, a que está associado o codigo do aeroporto de origem, o codigo do aeroporto de destino e o codigo da companhia aerea de conexão dos dois.
+     * @param airportCodeO string codigo do aeroporto de origem desta aresta
+     * @param airportCodeD string codigo do aeroporto de destino desta aresta
+     * @param airlineCode string codigo da companhia aerea associada a essa aresta de conexão
      */
     void addEdge(const string& airportCodeO, const string& airportCodeD, const string& airlineCode);
 /*

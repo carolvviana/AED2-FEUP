@@ -33,7 +33,15 @@ public:
     void setCity(string city);
     void setCoordinate(double lati, double longi);
     //void setIndex(int index);
-
+    /**
+     * Mostra ao utilizador informaçao relevante sobre o aeroporto (código e nome).
+     *
+     * COMPLEXIDADE: O(n)
+     *
+     * @param os ostream que recebe o output
+     * @param airport Aeroporto constante que será utilizado para dispor informação
+     * @return ostream que será o output para o utilizador
+     */
     friend std::ostream& operator <<(std::ostream& out ,Airport& airport);
 
 };

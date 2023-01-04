@@ -8,7 +8,7 @@ using namespace std;
 Interface::Interface() = default;
 
 /**
- * Função imprime o menu inicial que permite ao utilizador escolher entre as opções: obter voos, obter estatísticas, ver créditos ou sair do programa.
+ * Função imprime o menu inicial que permite ao utilizador escolher entre as opções: obter voos, obter estatísticas, escolher metodos de aeroportos, ver créditos ou sair do programa.
  *
  * COMPLEXIDADE: O(n).
  */
@@ -490,10 +490,10 @@ void Interface::credits() const {
 }
 
 /**
- * Função que permite ao utilizador submeter companhias aéreas como filtros
+ * Função que permite ao utilizador submeter companhias aéreas como filtros.
  *
  * COMPLEXIDADE: O(n).
- * @return vetor de strings com as companhias como filtros
+ * @return vetor de strings com as companhias de filtros escolhidas pelo utilizador
  */
 vector<string> Interface::createVec() {
     bool flag = true;
@@ -540,7 +540,7 @@ void Interface::lastPage() const {
 }
 
 /**
- * Função que dispoe opções de métodos para o aeroporto escolhido ou voltar atrás no programa.
+ * Função que dispoe várias opções de métodos a escolher para o aeroporto escolhido ou voltar atrás no programa.
  *
  * COMPLEXIDADE: O(n).
  */
