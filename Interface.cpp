@@ -64,11 +64,19 @@ void Interface::getFlights() {
             case ('1'):
                 cout << endl << "Insert origin airport:" << endl;
                 cin >> inputOrigin;
+                if (d_.getAirports().find(inputOrigin) == d_.getAirports().end()){
+                    cout << "\nNot a valid airport...\nTry again!\n\n";
+                    getFlights();
+                }
                 flag = 0;
                 break;
             case ('2'):
                 cout << endl << "Insert origin city: [Format: <city>,<country> (because of repeated city names)]" << endl;
                 getline(cin >>ws, inputOrigin);
+                if (d_.getCities().find(inputOrigin) == d_.getCities().end()){
+                    cout << "\nNot a valid city...\nTry again!\n\n";
+                    getFlights();
+                }
                 //cin >> inputOrigin;
                 flag = 0;
                 break;
@@ -77,6 +85,10 @@ void Interface::getFlights() {
                 cout << endl << "Insert origin country:" << endl;
                 getline(cin >>ws, inputOrigin);
                 //cin >> inputOrigin;
+                if (d_.getCountries().find(inputOrigin) == d_.getCountries().end()){
+                    cout << "\nNot a valid country...\nTry again!\n\n";
+                    getFlights();
+                }
                 flag = 0;
                 break;
 
@@ -120,17 +132,29 @@ void Interface::getFlights() {
             case ('1'):
                 cout << endl << "Insert destination airport:" << endl;
                 cin >> inputDestination;
+                if (d_.getAirports().find(inputOrigin) == d_.getAirports().end()){
+                    cout << "\nNot a valid airport...\nTry again!\n\n";
+                    getFlights();
+                }
                 flag2 = 0;
                 break;
 
             case ('2'):
                 cout << endl << "Insert destination city: [Format: <city>,<country> (because of repeated city names)]" << endl;
                 getline(cin >>ws, inputDestination);
+                if (d_.getCities().find(inputOrigin) == d_.getCities().end()){
+                    cout << "\nNot a valid city...\nTry again!\n\n";
+                    getFlights();
+                }
                 flag2 = 0;
                 break;
             case ('3'):
                 cout << endl << "Insert destination country:" << endl;
                 getline(cin >>ws, inputDestination);
+                if (d_.getCountries().find(inputOrigin) == d_.getCountries().end()){
+                    cout << "\nNot a valid country...\nTry again!\n\n";
+                    getFlights();
+                }
                 flag2 = 0;
                 break;
             case ('4'):
@@ -288,6 +312,10 @@ void Interface::countryStatistic(){
     cout << "Insert the name of the country:" << endl;
     string c;
     getline(cin >>ws, c);
+    if (d_.getCountries().find(c) == d_.getCountries().end()){
+        cout << "\nNot a valid country...\nTry again!\n\n";
+        countryStatistic();
+    }
     cout << "Choose the statistic:" << endl;
     cout << endl << "Options:\n\t1-Total airports\n\t2-Total flights\n\t3-Total airlines\n\t4-Total destinations\n\t5-Total cities\n\tb-Back\n\te-Exit"<<endl;
 
@@ -339,6 +367,10 @@ void Interface::cityStatistic(){ //DONE
     cout << "Insert the name of the city: [Format: <city>,<country> (because of repeated city names)]" << endl;
     string c;
     getline(cin >>ws, c);
+    if (d_.getCities().find(c) == d_.getCities().end()){
+        cout << "\nNot a valid city...\nTry again!\n\n";
+        cityStatistic();
+    }
     cout << "Choose the statistic:" << endl;
     cout << endl << "Options:\n\t1-Total airports\n\t2-Total flights\n\t3-Total airlines\n\t4-Total destinations\n\tb-Back\n\te-Exit"<<endl;
 
@@ -386,6 +418,10 @@ void Interface::airlineStatistic(){
     cout << "Insert the code of the airline:" << endl;
     string al;
     cin >> al;
+    if (d_.getAirlines().find(al) == d_.getAirlines().end()){
+        cout << "\nNot a valid airline...\nTry again!\n\n";
+        airlineStatistic();
+    }
     cout << "Choose the statistic:" << endl;
     cout << endl << "Options:\n\t1-Total flights\n\t2-Total destinations\n\tb-Back\n\te-Exit"<<endl;
 
@@ -425,6 +461,10 @@ void Interface::airportStatistic(){ //DONE
     string ap;
     cout << "Insert the airport code:" << endl;
     cin >> ap;
+    if (d_.getAirports().find(ap) == d_.getAirports().end()){
+        cout << "\nNot a valid airport...\nTry again!\n\n";
+        airportStatistic();
+    }
     cout << endl << "Choose the statistic:" << endl;
     cout << endl << "Options:\n\t1-Total flights\n\t2-Total airlines\n\t3-Total destinations\n\tb-Back\n\te-Exit"<<endl;
 
@@ -559,30 +599,50 @@ void Interface::getApMethods(){
             case ('1'):
                 cout << "Insert the airport code:" << endl;
                 cin >> ap;
+                if (d_.getAirports().find(ap) == d_.getAirports().end()){
+                    cout << "\nNot a valid airport...\nTry again!\n\n";
+                    getApMethods();
+                }
                 cout << "Number of flights: " << apm_.nFlightsAirport(ap) << endl;
                 lastPage();
                 return getApMethods();
             case ('2'):
                 cout << "Insert the airport code:" << endl;
                 cin >> ap;
+                if (d_.getAirports().find(ap) == d_.getAirports().end()){
+                    cout << "\nNot a valid airport...\nTry again!\n\n";
+                    getApMethods();
+                }
                 cout << "Number of airlines: " << apm_.nAirlines(ap) << endl;
                 lastPage();
                 return getApMethods();
             case ('3'):
                 cout << "Insert the airport code:" << endl;
                 cin >> ap;
+                if (d_.getAirports().find(ap) == d_.getAirports().end()){
+                    cout << "\nNot a valid airport...\nTry again!\n\n";
+                    getApMethods();
+                }
                 cout << "Number of city destinations: " << apm_.nCities(ap) << endl;
                 lastPage();
                 return getApMethods();
             case ('4'):
                 cout << "Insert the airport code:" << endl;
                 cin >> ap;
+                if (d_.getAirports().find(ap) == d_.getAirports().end()){
+                    cout << "\nNot a valid airport...\nTry again!\n\n";
+                    getApMethods();
+                }
                 cout << "Number of country destinations: " << apm_.nCountries(ap) << endl;
                 lastPage();
                 return getApMethods();
             case ('5'):
                 cout << "Insert the origin airport code:" << endl;
                 cin >> ap;
+                if (d_.getAirports().find(ap) == d_.getAirports().end()){
+                    cout << "\nNot a valid airport...\nTry again!\n\n";
+                    getApMethods();
+                }
                 cout << "Insert the maximum number of flights:" << endl;
                 cin >> max;
                 cout << "Number of reachable airports: " << apm_.nAirportsWithMaxFlights(ap,max) << endl;
@@ -591,6 +651,10 @@ void Interface::getApMethods(){
             case ('6'):
                 cout << "Insert the origin airport code:" << endl;
                 cin >> ap;
+                if (d_.getAirports().find(ap) == d_.getAirports().end()){
+                    cout << "\nNot a valid airport...\nTry again!\n\n";
+                    getApMethods();
+                }
                 cout << "Insert the maximum number of flights:" << endl;
                 cin >> max;
                 cout << "Number of reachable cities: " << apm_.nCitiesWithMaxFlights(ap,max) << endl;
@@ -599,6 +663,10 @@ void Interface::getApMethods(){
             case ('7'):
                 cout << "Insert the origin airport code:" << endl;
                 cin >> ap;
+                if (d_.getAirports().find(ap) == d_.getAirports().end()){
+                    cout << "\nNot a valid airport...\nTry again!\n\n";
+                    getApMethods();
+                }
                 cout << "Insert the maximum number of flights:" << endl;
                 cin >> max;
                 cout << "Number of reachable countries: " << apm_.nCountriesWithMaxFlights(ap,max) << endl;
