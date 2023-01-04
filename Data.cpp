@@ -303,7 +303,6 @@ void Data::flight(string origin, string dest, int oType, int dType, vector<strin
         for (auto it = paths.begin(); it != paths.end(); it++) {
             cout << "- ";
             flightG->printPath(*it);
-            //cout << "------" << endl;
         }
     }
 }
