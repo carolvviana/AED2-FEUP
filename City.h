@@ -28,6 +28,13 @@ public:
     void setName(string name);
     void setCountry(string country);
     //void addAirport(Airport ap);
+
+
+    /**
+     * Adiciona um aeroporto ao vector de strings de códigos de aeroportos da classe.
+     * COMPLEXIDADE: O(1)
+     * @param ap string que indica o código do aeroporto a ser acrescentado
+     */
     void addAirport(string ap);
 };
 

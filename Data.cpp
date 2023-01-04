@@ -26,7 +26,7 @@ Graph* Data::getFlightG(){
     return flightG;
 }
 
-void Data :: readFile_airlines() {
+ void Data :: readFile_airlines() {
 
     //variables
     string code, name, callSign, countryName;
@@ -49,7 +49,7 @@ void Data :: readFile_airlines() {
             name = v[1];
             callSign = v[2];
             countryName = v[3];
-            v.clear();
+            v.clear(); //O(n)
             Airline *airline = new Airline(code, name, callSign, countryName);
             airlines_.insert({code,airline});
 

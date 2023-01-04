@@ -41,14 +41,77 @@ public:
     Graph* getFlightG();
 
     //file reading methods
+
+    /**
+     * Função lê o ficheiro "airlines.csv" e cria os objetos do tipo Airline, guardando-os no unordered_map.
+     *
+     * Complexidade: O(n^2)
+     */
     void readFile_airlines();
+
+    /**
+     * Função lê o ficheiro "airports.csv" e cria os objetos do tipo Airport, City e Country, guardando-os nos respetivos unordered_maps.
+     *
+     * Complexidade: O(n^2)
+     */
     void readFile_airports();
+
+    /**
+     * Função lê o ficheiro "flights.csv" e cria o grafo que guarda os voos, tendo como nós os aeroportos e as edges os voos.
+     *
+     * Complexidade: O(n^2)
+     */
     void readFile_flights();
 
+    /**
+     * Retorna um vetor com os aeroportos presentes na cidade.
+     *
+     * Complexidade: O(1)
+     * @param city string codigo da cidade
+     * @return vetor com os codigos dos aeroportos presentes na cidade
+     *
+     */
     vector<string> city2Airport(string city);
+
+    /**
+     * Retorna um vetor com os códigos dos aeroportos presentes no país.
+     *
+     * Complexidade: O(n^2)
+     * @param country string nome do país
+     * @return vetor com os codigos dos aeroportos presentes no país
+     */
     vector<string> country2Airport(string country);
+
+    /**
+     * Retorna os código do aeroporto mais próximo da coordenada dada.
+     *
+     * Complexidade: O(nlog(n))
+     * @param c string coordenada
+     * @return codigo do aeroporto mais próximo da coordenada dada
+     */
     string coord2Airport(string c);
+    /**
+     * Retorna um vetor com os códigos dos aeroportos a menos de x quilómetros da coordenada dada.
+     *
+     * Complexidade: O(n)
+     * @param c string coordenada
+     * @param x int raio de quilómetros
+     * @return vetor com os códigos dos aeroportos a menos de x quilómetros da coordenada dada
+     */
     vector<string> coord2AirportWithDistance(string c, int x);
+
+    /**
+     * Dá print aos melhores voos disponíveis entre a origem/destino dados.
+     *
+     * Complexidade: O(n^2(n+e))
+     * @param origin string origem (aeroporto, cidade, país, coordenada)
+     * @param dest string destino (aeroporto, cidade, país, coordenada)
+     * @param oType int tipo de origem
+     * @param dType int tipo de destino
+     * @param filters vector<string> com os códigos das airlines que pretendemos usar. Vazio se não houver restrições
+     * @param oRadius int quilómetros de raio
+     * @param dRadius int quilómetros de raio
+     */
     void flight(string origin, string dest, int oType, int dType,vector<string>& filters,  int oRadius, int dRadius);
 
 
