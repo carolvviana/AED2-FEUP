@@ -511,7 +511,6 @@ void Interface::credits() const {
     cout << "Carolina Viana, up202108802" << endl;
     cout << "Guilherme Monteiro, up202108668" << endl;
     cout << "Sofia Sa, up202108676" << endl;
-
     cout << endl << endl << "Options:\n\tb-Back\n\te-Exit"<< endl;
     char input;
     while (true) {
