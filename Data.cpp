@@ -216,7 +216,7 @@ int binarySearchHighBoundLongi(const vector<pair<string,Coordinate>> &v, Coordin
     if (res == v.size()) return -1; // not found
     else return res;
 }
-
+/*
 string Data :: coord2Airport(string c){
     vector<pair<string, Coordinate>> airportCoord(airportCoord_);
     string v = ",";
@@ -244,6 +244,15 @@ string Data :: coord2Airport(string c){
         return airportCoord[0].first;
     }
     else return airportCoord[1].first;
+
+}*/
+string Data :: coord2Airport(string c){
+    vector<pair<string, Coordinate>> airportCoord(airportCoord_);
+    string v = ",";
+    size_t pos = c.find(v);
+    Coordinate co = Coordinate(stod(c.substr(0, pos)), stod(c.substr(pos+1)));
+
+
 
 }
 vector<string> Data :: coord2AirportWithDistance(string c, int x){
@@ -305,4 +314,6 @@ void Data::flight(string origin, string dest, int oType, int dType, vector<strin
             flightG->printPath(*it);
         }
     }
+
+
 }

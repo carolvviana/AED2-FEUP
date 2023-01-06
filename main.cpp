@@ -17,6 +17,19 @@ int main() {
     ApMethods apm = ApMethods();
     apm.setData(d);
     apm.setGraph(g);
+
+    Interface iFace = Interface();
+    iFace.setData(d);
+    iFace.setApm(apm);
+
+    try {
+        iFace.welcomePage();
+    }
+    catch (int exit) {
+        return 0;
+    }
+
+
     /*
     string airline = "TAP";
     cout << "Flights: " << d.nFlights2(airline) << endl;
@@ -31,6 +44,11 @@ int main() {
 
     auto c = d.getCities()["Albany"];*/
 
+
+
+
+
+/*
     Interface iFace = Interface();
     iFace.setData(d);
     iFace.setApm(apm);
@@ -41,6 +59,12 @@ int main() {
     catch (int exit) {
         return 0;
     }
+*/
+
+
+
+
+
 
 /*
     //g->bfs("OPO");

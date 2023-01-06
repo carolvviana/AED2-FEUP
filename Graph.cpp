@@ -93,7 +93,7 @@ void Graph::bfsWithFilters(const string& airportCode, vector<string>& airlines) 
 
 
         for (const auto& e : node.adj) {
-            if(find(airlines.begin(), airlines.end(),e.airline)!= airlines.end()) {
+            if(find(airlines.begin(), airlines.end(),e.airline)!= airlines.end()) { //passar para color
                 string airportD = e.dest;
 
                 if (!nodes[airportD].visited) { //o segundo switch vai ser tipo o 1o. chamamos a função flight depois dos 2 switches(e de perguntar pelo filtro)
@@ -140,16 +140,9 @@ int Graph::distance(string origin, string dest) {
 
 vector<string> Graph::makePath(string origin, string destination, vector<string>& airlines) {
     vector<string> path = {};
-    /*
-    if (!nodes[origin].available || !nodes[destination].available) {
-        cout << "Origem/Destino nao disponivel" << endl;
-        return path;
-    }
-     */
+
     if (airlines.size() == 0) bfs(origin);
     else bfsWithFilters(origin, airlines);
-
-    //bfs(origin);
 
     string dest = destination;
     path.push_back(dest);
@@ -292,7 +285,6 @@ vector<string> Graph::dfs(const string& cAp, bool firstIteration, int& distance,
 */
 vector<string> Graph::dfs(const string& cAp, bool firstIteration, int& distance, vector<string>& path, vector<vector<string>>& paths, const string& destAp, int d) {
     if (firstIteration) { this->unvisit();}
-
 
     Node& cNode = nodes[cAp];
     std::cout << *(cNode.airport) << '\n'; // show node order
