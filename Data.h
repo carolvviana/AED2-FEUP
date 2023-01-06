@@ -145,6 +145,7 @@ public:
     set<string> getDifDestinations(string airport);
 
     int nFlightsFromAirportWithAirlines(string airport, set<string> airline);
+    int diameter();
 };
 
 

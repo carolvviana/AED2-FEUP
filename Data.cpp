@@ -315,5 +315,15 @@ void Data::flight(string origin, string dest, int oType, int dType, vector<strin
         }
     }
 
-
 }
+
+    int Data::diameter(){
+        int max_distance = 0;
+        for (auto a : airports_){
+            flightG->bfs(a.first);
+            for (auto b : airports_){
+                if (flightG->nodeAt(b.first).distance > max_distance) max_distance = flightG->nodeAt(b.first).distance;
+            }
+        }
+        return max_distance;
+    }

@@ -22,6 +22,8 @@ int main() {
     iFace.setData(d);
     iFace.setApm(apm);
 
+    //cout << d.diameter();
+
     try {
         iFace.welcomePage();
     }

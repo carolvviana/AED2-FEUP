@@ -132,9 +132,9 @@ void Interface::getFlights() {
             case ('1'):
                 cout << endl << "Insert destination airport:" << endl;
                 cin >> inputDestination;
-                if (d_.getAirports().find(inputOrigin) == d_.getAirports().end()){
+                if (d_.getAirports().find(inputDestination) == d_.getAirports().end()){
                     cout << "\nNot a valid airport...\nTry again!\n\n";
-                    getFlights();
+                    getFlights(); //tentar utilizar o while loop.
                 }
                 flag2 = 0;
                 break;
@@ -142,7 +142,7 @@ void Interface::getFlights() {
             case ('2'):
                 cout << endl << "Insert destination city: [Format: <city>,<country> (because of repeated city names)]" << endl;
                 getline(cin >>ws, inputDestination);
-                if (d_.getCities().find(inputOrigin) == d_.getCities().end()){
+                if (d_.getCities().find(inputDestination) == d_.getCities().end()){
                     cout << "\nNot a valid city...\nTry again!\n\n";
                     getFlights();
                 }
@@ -151,7 +151,7 @@ void Interface::getFlights() {
             case ('3'):
                 cout << endl << "Insert destination country:" << endl;
                 getline(cin >>ws, inputDestination);
-                if (d_.getCountries().find(inputOrigin) == d_.getCountries().end()){
+                if (d_.getCountries().find(inputDestination) == d_.getCountries().end()){
                     cout << "\nNot a valid country...\nTry again!\n\n";
                     getFlights();
                 }
