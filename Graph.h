@@ -59,6 +59,8 @@ public:
 
     /**
      * Adiciona uma aresta conectando dois nós do grafo, a que está associado o codigo do aeroporto de origem, o codigo do aeroporto de destino e o codigo da companhia aerea de conexão dos dois.
+     *
+     * COMPLEXIDADE: O(n)
      * @param airportCodeO string codigo do aeroporto de origem desta aresta
      * @param airportCodeD string codigo do aeroporto de destino desta aresta
      * @param airlineCode string codigo da companhia aerea associada a essa aresta de conexão
@@ -116,12 +118,12 @@ public:
     void clear();
 
 
-    void print();
+   // void print();
 
     /**
     * Retorna a distancia entre uma origem e um destino.
     *
-    * COMPLEXIDADE:
+    * COMPLEXIDADE: O(V+E), sendo V o numero de nós do grafo e E o numero de arestas do grafo
     * @param dest string código do aeroporto de destino
     * @param origin string código do aeroporto de origem
      * @return distancia em valor inteiro entre os dois aeroportos
@@ -131,16 +133,38 @@ public:
     /**
      * Retorna o vetor com o percurso mais adequado entre o aeroporto de origem e de destino
      *
-     * COMPLEXIDADE:
+     * COMPLEXIDADE: O(V+E), sendo V o numero de nós do grafo e E o numero de arestas do grafo
      */
     vector<string> makePath(string origin, string destination, vector<string>& airlines);
-    //void printPath(string origin, string destination);
+
+
+/**
+     * Imprime o percurso entre o aeroporto de origem e de destino
+     *
+     * COMPLEXIDADE: O(n)
+     */
     void printPath(vector<string> path);
 
+
+    /**
+     * Realiza a Breadth-First search no grafo preenchido com os voos e destinos, apenas com a restrição de só utilizar as compnhias aéreas escolhidas pelo utilizador.
+     *
+    * COMPLEXIDADE: O(V+E+N), sendo V o numero de nós do grafo e E o numero de arestas do grafo e N o numero de companhias aereas
+     * @param airportCode string codigo do aeroporto de origem
+     * @param airlines vector de string(s) de codigo(s) de companhias aereas a considerar na bfs
+     */
     void bfsWithFilters(const string& airportCode, vector<string>& airlines); //ainda não faças disto, complexidade vai alterar
     //void printShortestDistance(string src, string dest, int v);
     //bool BFS(string src, string dest, int v, unordered_map <string, vector<string>> predi, unordered_map <string, int> disti);
     //vector<string> dfs(const std::string& cStop, bool firstIteration);
+
+    /**
+     * Retorna uma set de strings de codigos de aeroportos cuja distancia é menor ou igual do que y (e maior do que zero), em numero de voos. É uma funçao auxiliar às funções da classe ApMethods.
+     *
+    * COMPLEXIDADE: O(V), sendo V o numero de nós do grafo
+     * @param y numero de voos a considerar na contagem
+     * @return set de strings de codigos de aeroportos que se encontram a uma distancia maxima de Y voos do aeroporto de origem, definido anteriormente noutra função
+     */
     set<string> apMethodsHelper(int y);
 
     /**

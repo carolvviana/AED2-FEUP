@@ -122,6 +122,7 @@ void Graph:: undistance(){
 void Graph::clear() {
     this->nodes.clear();
 }
+/*
 void Graph:: print(){
     auto it = nodes.begin();
     while (it != nodes.end()){
@@ -131,6 +132,8 @@ void Graph:: print(){
         it++;
     }
 }
+ */
+
 int Graph::distance(string origin, string dest) {
     if (origin==dest) return 0;
     bfs(origin);
@@ -162,7 +165,6 @@ void Graph::printPath(string origin, string destination){
  */
 
 void Graph::printPath(vector<string> path){
-    //cout << "Best path from " << path.front() << " to " << path.back() << ":" << endl;
         for (int i = 0; i < path.size() - 1; i++) {
             cout << path[i] << " -> ";
         }
