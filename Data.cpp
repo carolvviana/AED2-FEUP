@@ -65,7 +65,6 @@ void Data :: readFile_airports(){
 
     //open file
     ifstream input(AIRPORTS);
-    //ifstream input("../csv/airportsv2.csv");
     if(input.is_open()) {
         string line;
         getline(input, line); //skips first line
@@ -102,7 +101,6 @@ void Data :: readFile_flights() {
         flightG->addNode(it->first, it->second);
     }
     //open file
-    //ifstream input("../csv/flightsv2.csv");
     ifstream input(FLIGHTS);
 
     if(input.is_open()) {
@@ -304,10 +302,9 @@ void Data::flight(string origin, string dest, int oType, int dType, vector<strin
         sort(paths.begin(), paths.end(),
              [](vector<string> &a, vector<string> &b) { return a.size() < b.size(); }); // colocar menor à frente
         int min = paths[0].size();
-        //auto aux = remove_if(paths.begin(), paths.end(), [min](vector<string> &a) {return a.size() > min;});
         auto aux = find_if(paths.begin(), paths.end(), [min](vector<string> &a) { return a.size() > min; });
         paths.erase(aux, paths.end());
-        cout << "Best ways to travel from " << origin << " to " << dest << ": " << endl;
+        cout << "\n\nBest ways to travel from " << origin << " to " << dest << ": " << endl;
 
         for (auto it = paths.begin(); it != paths.end(); it++) {
             cout << "- ";
