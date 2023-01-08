@@ -11,12 +11,6 @@
 
 using namespace std;
 
-/**
- * A graph class.
- * In the context of this program this is going to represent the STCP network.
- *
- * Due to the design choices made throughout the project, this class is a mix of the theoretical classes' "abstract" graph and a context-aware graph tailored to the STCP network.
- */
 class Graph {
     /**
      * An edge between 2 nodes on this graph.
@@ -39,11 +33,10 @@ class Graph {
         int low;
         bool stacked;
     };
-
     int n;
     bool hasDir; // false: undirect; true: directed
     unordered_map<string, Node> nodes;
-    vector<vector<string>> paths = {}; //caminhos para chegar ao destino
+    //vector<vector<string>> paths = {}; //caminhos para chegar ao destino
 
 public:
     // Constructor: nr nodes and direction (default: directed)
@@ -129,7 +122,7 @@ public:
     * @param origin string código do aeroporto de origem
      * @return distancia em valor inteiro entre os dois aeroportos
     */
-    //int distance(string origin, string dest);
+    int distance(string origin, string dest);
 
     /**
      * Retorna o vetor com o percurso mais adequado entre o aeroporto de origem e de destino
