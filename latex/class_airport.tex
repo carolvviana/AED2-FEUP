@@ -1,0 +1,66 @@
+\hypertarget{class_airport}{}\doxysection{Airport Class Reference}
+\label{class_airport}\index{Airport@{Airport}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_airport_a78b75bb31b125aca98f5e65e4a603b27}\label{class_airport_a78b75bb31b125aca98f5e65e4a603b27}} 
+{\bfseries Airport} (string code, string name, string city, double lati, double longi)
+\item 
+\mbox{\Hypertarget{class_airport_add9b3ea6f8849f6167f5a70a9280781a}\label{class_airport_add9b3ea6f8849f6167f5a70a9280781a}} 
+string {\bfseries get\+Code} ()
+\item 
+\mbox{\Hypertarget{class_airport_a939b886a8a9675e22418f2c9a490bdcb}\label{class_airport_a939b886a8a9675e22418f2c9a490bdcb}} 
+string {\bfseries get\+Name} ()
+\item 
+\mbox{\Hypertarget{class_airport_a7dc058132336ea1b211323730fc44148}\label{class_airport_a7dc058132336ea1b211323730fc44148}} 
+string {\bfseries get\+City} ()
+\item 
+\mbox{\Hypertarget{class_airport_a9a4bbcf71095dceebcfda56760683d4c}\label{class_airport_a9a4bbcf71095dceebcfda56760683d4c}} 
+\mbox{\hyperlink{class_coordinate}{Coordinate}} {\bfseries get\+Coordinate} ()
+\item 
+\mbox{\Hypertarget{class_airport_afd6aa58170e56847bf99f8eae553e491}\label{class_airport_afd6aa58170e56847bf99f8eae553e491}} 
+void {\bfseries set\+Code} (string code)
+\item 
+\mbox{\Hypertarget{class_airport_a064fd9435cd179b04d94c04a18a96583}\label{class_airport_a064fd9435cd179b04d94c04a18a96583}} 
+void {\bfseries set\+Name} (string name)
+\item 
+\mbox{\Hypertarget{class_airport_a7ac65e3be0034babedc2adbe650ce5e9}\label{class_airport_a7ac65e3be0034babedc2adbe650ce5e9}} 
+void {\bfseries set\+City} (string city)
+\item 
+\mbox{\Hypertarget{class_airport_a5f34902f4698f16603c89f684f650635}\label{class_airport_a5f34902f4698f16603c89f684f650635}} 
+void {\bfseries set\+Coordinate} (double lati, double longi)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_airport_a5a82bdbae5754ec7671da6d775e31eef}{operator$<$$<$}} (std\+::ostream \&out, \mbox{\hyperlink{class_airport}{Airport}} \&airport)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_airport_a5a82bdbae5754ec7671da6d775e31eef}\label{class_airport_a5a82bdbae5754ec7671da6d775e31eef}} 
+\index{Airport@{Airport}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\mbox{\hyperlink{class_airport}{Airport}} \&}]{airport }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Mostra ao utilizador informaçao relevante sobre o aeroporto (código e nome).
+
+COMPLEXIDADE\+: O(n)
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & ostream que recebe o output \\
+\hline
+{\em airport} & Aeroporto constante que será utilizado para dispor informação \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ostream que será o output para o utilizador 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Airport.\+h\item 
+Airport.\+cpp\end{DoxyCompactItemize}

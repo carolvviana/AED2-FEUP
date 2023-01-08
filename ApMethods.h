@@ -66,7 +66,7 @@ public:
     /**
      * Indica quantos aeroportos são alcançaveis com um máximo de Y voos a partir de um dado aeroporto.
      *
-     * COMPLEXIDADE: O(V+E)
+     * COMPLEXIDADE: O(|V|+|E|), sendo V o numero de nodes e E o numero de arestas do grafo
      *
      * @param code string código do aeroporto
      * @param y inteiro que indica o valor maximo de voos
@@ -77,7 +77,7 @@ public:
     /**
      * Indica quantas cidades (destinos) são alcançaveis com um máximo de Y voos a partir de um dado aeroporto.
      *
-     * COMPLEXIDADE: O(V+E)
+     * COMPLEXIDADE: O(|V|+|E|), sendo V o numero de nodes e E o numero de arestas do grafo
      *
      * @param code string código do aeroporto
      * @param y inteiro que indica o valor maximo de voos
@@ -88,7 +88,7 @@ public:
     /**
      * Indica quantos países são alcançaveis com um máximo de Y voos a partir de um dado aeroporto.
      *
-     * COMPLEXIDADE: O(V+E)
+     * COMPLEXIDADE: O(|V|+|E|), sendo V o numero de nodes e E o numero de arestas do grafo
      *
      *
      * @param code string código do aeroporto

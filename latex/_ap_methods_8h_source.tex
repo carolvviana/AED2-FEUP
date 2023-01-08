@@ -1,0 +1,47 @@
+\hypertarget{_ap_methods_8h_source}{}\doxysection{Ap\+Methods.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by User on 27/12/2022.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef AEDP2\_APMETHODS\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define AEDP2\_APMETHODS\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}Airport.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}Graph.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}Data.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_ap_methods}{ApMethods}} \{}
+\DoxyCodeLine{15 \textcolor{keyword}{private}:}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_data}{Data}} d\_ ;}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_graph}{Graph}}* g\_ = \textcolor{keyword}{new} \mbox{\hyperlink{class_graph}{Graph}}(1);}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_ap_methods}{ApMethods}}();}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_ap_methods}{ApMethods}}(\mbox{\hyperlink{class_data}{Data}} d, \mbox{\hyperlink{class_graph}{Graph}}* g);}
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} setGraph(\mbox{\hyperlink{class_graph}{Graph}}* g);}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} setData(\mbox{\hyperlink{class_data}{Data}} d);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{33     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_ap_methods_a0679be2f02d8ce55f3e110a88af1d220}{nFlightsAirport}}(\textcolor{keywordtype}{string} code); \textcolor{comment}{//Quantos voos existem a partir de um dado aeroporto?}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{44     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_ap_methods_a0db6b41a77fcc08d56aeb31acb0bc412}{nAirlines}} (\textcolor{keywordtype}{string} code); \textcolor{comment}{// De quantas companhias aéreas diferentes?}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{54     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_ap_methods_af0e71020cfcdf24f2f7fbb1a1c472589}{nCities}} (\textcolor{keywordtype}{string} code); \textcolor{comment}{//Para quantos destinos diferentes?}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{64     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_ap_methods_a9e6dad4dbf2acbe376fe21d447728832}{nCountries}} (\textcolor{keywordtype}{string} code); \textcolor{comment}{//De quantos países diferentes?}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{75     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_ap_methods_add5523dea7cf4c80e4736a9764f40a22}{nAirportsWithMaxFlights}}(\textcolor{keywordtype}{string} code, \textcolor{keywordtype}{int} y);\textcolor{comment}{//Quantos aeroportos, cidades ou países são atingíveis usando um máximo de Y voos?}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{86     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_ap_methods_a2b47e0312a9bad479aea0d9c6de28f6d}{nCitiesWithMaxFlights}}(\textcolor{keywordtype}{string} code, \textcolor{keywordtype}{int} y);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{98     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_ap_methods_a22ecb60aa61e9b7bd2c4f38b66d95b5d}{nCountriesWithMaxFlights}}(\textcolor{keywordtype}{string} code, \textcolor{keywordtype}{int} y);}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//AEDP2\_APMETHODS\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,577 @@
+\hypertarget{class_data}{}\doxysection{Data Class Reference}
+\label{class_data}\index{Data@{Data}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_data_ae0bf95d65f16b2fa79563a02d59b5db3}\label{class_data_ae0bf95d65f16b2fa79563a02d59b5db3}} 
+unordered\+\_\+map$<$ string, \mbox{\hyperlink{class_airport}{Airport}} $\ast$ $>$ {\bfseries get\+Airports} ()
+\item 
+\mbox{\Hypertarget{class_data_ac9bff179fcc8bb26296f284fcadd4d0d}\label{class_data_ac9bff179fcc8bb26296f284fcadd4d0d}} 
+unordered\+\_\+map$<$ string, \mbox{\hyperlink{class_airline}{Airline}} $\ast$ $>$ {\bfseries get\+Airlines} ()
+\item 
+\mbox{\Hypertarget{class_data_a9affad4bd6a466508bdafc8cc8a5d37d}\label{class_data_a9affad4bd6a466508bdafc8cc8a5d37d}} 
+unordered\+\_\+map$<$ string, \mbox{\hyperlink{class_city}{City}} $\ast$ $>$ {\bfseries get\+Cities} ()
+\item 
+\mbox{\Hypertarget{class_data_a0513bd46f08b1e603128bac9a1bcfddb}\label{class_data_a0513bd46f08b1e603128bac9a1bcfddb}} 
+unordered\+\_\+map$<$ string, \mbox{\hyperlink{struct_country}{Country}} $\ast$ $>$ {\bfseries get\+Countries} ()
+\item 
+\mbox{\Hypertarget{class_data_ad0585620986cc7ef050dc2520549a1e4}\label{class_data_ad0585620986cc7ef050dc2520549a1e4}} 
+\mbox{\hyperlink{class_graph}{Graph}} $\ast$ {\bfseries get\+FlightG} ()
+\item 
+void \mbox{\hyperlink{class_data_ada480eb9722e7a24ab33353426620b0a}{read\+File\+\_\+airlines}} ()
+\item 
+void \mbox{\hyperlink{class_data_a4cd22ae183274891a2204bee61676265}{read\+File\+\_\+airports}} ()
+\item 
+void \mbox{\hyperlink{class_data_ad9c53da28c787ceeffa4c15c637a876d}{read\+File\+\_\+flights}} ()
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{class_data_a94159701aa282df027b4ed6f7516efdc}{city2\+Airport}} (string city)
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{class_data_af0fea4846f24c7544632cd807a288274}{country2\+Airport}} (string country)
+\item 
+string \mbox{\hyperlink{class_data_a7a7b8aa72f4f8e8fdb9b166c2fddad1a}{coord2\+Airport}} (string c)
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{class_data_aeb9227bae4207c2b88579d0345b801d4}{coord2\+Airport\+With\+Distance}} (string c, int x)
+\item 
+void \mbox{\hyperlink{class_data_af31006a4c3bb3732667a566b93b528d0}{flight}} (string origin, string dest, int o\+Type, int d\+Type, vector$<$ string $>$ \&filters, int o\+Radius, int d\+Radius)
+\item 
+int \mbox{\hyperlink{class_data_aff07f5d7306e497e1927e91e58008575}{total\+Airports}} ()
+\item 
+int \mbox{\hyperlink{class_data_af25ae6a920137e1724d40d8ff0fe5e3c}{total\+Cities}} ()
+\item 
+int \mbox{\hyperlink{class_data_a6d6954a683593e59938a34dddeead81a}{total\+Countries}} ()
+\item 
+int \mbox{\hyperlink{class_data_ae4e05fd5fe530fb422b7fb4d69500318}{total\+Airlines}} ()
+\item 
+int \mbox{\hyperlink{class_data_ab383dceb6f21b16bff75e809d23470eb}{total\+Flights}} ()
+\item 
+int \mbox{\hyperlink{class_data_acdb96c187c958dba5103c798e937a8b4}{n\+Cities1}} (string country)
+\item 
+int \mbox{\hyperlink{class_data_afb1fcf03bb2a124cb38afa5d4882d3a5}{n\+Airports1}} (string country)
+\item 
+int \mbox{\hyperlink{class_data_a5e731af731d4afc5982367d180bddc47}{n\+Flights1}} (string country)
+\item 
+int \mbox{\hyperlink{class_data_aaac623a4ca26498bbc8e600b50a1aaa1}{n\+Airlines1}} (string country)
+\item 
+int \mbox{\hyperlink{class_data_acbca7e362954f89f7b6dff14bc836777}{n\+Destinations1}} (string country)
+\item 
+int \mbox{\hyperlink{class_data_a1f0ba854de9309ba81cd4202d4652a15}{n\+Airports2}} (string city)
+\item 
+int \mbox{\hyperlink{class_data_a6ae3c8baaf596f9f4e5827f1cbc9157d}{n\+Flights2}} (string city)
+\item 
+int \mbox{\hyperlink{class_data_adf8b01732b77d971f4d451cc34ca97a6}{n\+Airlines2}} (string city)
+\item 
+int \mbox{\hyperlink{class_data_afc724ca40dab51ac2eccd90498c8c5c2}{n\+Destinations2}} (string city)
+\item 
+int \mbox{\hyperlink{class_data_a4fb06f18d55855c33bbcce34713809d8}{n\+Flights3}} (string airport)
+\item 
+int \mbox{\hyperlink{class_data_a307c4b439059426b3595ddc8c4f47ec6}{n\+Airlines3}} (string airport)
+\item 
+int \mbox{\hyperlink{class_data_ab4e406eeac4676f63460b3a477c1bd6e}{n\+Destinations3}} (string airport)
+\item 
+int \mbox{\hyperlink{class_data_af5bed2aa6ef9791cdcf517ac69427b9f}{n\+Flights4}} (string airline)
+\item 
+int \mbox{\hyperlink{class_data_a982ec0beb9914f42afd1ec0477fa7284}{n\+Destinations4}} (string airline)
+\item 
+set$<$ string $>$ \mbox{\hyperlink{class_data_a7df22752d364b84d38f45cde77382fc3}{get\+Dif\+Airlines}} (string airport)
+\item 
+set$<$ string $>$ \mbox{\hyperlink{class_data_af19af469e597b60b7ae479850b48e28f}{get\+Dif\+Destinations}} (string airport)
+\item 
+int \mbox{\hyperlink{class_data_ae17d78f1df21dbb390e87f5f838f6a68}{n\+Flights\+From\+Airport\+With\+Airlines}} (string airport, set$<$ string $>$ airline)
+\item 
+int \mbox{\hyperlink{class_data_af613823a01d5df69f2fe632a20b2a7ce}{diameter}} ()
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{class_data_ac668078e7be6f2e44b972579ff61263a}{top\+Kairports}} (int k)
+\item 
+\mbox{\Hypertarget{class_data_a9ddae2b76363418812907c14d483b6fb}\label{class_data_a9ddae2b76363418812907c14d483b6fb}} 
+void {\bfseries print\+Art\+Points} (vector$<$ string $>$ airlines)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_data_a94159701aa282df027b4ed6f7516efdc}\label{class_data_a94159701aa282df027b4ed6f7516efdc}} 
+\index{Data@{Data}!city2Airport@{city2Airport}}
+\index{city2Airport@{city2Airport}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{city2Airport()}{city2Airport()}}
+{\footnotesize\ttfamily vector$<$ string $>$ Data\+::city2\+Airport (\begin{DoxyParamCaption}\item[{string}]{city }\end{DoxyParamCaption})}
+
+Retorna um vetor com os aeroportos presentes na cidade.
+
+Complexidade\+: O(1) 
+\begin{DoxyParams}{Parameters}
+{\em city} & string codigo da cidade \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vetor com os codigos dos aeroportos presentes na cidade 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_a7a7b8aa72f4f8e8fdb9b166c2fddad1a}\label{class_data_a7a7b8aa72f4f8e8fdb9b166c2fddad1a}} 
+\index{Data@{Data}!coord2Airport@{coord2Airport}}
+\index{coord2Airport@{coord2Airport}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{coord2Airport()}{coord2Airport()}}
+{\footnotesize\ttfamily string Data\+::coord2\+Airport (\begin{DoxyParamCaption}\item[{string}]{c }\end{DoxyParamCaption})}
+
+Retorna os código do aeroporto mais próximo da coordenada dada.
+
+Complexidade\+: O(n) 
+\begin{DoxyParams}{Parameters}
+{\em c} & string coordenada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+codigo do aeroporto mais próximo da coordenada dada 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_aeb9227bae4207c2b88579d0345b801d4}\label{class_data_aeb9227bae4207c2b88579d0345b801d4}} 
+\index{Data@{Data}!coord2AirportWithDistance@{coord2AirportWithDistance}}
+\index{coord2AirportWithDistance@{coord2AirportWithDistance}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{coord2AirportWithDistance()}{coord2AirportWithDistance()}}
+{\footnotesize\ttfamily vector$<$ string $>$ Data\+::coord2\+Airport\+With\+Distance (\begin{DoxyParamCaption}\item[{string}]{c,  }\item[{int}]{x }\end{DoxyParamCaption})}
+
+Retorna um vetor com os códigos dos aeroportos a menos de x quilómetros da coordenada dada.
+
+Complexidade\+: O(n) 
+\begin{DoxyParams}{Parameters}
+{\em c} & string coordenada \\
+\hline
+{\em x} & int raio de quilómetros \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vetor com os códigos dos aeroportos a menos de x quilómetros da coordenada dada 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_af0fea4846f24c7544632cd807a288274}\label{class_data_af0fea4846f24c7544632cd807a288274}} 
+\index{Data@{Data}!country2Airport@{country2Airport}}
+\index{country2Airport@{country2Airport}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{country2Airport()}{country2Airport()}}
+{\footnotesize\ttfamily vector$<$ string $>$ Data\+::country2\+Airport (\begin{DoxyParamCaption}\item[{string}]{country }\end{DoxyParamCaption})}
+
+Retorna um vetor com os códigos dos aeroportos presentes no país.
+
+Complexidade\+: O(n$^\wedge$2) 
+\begin{DoxyParams}{Parameters}
+{\em country} & string nome do país \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vetor com os codigos dos aeroportos presentes no país 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_af613823a01d5df69f2fe632a20b2a7ce}\label{class_data_af613823a01d5df69f2fe632a20b2a7ce}} 
+\index{Data@{Data}!diameter@{diameter}}
+\index{diameter@{diameter}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{diameter()}{diameter()}}
+{\footnotesize\ttfamily int Data\+::diameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Calcula o diametro do grafo
+
+Complexidade\+: O(n$^\wedge$2($\vert$\+V$\vert$+$\vert$\+E$\vert$)) \begin{DoxyReturn}{Returns}
+diametro do grafo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_af31006a4c3bb3732667a566b93b528d0}\label{class_data_af31006a4c3bb3732667a566b93b528d0}} 
+\index{Data@{Data}!flight@{flight}}
+\index{flight@{flight}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{flight()}{flight()}}
+{\footnotesize\ttfamily void Data\+::flight (\begin{DoxyParamCaption}\item[{string}]{origin,  }\item[{string}]{dest,  }\item[{int}]{o\+Type,  }\item[{int}]{d\+Type,  }\item[{vector$<$ string $>$ \&}]{filters,  }\item[{int}]{o\+Radius = {\ttfamily 0},  }\item[{int}]{d\+Radius = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Dá print aos melhores voos disponíveis entre a origem/destino dados.
+
+Complexidade\+: O(n$^\wedge$2(n+e)) 
+\begin{DoxyParams}{Parameters}
+{\em origin} & string origem (aeroporto, cidade, país, coordenada) \\
+\hline
+{\em dest} & string destino (aeroporto, cidade, país, coordenada) \\
+\hline
+{\em o\+Type} & int tipo de origem \\
+\hline
+{\em d\+Type} & int tipo de destino \\
+\hline
+{\em filters} & vector$<$string$>$ com os códigos das airlines que pretendemos usar. Vazio se não houver restrições \\
+\hline
+{\em o\+Radius} & int quilómetros de raio \\
+\hline
+{\em d\+Radius} & int quilómetros de raio \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_a7df22752d364b84d38f45cde77382fc3}\label{class_data_a7df22752d364b84d38f45cde77382fc3}} 
+\index{Data@{Data}!getDifAirlines@{getDifAirlines}}
+\index{getDifAirlines@{getDifAirlines}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getDifAirlines()}{getDifAirlines()}}
+{\footnotesize\ttfamily set$<$ string $>$ Data\+::get\+Dif\+Airlines (\begin{DoxyParamCaption}\item[{string}]{airport }\end{DoxyParamCaption})}
+
+Retorna um set de strings que são os codigos de companhias aéreas diferentes que partem do aeroporto dado.
+
+COMPLEXIDADE\+: O(n)
+
+
+\begin{DoxyParams}{Parameters}
+{\em airport} & codigo do aeroporto que queremos contar o numero de companhias aereas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+set de strings de codigos das diferentes companhias aereas nesse aeroporto 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_af19af469e597b60b7ae479850b48e28f}\label{class_data_af19af469e597b60b7ae479850b48e28f}} 
+\index{Data@{Data}!getDifDestinations@{getDifDestinations}}
+\index{getDifDestinations@{getDifDestinations}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getDifDestinations()}{getDifDestinations()}}
+{\footnotesize\ttfamily set$<$ string $>$ Data\+::get\+Dif\+Destinations (\begin{DoxyParamCaption}\item[{string}]{airport }\end{DoxyParamCaption})}
+
+Retorna um set de strings que são os codigos dos aeroportos diferentes atingiveis pelo aeroporto dado.
+
+COMPLEXIDADE\+: O(n)
+
+
+\begin{DoxyParams}{Parameters}
+{\em airport} & codigo do aeroporto que queremos contar o numero de companhias aereas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+set de strings de codigos dos aeroportos diferentes atingiveis pelo aeroporto dado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_aaac623a4ca26498bbc8e600b50a1aaa1}\label{class_data_aaac623a4ca26498bbc8e600b50a1aaa1}} 
+\index{Data@{Data}!nAirlines1@{nAirlines1}}
+\index{nAirlines1@{nAirlines1}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{nAirlines1()}{nAirlines1()}}
+{\footnotesize\ttfamily int Data\+::n\+Airlines1 (\begin{DoxyParamCaption}\item[{string}]{country }\end{DoxyParamCaption})}
+
+Retorna o numero de companhias aereas a partir do país dado.
+
+COMPLEXIDADE\+: O(n) 
+\begin{DoxyParams}{Parameters}
+{\em country} & string nome do país a considerar na contagem \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de companhias aereas a partir do país dado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_adf8b01732b77d971f4d451cc34ca97a6}\label{class_data_adf8b01732b77d971f4d451cc34ca97a6}} 
+\index{Data@{Data}!nAirlines2@{nAirlines2}}
+\index{nAirlines2@{nAirlines2}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{nAirlines2()}{nAirlines2()}}
+{\footnotesize\ttfamily int Data\+::n\+Airlines2 (\begin{DoxyParamCaption}\item[{string}]{city }\end{DoxyParamCaption})}
+
+Retorna o numero de companhias aereas a partir da cidade dada.
+
+COMPLEXIDADE\+: O(n) 
+\begin{DoxyParams}{Parameters}
+{\em city} & string nome da cidade a considerar na contagem \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de companhias aereas a partir da cidade dada. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_a307c4b439059426b3595ddc8c4f47ec6}\label{class_data_a307c4b439059426b3595ddc8c4f47ec6}} 
+\index{Data@{Data}!nAirlines3@{nAirlines3}}
+\index{nAirlines3@{nAirlines3}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{nAirlines3()}{nAirlines3()}}
+{\footnotesize\ttfamily int Data\+::n\+Airlines3 (\begin{DoxyParamCaption}\item[{string}]{airport }\end{DoxyParamCaption})}
+
+Retorna o numero de companhias aereas presentes no aeroporto dado.
+
+COMPLEXIDADE\+: O(1) 
+\begin{DoxyParams}{Parameters}
+{\em airport} & codigo do aeroporto que será considerado na contagem \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de companhias aereas presentes no aeroporto dado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_afb1fcf03bb2a124cb38afa5d4882d3a5}\label{class_data_afb1fcf03bb2a124cb38afa5d4882d3a5}} 
+\index{Data@{Data}!nAirports1@{nAirports1}}
+\index{nAirports1@{nAirports1}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{nAirports1()}{nAirports1()}}
+{\footnotesize\ttfamily int Data\+::n\+Airports1 (\begin{DoxyParamCaption}\item[{string}]{country }\end{DoxyParamCaption})}
+
+Retorna o numero de aeroportos presentes no país dado.
+
+COMPLEXIDADE\+: O(n) 
+\begin{DoxyParams}{Parameters}
+{\em country} & string nome do país a considerar na contagem \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de aeroportos presentes no país dado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_a1f0ba854de9309ba81cd4202d4652a15}\label{class_data_a1f0ba854de9309ba81cd4202d4652a15}} 
+\index{Data@{Data}!nAirports2@{nAirports2}}
+\index{nAirports2@{nAirports2}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{nAirports2()}{nAirports2()}}
+{\footnotesize\ttfamily int Data\+::n\+Airports2 (\begin{DoxyParamCaption}\item[{string}]{city }\end{DoxyParamCaption})}
+
+Retorna o numero de aeroportos presentes na cidade dada.
+
+COMPLEXIDADE\+: O(n) 
+\begin{DoxyParams}{Parameters}
+{\em city} & string nome da cidade a considerar na contagem \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de aeroportos presentes na cidade dada. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_acdb96c187c958dba5103c798e937a8b4}\label{class_data_acdb96c187c958dba5103c798e937a8b4}} 
+\index{Data@{Data}!nCities1@{nCities1}}
+\index{nCities1@{nCities1}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{nCities1()}{nCities1()}}
+{\footnotesize\ttfamily int Data\+::n\+Cities1 (\begin{DoxyParamCaption}\item[{string}]{country }\end{DoxyParamCaption})}
+
+Retorna o numero de cidades presentes no país dado.
+
+COMPLEXIDADE\+: O(n) 
+\begin{DoxyParams}{Parameters}
+{\em country} & string nome do país a considerar na contagem \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de cidades presentes no país dado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_acbca7e362954f89f7b6dff14bc836777}\label{class_data_acbca7e362954f89f7b6dff14bc836777}} 
+\index{Data@{Data}!nDestinations1@{nDestinations1}}
+\index{nDestinations1@{nDestinations1}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{nDestinations1()}{nDestinations1()}}
+{\footnotesize\ttfamily int Data\+::n\+Destinations1 (\begin{DoxyParamCaption}\item[{string}]{country }\end{DoxyParamCaption})}
+
+Retorna o numero de destinos alcançaveis (aeroportos) a partir do país dado.
+
+COMPLEXIDADE\+: O(n) 
+\begin{DoxyParams}{Parameters}
+{\em country} & string nome do país a considerar na contagem \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de destinos alcançaveis (aeroportos) a partir do país dado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_afc724ca40dab51ac2eccd90498c8c5c2}\label{class_data_afc724ca40dab51ac2eccd90498c8c5c2}} 
+\index{Data@{Data}!nDestinations2@{nDestinations2}}
+\index{nDestinations2@{nDestinations2}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{nDestinations2()}{nDestinations2()}}
+{\footnotesize\ttfamily int Data\+::n\+Destinations2 (\begin{DoxyParamCaption}\item[{string}]{city }\end{DoxyParamCaption})}
+
+Retorna o numero de destinos alcancaveis(aeroportos) a partir da cidade dada.
+
+COMPLEXIDADE\+: O(n) 
+\begin{DoxyParams}{Parameters}
+{\em city} & string nome da cidade a considerar na contagem \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de destinos alcancaveis a partir da cidade dada. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_ab4e406eeac4676f63460b3a477c1bd6e}\label{class_data_ab4e406eeac4676f63460b3a477c1bd6e}} 
+\index{Data@{Data}!nDestinations3@{nDestinations3}}
+\index{nDestinations3@{nDestinations3}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{nDestinations3()}{nDestinations3()}}
+{\footnotesize\ttfamily int Data\+::n\+Destinations3 (\begin{DoxyParamCaption}\item[{string}]{airport }\end{DoxyParamCaption})}
+
+Retorna o numero de destinos (aeroportos) alcançaveis a partir do aeroporto dado.
+
+COMPLEXIDADE\+: O(1) 
+\begin{DoxyParams}{Parameters}
+{\em airport} & codigo do aeroporto que será considerado na contagem \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de destinos (aeroportos) alcançaveis a partir do aeroporto dado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_a982ec0beb9914f42afd1ec0477fa7284}\label{class_data_a982ec0beb9914f42afd1ec0477fa7284}} 
+\index{Data@{Data}!nDestinations4@{nDestinations4}}
+\index{nDestinations4@{nDestinations4}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{nDestinations4()}{nDestinations4()}}
+{\footnotesize\ttfamily int Data\+::n\+Destinations4 (\begin{DoxyParamCaption}\item[{string}]{airline }\end{DoxyParamCaption})}
+
+Retorna o numero de destinos alcançaveis (aeroportos) utilizando companhia dada.
+
+COMPLEXIDADE\+: O(n$^\wedge$2) 
+\begin{DoxyParams}{Parameters}
+{\em airline} & string codigo da companhia aerea a considerar na contagem \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de destinos alcançaveis (aeroportos) utilizando companhia dada. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_a5e731af731d4afc5982367d180bddc47}\label{class_data_a5e731af731d4afc5982367d180bddc47}} 
+\index{Data@{Data}!nFlights1@{nFlights1}}
+\index{nFlights1@{nFlights1}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{nFlights1()}{nFlights1()}}
+{\footnotesize\ttfamily int Data\+::n\+Flights1 (\begin{DoxyParamCaption}\item[{string}]{country }\end{DoxyParamCaption})}
+
+Retorna o numero de voos a partir do país dado.
+
+COMPLEXIDADE\+: O(n) 
+\begin{DoxyParams}{Parameters}
+{\em country} & string nome do país a considerar na contagem \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de voos a partir do país dado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_a6ae3c8baaf596f9f4e5827f1cbc9157d}\label{class_data_a6ae3c8baaf596f9f4e5827f1cbc9157d}} 
+\index{Data@{Data}!nFlights2@{nFlights2}}
+\index{nFlights2@{nFlights2}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{nFlights2()}{nFlights2()}}
+{\footnotesize\ttfamily int Data\+::n\+Flights2 (\begin{DoxyParamCaption}\item[{string}]{city }\end{DoxyParamCaption})}
+
+Retorna o numero de voos a partir da cidade dada.
+
+COMPLEXIDADE\+: O(n) 
+\begin{DoxyParams}{Parameters}
+{\em city} & string nome da cidade a considerar na contagem \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de voos a partir da cidade dada. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_a4fb06f18d55855c33bbcce34713809d8}\label{class_data_a4fb06f18d55855c33bbcce34713809d8}} 
+\index{Data@{Data}!nFlights3@{nFlights3}}
+\index{nFlights3@{nFlights3}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{nFlights3()}{nFlights3()}}
+{\footnotesize\ttfamily int Data\+::n\+Flights3 (\begin{DoxyParamCaption}\item[{string}]{airport }\end{DoxyParamCaption})}
+
+Retorna o numero de voos presentes no aeroporto dado.
+
+COMPLEXIDADE\+: O(1) 
+\begin{DoxyParams}{Parameters}
+{\em airport} & codigo do aeroporto que será considerado na contagem \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de voos presentes no aeroporto dado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_af5bed2aa6ef9791cdcf517ac69427b9f}\label{class_data_af5bed2aa6ef9791cdcf517ac69427b9f}} 
+\index{Data@{Data}!nFlights4@{nFlights4}}
+\index{nFlights4@{nFlights4}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{nFlights4()}{nFlights4()}}
+{\footnotesize\ttfamily int Data\+::n\+Flights4 (\begin{DoxyParamCaption}\item[{string}]{airline }\end{DoxyParamCaption})}
+
+Retorna o numero de voos que a companhia dada tem.
+
+COMPLEXIDADE\+: O(n$^\wedge$2) 
+\begin{DoxyParams}{Parameters}
+{\em airline} & string codigo da companhia aerea a considerar na contagem \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o nnumero de voos que a companhia dada tem. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_ae17d78f1df21dbb390e87f5f838f6a68}\label{class_data_ae17d78f1df21dbb390e87f5f838f6a68}} 
+\index{Data@{Data}!nFlightsFromAirportWithAirlines@{nFlightsFromAirportWithAirlines}}
+\index{nFlightsFromAirportWithAirlines@{nFlightsFromAirportWithAirlines}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{nFlightsFromAirportWithAirlines()}{nFlightsFromAirportWithAirlines()}}
+{\footnotesize\ttfamily int Data\+::n\+Flights\+From\+Airport\+With\+Airlines (\begin{DoxyParamCaption}\item[{string}]{airport,  }\item[{set$<$ string $>$}]{airlines }\end{DoxyParamCaption})}
+
+Retorna o numero de voos a partir de um dado aeroporto de uma ou mais companhias aéreas.
+
+COMPLEXIDADE\+: O(n$^\wedge$2) 
+\begin{DoxyParams}{Parameters}
+{\em airport} & string codigo do aeroporto a considerar na contagem \\
+\hline
+{\em airlines} & set de strings de codigos de companhia(s) aerea(s) a utilizar na contagem como filtros \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de voos a partir de um dado aeroporto de uma ou mais companhias aéreas. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_ada480eb9722e7a24ab33353426620b0a}\label{class_data_ada480eb9722e7a24ab33353426620b0a}} 
+\index{Data@{Data}!readFile\_airlines@{readFile\_airlines}}
+\index{readFile\_airlines@{readFile\_airlines}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{readFile\_airlines()}{readFile\_airlines()}}
+{\footnotesize\ttfamily void Data\+::read\+File\+\_\+airlines (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Função lê o ficheiro \char`\"{}airlines.\+csv\char`\"{} e cria os objetos do tipo \mbox{\hyperlink{class_airline}{Airline}}, guardando-\/os no unordered\+\_\+map.
+
+Complexidade\+: O(n$^\wedge$2) \mbox{\Hypertarget{class_data_a4cd22ae183274891a2204bee61676265}\label{class_data_a4cd22ae183274891a2204bee61676265}} 
+\index{Data@{Data}!readFile\_airports@{readFile\_airports}}
+\index{readFile\_airports@{readFile\_airports}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{readFile\_airports()}{readFile\_airports()}}
+{\footnotesize\ttfamily void Data\+::read\+File\+\_\+airports (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Função lê o ficheiro \char`\"{}airports.\+csv\char`\"{} e cria os objetos do tipo \mbox{\hyperlink{class_airport}{Airport}}, \mbox{\hyperlink{class_city}{City}} e \mbox{\hyperlink{struct_country}{Country}}, guardando-\/os nos respetivos unordered\+\_\+maps.
+
+Complexidade\+: O(n$^\wedge$2) \mbox{\Hypertarget{class_data_ad9c53da28c787ceeffa4c15c637a876d}\label{class_data_ad9c53da28c787ceeffa4c15c637a876d}} 
+\index{Data@{Data}!readFile\_flights@{readFile\_flights}}
+\index{readFile\_flights@{readFile\_flights}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{readFile\_flights()}{readFile\_flights()}}
+{\footnotesize\ttfamily void Data\+::read\+File\+\_\+flights (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Função lê o ficheiro \char`\"{}flights.\+csv\char`\"{} e cria o grafo que guarda os voos, tendo como nós os aeroportos e as edges os voos.
+
+Complexidade\+: O(n$^\wedge$2) \mbox{\Hypertarget{class_data_ac668078e7be6f2e44b972579ff61263a}\label{class_data_ac668078e7be6f2e44b972579ff61263a}} 
+\index{Data@{Data}!topKairports@{topKairports}}
+\index{topKairports@{topKairports}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{topKairports()}{topKairports()}}
+{\footnotesize\ttfamily vector$<$ string $>$ Data\+::top\+Kairports (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})}
+
+Calcula o os K aeroportos com mais voos
+
+Complexidade\+: O(nlog(n)) \begin{DoxyReturn}{Returns}
+vetor com K aeroportos com mais voos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_ae4e05fd5fe530fb422b7fb4d69500318}\label{class_data_ae4e05fd5fe530fb422b7fb4d69500318}} 
+\index{Data@{Data}!totalAirlines@{totalAirlines}}
+\index{totalAirlines@{totalAirlines}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{totalAirlines()}{totalAirlines()}}
+{\footnotesize\ttfamily int Data\+::total\+Airlines (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retorna o numero de companhias aereas presentes no grafo.
+
+COMPLEXIDADE\+: O(1)
+
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de companhias aereas presentes no grafo. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_aff07f5d7306e497e1927e91e58008575}\label{class_data_aff07f5d7306e497e1927e91e58008575}} 
+\index{Data@{Data}!totalAirports@{totalAirports}}
+\index{totalAirports@{totalAirports}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{totalAirports()}{totalAirports()}}
+{\footnotesize\ttfamily int Data\+::total\+Airports (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retorna o numero de aeroportos presentes no grafo.
+
+COMPLEXIDADE\+: O(1)
+
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de aeroportos no grafo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_af25ae6a920137e1724d40d8ff0fe5e3c}\label{class_data_af25ae6a920137e1724d40d8ff0fe5e3c}} 
+\index{Data@{Data}!totalCities@{totalCities}}
+\index{totalCities@{totalCities}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{totalCities()}{totalCities()}}
+{\footnotesize\ttfamily int Data\+::total\+Cities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retorna o numero de cidades presentes no grafo.
+
+COMPLEXIDADE\+: O(1)
+
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de cidades presentes no grafo. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_a6d6954a683593e59938a34dddeead81a}\label{class_data_a6d6954a683593e59938a34dddeead81a}} 
+\index{Data@{Data}!totalCountries@{totalCountries}}
+\index{totalCountries@{totalCountries}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{totalCountries()}{totalCountries()}}
+{\footnotesize\ttfamily int Data\+::total\+Countries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retorna o numero de paises presentes no grafo.
+
+COMPLEXIDADE\+: O(1)
+
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de paises presentes no grafo. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_ab383dceb6f21b16bff75e809d23470eb}\label{class_data_ab383dceb6f21b16bff75e809d23470eb}} 
+\index{Data@{Data}!totalFlights@{totalFlights}}
+\index{totalFlights@{totalFlights}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{totalFlights()}{totalFlights()}}
+{\footnotesize\ttfamily int Data\+::total\+Flights (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retorna o numero de voos presentes no grafo.
+
+COMPLEXIDADE\+: O(1)
+
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de voos presentes no grafo. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Data.\+h\item 
+Data.\+cpp\item 
+Statistics.\+cpp\end{DoxyCompactItemize}
