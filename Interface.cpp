@@ -14,7 +14,7 @@ Interface::Interface() = default;
  */
 void Interface::welcomePage() {
     cout << endl << "=========WELCOME PAGE=========" << endl;
-    cout << endl << "Options:\n\t1-Get flights\n\t2-Get statistics\n\t3-Airport methods\n\t4-Credits\n\te-Exit"<<endl;
+    cout << endl << "Options:\n\t1-Get flights\n\t2-Get statistics\n\t3-Airport methods\n\t4-Other informations\n\t5-Credits\n\te-Exit"<<endl;
     char input;
     while (true){
         cout << "Choose option:";
@@ -31,6 +31,9 @@ void Interface::welcomePage() {
                 getApMethods();
                 return welcomePage();
             case ('4'):
+                otherInfo();
+                return welcomePage();
+            case ('5'):
                 credits();
                 return welcomePage();
             case ('e'):
@@ -242,7 +245,7 @@ void Interface::getStatistics(){
                 airportStatistic();
                 return getStatistics();
             case ('b'):
-                return;
+                return welcomePage();
             case ('e'):
                 return exitProgram();
 
@@ -487,6 +490,68 @@ void Interface::airportStatistic(){ //DONE
                 cout << "Number of destinations:" << d_.nDestinations3(ap) << endl;
                 lastPage();
                 return getStatistics();
+            case ('b'):
+                return;
+            case ('e'):
+                return exitProgram();
+
+            default:
+                cout << endl << "Not a valid option" << endl;
+        }
+    }
+}
+void Interface::otherInfo(){ //DONE
+    cout << endl << "=========OTHER INFORMATIONS=========" << endl;
+    cout << endl;
+
+    cout << endl << "What do you want to know:" << endl;
+    cout << endl << "Options:\n\t1-Diameter\n\t2-Airports with top-K number of flights\n\t3-Articulation Points\n\tb-Back\n\te-Exit"<<endl;
+
+    char option;
+    string k;
+    vector<string> filters = {};
+    bool flag3 = true;
+    while (true){
+        cout << "Choose option:";
+        cin >> option;
+
+        switch (option) {
+            case ('1'):
+                cout << "The diameter of the graph is: " << d_.diameter() << endl;
+                lastPage();
+                return otherInfo();
+            case ('2'):
+                cout << "How many airports with most flights?";
+                cin >> k;
+                cout << "Top-" << k << " airports with most flights: " ;
+                for (auto a: d_.topKairports(stoi(k))){
+                    cout << a << " | " ;
+                }
+                cout << endl;
+                lastPage();
+                return otherInfo();
+            case ('3'):
+                cout << "Do you want an airline filter?" << endl;
+                cout << endl << "Options:\n\t1-Yes\n\t2-No\n\t" <<endl;
+                char yn;
+                while(flag3) {
+                    cout << "Choose option:";
+                    cin >> yn;
+                    switch (yn) {
+                        case ('1'):
+                            filters = createVec();
+                            flag3 = 0;
+                            break;
+                        case ('2'):
+                            flag3 = 0;
+                            break;
+                        default:
+                            cout << "Not a valid option." << endl;
+                    }
+                }
+                d_.printArtPoints(filters);
+                lastPage();
+                return otherInfo();
             case ('b'):
                 return;
             case ('e'):

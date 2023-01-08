@@ -36,6 +36,7 @@ public:
     void airportStatistic();
     void lastPage() const;
     vector<string> createVec();
+    void otherInfo();
 
 };
 

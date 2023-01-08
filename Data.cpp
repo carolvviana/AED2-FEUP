@@ -247,14 +247,17 @@ string Data :: coord2Airport(string c){
 
 }*/
 string Data :: coord2Airport(string c){
-    vector<pair<string, Coordinate>> airportCoord(airportCoord_);
     string v = ",";
     size_t pos = c.find(v);
     Coordinate co = Coordinate(stod(c.substr(0, pos)), stod(c.substr(pos+1)));
+    pair<string, double> min_dist_airport = {airportCoord_[0].first, co.distance_between_coordinates(airportCoord_[0].second)};
 
-
-
+    for (auto p: airportCoord_){
+        if (p.second.distance_between_coordinates(co) <= min_dist_airport.second) min_dist_airport =  {p.first, co.distance_between_coordinates(p.second)};
+    }
+    return min_dist_airport.first;
 }
+
 vector<string> Data :: coord2AirportWithDistance(string c, int x){
     vector<string> r;
     string v = ",";
@@ -316,14 +319,63 @@ void Data::flight(string origin, string dest, int oType, int dType, vector<strin
     }
 
 }
+int Data::diameter(){
+    int max_distance = 0;
+    for (auto a : airports_){
+        flightG->bfs(a.first);
+        for (auto b : airports_){
+            if (flightG->nodeAt(b.first).distance > max_distance) max_distance = flightG->nodeAt(b.first).distance;
+        }
+    }
+    return max_distance;
+}
 
-    int Data::diameter(){
-        int max_distance = 0;
-        for (auto a : airports_){
-            flightG->bfs(a.first);
-            for (auto b : airports_){
-                if (flightG->nodeAt(b.first).distance > max_distance) max_distance = flightG->nodeAt(b.first).distance;
+struct {
+    bool operator()(pair<string, int> p1, pair<string, int> p2){
+        return p1.second < p2.second;
+    }
+} compTopK;
+
+vector<string> Data :: topKairports(int k){
+    vector<string> res;
+    vector<pair<string, int>> nAirports;
+    for (auto p: airports_){
+        nAirports.push_back({p.first, flightG->nodeAt(p.first).adj.size()});
+    }
+    sort(nAirports.begin(), nAirports.end(), compTopK);
+    for (int i = 0; i<k; i++){
+        res.push_back(nAirports[i].first);
+    }
+    return res;
+}
+
+void Data :: printArtPoints(vector<string> airlines){
+    if (airlines.empty()){
+        vector<string> artPoints;
+        stack<string> s; int index = 1;
+        for (auto p: airports_){
+            if (!flightG->nodeAt(p.first).visited){
+                flightG->dfs_articulationPoints(p.first, true, artPoints, s, index);
             }
         }
-        return max_distance;
+        cout << "Number of articulation points: " << artPoints.size() << endl;
+        cout << "The articulation points are: ";
+        for (int i = 0; i<artPoints.size(); i++){
+            cout << artPoints[i] << " | ";
+        }
     }
+    else{
+        vector<string> artPoints;
+        stack<string> s; int index = 1;
+        for (auto p: airports_){
+            if (!flightG->nodeAt(p.first).visited){
+                flightG->dfs_articulationPointsWithAirline(p.first, true, artPoints, s, index, airlines);
+            }
+        }
+        cout << "Number of articulation points with airline filters: " << artPoints.size() << endl;
+        cout << "The articulation points are: ";
+        for (int i = 0; i<artPoints.size(); i++){
+            cout << artPoints[i] << " | ";
+        }
+    }
+}

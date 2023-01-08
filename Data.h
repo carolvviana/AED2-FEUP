@@ -40,8 +40,6 @@ public:
     unordered_map <string, Country*> getCountries();
     Graph* getFlightG();
 
-    //file reading methods
-
     /**
      * Função lê o ficheiro "airlines.csv" e cria os objetos do tipo Airline, guardando-os no unordered_map.
      *
@@ -85,7 +83,7 @@ public:
     /**
      * Retorna os código do aeroporto mais próximo da coordenada dada.
      *
-     * Complexidade: O(nlog(n))
+     * Complexidade: O(n)
      * @param c string coordenada
      * @return codigo do aeroporto mais próximo da coordenada dada
      */
@@ -145,7 +143,25 @@ public:
     set<string> getDifDestinations(string airport);
 
     int nFlightsFromAirportWithAirlines(string airport, set<string> airline);
+
+
+    /**
+ * Calcula o diametro do grafo
+ *
+ * Complexidade: O(n^2(|V|+|E|))
+ * @return diametro do grafo
+ */
     int diameter();
+
+
+    /**
+ * Calcula o os K aeroportos com mais voos
+ *
+ * Complexidade: O(nlog(n))
+ * @return vetor com K aeroportos com mais voos
+ */
+    vector<string> topKairports(int k);
+    void printArtPoints(vector<string> airlines);
 };
 
 

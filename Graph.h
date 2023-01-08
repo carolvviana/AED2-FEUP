@@ -6,6 +6,7 @@
 #include <list>
 #include <unordered_map>
 #include <limits>
+#include <stack>
 #include "Airport.h"
 
 using namespace std;
@@ -34,6 +35,9 @@ class Graph {
         bool visited; // As the node been visited on a search?
         int distance;
         string parent;
+        int num;
+        int low;
+        bool stacked;
     };
 
     int n;
@@ -117,9 +121,6 @@ public:
      */
     void clear();
 
-
-   // void print();
-
     /**
     * Retorna a distancia entre uma origem e um destino.
     *
@@ -128,7 +129,7 @@ public:
     * @param origin string código do aeroporto de origem
      * @return distancia em valor inteiro entre os dois aeroportos
     */
-    int distance(string origin, string dest);
+    //int distance(string origin, string dest);
 
     /**
      * Retorna o vetor com o percurso mais adequado entre o aeroporto de origem e de destino
@@ -181,7 +182,36 @@ public:
      * @param d
      * @return
      */
-    vector<string> dfs(const string& cAp, bool firstIteration, int& distance, vector<string>& path, vector<vector<string>>& paths, const string& destAp, int d);
+    //vector<string> dfs(const string& cAp, bool firstIteration, int& distance, vector<string>& path, vector<vector<string>>& paths, const string& destAp, int d);
+
+    /**
+ * Realiza a Depth-First search no grafo preenchido com os voos e destinos, assinalando os Pontos de Articulação da Rede.
+ *
+ * COMPLEXIDADE: O(|V| + |E|),  |V| sendo o número de nós do grafo e |E| o número de arestas (edges) do grafo
+ *
+ * @param cAp string codigo do aeroporto de partida
+ * @param firstIteration valor booleano que indica se é a primeira iteração ou não
+ * @param artPoints pontos de articulação identificados
+ * @param s stack auxiliar para o dfs
+ * @param index ordem de visita dos nodes
+ * @return vector de strings com os nomes dos pontos de articulação do grafo (Aeroportos)
+ */
+    vector<string> dfs_articulationPoints(const string& cAp, bool firstIteration, vector<string>& artPoints, stack<string>& s, int& index);
+
+    /**
+* Realiza a Depth-First search no grafo preenchido com os voos e destinos, assinalando os Pontos de Articulação da Rede considerando apenas um subconjunto de companhias.
+*
+* COMPLEXIDADE: O(|V| + |E|),  |V| sendo o número de nós do grafo e |E| o número de arestas (edges) do grafo
+*
+* @param cAp string codigo do aeroporto de partida
+* @param firstIteration valor booleano que indica se é a primeira iteração ou não
+* @param artPoints pontos de articulação identificados
+* @param s stack auxiliar para o dfs
+* @param index ordem de visita dos nodes
+* @param airlines companhias selecionadas pelo utilizador
+* @return vector de strings com os nomes dos pontos de articulação do grafo (Aeroportos)
+*/
+    vector<string> dfs_articulationPointsWithAirline(const string& cAp, bool firstIteration, vector<string>& artPoints, stack<string>& s, int& index, vector<string> airlines);
 
 };
 

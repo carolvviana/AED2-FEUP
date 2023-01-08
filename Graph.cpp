@@ -285,7 +285,7 @@ vector<string> Graph::dfs(const string& cAp, bool firstIteration, int& distance,
     }
 }
 */
-vector<string> Graph::dfs(const string& cAp, bool firstIteration, int& distance, vector<string>& path, vector<vector<string>>& paths, const string& destAp, int d) {
+/*vector<string> Graph::dfs(const string& cAp, bool firstIteration, int& distance, vector<string>& path, vector<vector<string>>& paths, const string& destAp, int d) {
     if (firstIteration) { this->unvisit();}
 
     Node& cNode = nodes[cAp];
@@ -306,6 +306,60 @@ vector<string> Graph::dfs(const string& cAp, bool firstIteration, int& distance,
         path.push_back(dAp);
         if (distance > 0 && !dNode.visited)
             dfs(dAp, false, distance, path, paths, destAp, d);
+    }
+}*/
+vector<string> Graph::dfs_articulationPoints(const string& cAp, bool firstIteration, vector<string>& artPoints, stack<string>& s, int& index) {
+    if (firstIteration) { this->unvisit();}
+    bool art_point = false;
+
+    Node& cNode = nodes[cAp];
+    cNode.visited = true; cNode.num = index; cNode.low = index; s.push(cAp); cNode.stacked = true; index++;
+
+    int children = 0;
+
+    for (const auto& e : cNode.adj) {
+        string dAp = e.dest;
+        Node& dNode = nodes[dAp];
+        if (!dNode.visited){
+            children++;
+            dfs_articulationPoints(dAp, false, artPoints, s, index);
+            cNode.low = min(cNode.low, dNode.low);
+            if (dNode.low >= cNode.num){
+                art_point = true;
+            }
+        }
+        else if (dNode.stacked){ cNode.low = min(cNode.low, dNode.num);}
+    }
+    if ((cNode.num == cNode.low && children > 1) || (cNode.num != cNode.low && art_point)){
+        artPoints.push_back(cNode.airport->getName());
+    }
+}
+vector<string> Graph::dfs_articulationPointsWithAirline(const string& cAp, bool firstIteration, vector<string>& artPoints, stack<string>& s, int& index, vector<string> airlines) {
+    if (firstIteration) { this->unvisit();}
+    bool art_point = false;
+
+    Node& cNode = nodes[cAp];
+    cNode.visited = true; cNode.num = index; cNode.low = index; s.push(cAp); cNode.stacked = true; index++;
+
+    int children = 0;
+
+    for (const auto& e : cNode.adj) {
+        if (find(airlines.begin(), airlines.end(), e.airline) != airlines.end())
+        {
+            string dAp = e.dest;
+            Node &dNode = nodes[dAp];
+            if (!dNode.visited) {
+                children++;
+                dfs_articulationPointsWithAirline(dAp, false, artPoints, s, index, airlines);
+                cNode.low = min(cNode.low, dNode.low);
+                if (dNode.low >= cNode.num) {
+                    art_point = true;
+                }
+            } else if (dNode.stacked) { cNode.low = min(cNode.low, dNode.num); }
+        }
+    }
+    if ((cNode.num == cNode.low && children > 1) || (cNode.num != cNode.low && art_point)){
+        artPoints.push_back(cNode.airport->getName());
     }
 }
 
