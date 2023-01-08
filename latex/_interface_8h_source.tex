@@ -1,49 +1,42 @@
 \hypertarget{_interface_8h_source}{}\doxysection{Interface.\+h}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{comment}{//}}
-\DoxyCodeLine{2 \textcolor{comment}{// Created by carol on 13/12/2022.}}
-\DoxyCodeLine{3 \textcolor{comment}{//}}
-\DoxyCodeLine{4 }
-\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef AEDP2\_INTERFACE\_H}}
-\DoxyCodeLine{6 \textcolor{preprocessor}{\#define AEDP2\_INTERFACE\_H}}
-\DoxyCodeLine{7 }
-\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}Data.h"{}}}
-\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}ApMethods.h"{}}}
-\DoxyCodeLine{10 }
-\DoxyCodeLine{11 \textcolor{keyword}{using namespace }std;}
-\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_interface}{Interface}} \{}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef AEDP2\_INTERFACE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define AEDP2\_INTERFACE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}Data.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}ApMethods.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_interface}{Interface}} \{}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{11     \mbox{\hyperlink{class_data}{Data}} d\_;}
+\DoxyCodeLine{12     \mbox{\hyperlink{class_ap_methods}{ApMethods}} apm\_;}
 \DoxyCodeLine{13 }
-\DoxyCodeLine{14 \textcolor{keyword}{public}:}
-\DoxyCodeLine{15     \mbox{\hyperlink{class_data}{Data}} d\_;}
-\DoxyCodeLine{16     \mbox{\hyperlink{class_ap_methods}{ApMethods}} apm\_;}
-\DoxyCodeLine{17 }
-\DoxyCodeLine{18     \textcolor{keywordtype}{void} setData(\mbox{\hyperlink{class_data}{Data}} d)\{d\_ = d;\}}
-\DoxyCodeLine{19     \textcolor{keywordtype}{void} setApm(\mbox{\hyperlink{class_ap_methods}{ApMethods}} apm)\{apm\_=apm;\}}
-\DoxyCodeLine{20     \mbox{\hyperlink{class_interface}{Interface}}();}
-\DoxyCodeLine{21     \textcolor{comment}{//Data getData()\{return d;\}}}
-\DoxyCodeLine{22     \textcolor{comment}{//0}}
-\DoxyCodeLine{23     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_a4093ff931d12a9261cbcb181cbe418e5}{welcomePage}}();}
-\DoxyCodeLine{24     \textcolor{comment}{//1}}
-\DoxyCodeLine{25     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_a34546161b2d710adf574dd1a87f9a53a}{getFlights}}();}
-\DoxyCodeLine{26     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_aeda2dc8fd7f31dff4f4c3f9194ca7323}{credits}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{27 }
-\DoxyCodeLine{28     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_a228026f980cf710614a42021d68fed6c}{exitProgram}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{29     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_a8f8ebc689d935f6964fa3520959b101c}{getStatistics}}();}
-\DoxyCodeLine{30     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_abeb9076b5638716dc4386a34061ee4bf}{getApMethods}}();}
-\DoxyCodeLine{31 }
-\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_a329aa6afc660a0b2106739b9cf7ec32c}{globalStatistic}}();}
-\DoxyCodeLine{33     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_a320e52d4ad2bde98bb1eab4c75f22317}{countryStatistic}}();}
-\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_a2e28f6b162d0095c401ec4c023d4b866}{cityStatistic}}();}
-\DoxyCodeLine{35     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_ab5f991c7438c61cfe569311c27bf294d}{airlineStatistic}}();}
-\DoxyCodeLine{36     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_aafbbf0705fa98058f883b80cf2b14c14}{airportStatistic}}();}
-\DoxyCodeLine{37     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_a221309fdb8d797aa3fad317a360556e6}{lastPage}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{38     vector<string> \mbox{\hyperlink{class_interface_ab771fb2d15295b77188de9e27ad4e45d}{createVec}}();}
-\DoxyCodeLine{39     \textcolor{keywordtype}{void} otherInfo();}
-\DoxyCodeLine{40 }
-\DoxyCodeLine{41 \};}
-\DoxyCodeLine{42 }
-\DoxyCodeLine{43 }
-\DoxyCodeLine{44 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//AEDP2\_INTERFACE\_H}}
+\DoxyCodeLine{14     \textcolor{keywordtype}{void} setData(\mbox{\hyperlink{class_data}{Data}} d)\{d\_ = d;\}}
+\DoxyCodeLine{15     \textcolor{keywordtype}{void} setApm(\mbox{\hyperlink{class_ap_methods}{ApMethods}} apm)\{apm\_=apm;\}}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_interface}{Interface}}();}
+\DoxyCodeLine{17     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_a4093ff931d12a9261cbcb181cbe418e5}{welcomePage}}();}
+\DoxyCodeLine{18     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_a34546161b2d710adf574dd1a87f9a53a}{getFlights}}();}
+\DoxyCodeLine{19     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_aeda2dc8fd7f31dff4f4c3f9194ca7323}{credits}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_a228026f980cf710614a42021d68fed6c}{exitProgram}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_a8f8ebc689d935f6964fa3520959b101c}{getStatistics}}();}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_abeb9076b5638716dc4386a34061ee4bf}{getApMethods}}();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_a329aa6afc660a0b2106739b9cf7ec32c}{globalStatistic}}();}
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_a320e52d4ad2bde98bb1eab4c75f22317}{countryStatistic}}();}
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_a2e28f6b162d0095c401ec4c023d4b866}{cityStatistic}}();}
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_ab5f991c7438c61cfe569311c27bf294d}{airlineStatistic}}();}
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_aafbbf0705fa98058f883b80cf2b14c14}{airportStatistic}}();}
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_a221309fdb8d797aa3fad317a360556e6}{lastPage}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{31     vector<string> \mbox{\hyperlink{class_interface_ab771fb2d15295b77188de9e27ad4e45d}{createVec}}();}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_interface_a44c0fa09b7e398fd9e3d5e3b98c89e74}{otherInfo}}();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//AEDP2\_INTERFACE\_H}}
 
 \end{DoxyCode}

@@ -72,66 +72,60 @@ $(function() {
   <div class="headertitle"><div class="title">Interface.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by carol on 13/12/2022.</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef AEDP2_INTERFACE_H</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define AEDP2_INTERFACE_H</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;Data.h&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;ApMethods.h&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">using namespace </span>std;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_interface.html">   12</a></span><span class="keyword">class </span><a class="code hl_class" href="class_interface.html">Interface</a> {</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef AEDP2_INTERFACE_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define AEDP2_INTERFACE_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;Data.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;ApMethods.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_interface.html">    8</a></span><span class="keyword">class </span><a class="code hl_class" href="class_interface.html">Interface</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_class" href="class_data.html">Data</a> d_;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_class" href="class_ap_methods.html">ApMethods</a> apm_;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_class" href="class_data.html">Data</a> d_;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="class_ap_methods.html">ApMethods</a> apm_;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">void</span> setData(<a class="code hl_class" href="class_data.html">Data</a> d){d_ = d;}</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">void</span> setApm(<a class="code hl_class" href="class_ap_methods.html">ApMethods</a> apm){apm_=apm;}</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_class" href="class_interface.html">Interface</a>();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">//Data getData(){return d;}</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">//0</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#a4093ff931d12a9261cbcb181cbe418e5">welcomePage</a>();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">//1</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#a34546161b2d710adf574dd1a87f9a53a">getFlights</a>();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#aeda2dc8fd7f31dff4f4c3f9194ca7323">credits</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#a228026f980cf710614a42021d68fed6c">exitProgram</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#a8f8ebc689d935f6964fa3520959b101c">getStatistics</a>();</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#abeb9076b5638716dc4386a34061ee4bf">getApMethods</a>();</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#a329aa6afc660a0b2106739b9cf7ec32c">globalStatistic</a>();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#a320e52d4ad2bde98bb1eab4c75f22317">countryStatistic</a>();</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#a2e28f6b162d0095c401ec4c023d4b866">cityStatistic</a>();</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#ab5f991c7438c61cfe569311c27bf294d">airlineStatistic</a>();</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#aafbbf0705fa98058f883b80cf2b14c14">airportStatistic</a>();</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#a221309fdb8d797aa3fad317a360556e6">lastPage</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    vector&lt;string&gt; <a class="code hl_function" href="class_interface.html#ab771fb2d15295b77188de9e27ad4e45d">createVec</a>();</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> otherInfo();</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif </span><span class="comment">//AEDP2_INTERFACE_H</span></div>
-<div class="ttc" id="aclass_ap_methods_html"><div class="ttname"><a href="class_ap_methods.html">ApMethods</a></div><div class="ttdef"><b>Definition:</b> ApMethods.h:14</div></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">void</span> setData(<a class="code hl_class" href="class_data.html">Data</a> d){d_ = d;}</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">void</span> setApm(<a class="code hl_class" href="class_ap_methods.html">ApMethods</a> apm){apm_=apm;}</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="class_interface.html">Interface</a>();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#a4093ff931d12a9261cbcb181cbe418e5">welcomePage</a>();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#a34546161b2d710adf574dd1a87f9a53a">getFlights</a>();</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#aeda2dc8fd7f31dff4f4c3f9194ca7323">credits</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#a228026f980cf710614a42021d68fed6c">exitProgram</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#a8f8ebc689d935f6964fa3520959b101c">getStatistics</a>();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#abeb9076b5638716dc4386a34061ee4bf">getApMethods</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#a329aa6afc660a0b2106739b9cf7ec32c">globalStatistic</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#a320e52d4ad2bde98bb1eab4c75f22317">countryStatistic</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#a2e28f6b162d0095c401ec4c023d4b866">cityStatistic</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#ab5f991c7438c61cfe569311c27bf294d">airlineStatistic</a>();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#aafbbf0705fa98058f883b80cf2b14c14">airportStatistic</a>();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#a221309fdb8d797aa3fad317a360556e6">lastPage</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    vector&lt;string&gt; <a class="code hl_function" href="class_interface.html#ab771fb2d15295b77188de9e27ad4e45d">createVec</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_interface.html#a44c0fa09b7e398fd9e3d5e3b98c89e74">otherInfo</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>};</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#endif </span><span class="comment">//AEDP2_INTERFACE_H</span></div>
+<div class="ttc" id="aclass_ap_methods_html"><div class="ttname"><a href="class_ap_methods.html">ApMethods</a></div><div class="ttdef"><b>Definition:</b> ApMethods.h:10</div></div>
 <div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdef"><b>Definition:</b> Data.h:24</div></div>
-<div class="ttc" id="aclass_interface_html"><div class="ttname"><a href="class_interface.html">Interface</a></div><div class="ttdef"><b>Definition:</b> Interface.h:12</div></div>
-<div class="ttc" id="aclass_interface_html_a221309fdb8d797aa3fad317a360556e6"><div class="ttname"><a href="class_interface.html#a221309fdb8d797aa3fad317a360556e6">Interface::lastPage</a></div><div class="ttdeci">void lastPage() const</div><div class="ttdef"><b>Definition:</b> Interface.cpp:628</div></div>
-<div class="ttc" id="aclass_interface_html_a228026f980cf710614a42021d68fed6c"><div class="ttname"><a href="class_interface.html#a228026f980cf710614a42021d68fed6c">Interface::exitProgram</a></div><div class="ttdeci">void exitProgram() const</div><div class="ttdef"><b>Definition:</b> Interface.cpp:755</div></div>
-<div class="ttc" id="aclass_interface_html_a2e28f6b162d0095c401ec4c023d4b866"><div class="ttname"><a href="class_interface.html#a2e28f6b162d0095c401ec4c023d4b866">Interface::cityStatistic</a></div><div class="ttdeci">void cityStatistic()</div><div class="ttdef"><b>Definition:</b> Interface.cpp:367</div></div>
-<div class="ttc" id="aclass_interface_html_a320e52d4ad2bde98bb1eab4c75f22317"><div class="ttname"><a href="class_interface.html#a320e52d4ad2bde98bb1eab4c75f22317">Interface::countryStatistic</a></div><div class="ttdeci">void countryStatistic()</div><div class="ttdef"><b>Definition:</b> Interface.cpp:312</div></div>
-<div class="ttc" id="aclass_interface_html_a329aa6afc660a0b2106739b9cf7ec32c"><div class="ttname"><a href="class_interface.html#a329aa6afc660a0b2106739b9cf7ec32c">Interface::globalStatistic</a></div><div class="ttdeci">void globalStatistic()</div><div class="ttdef"><b>Definition:</b> Interface.cpp:264</div></div>
-<div class="ttc" id="aclass_interface_html_a34546161b2d710adf574dd1a87f9a53a"><div class="ttname"><a href="class_interface.html#a34546161b2d710adf574dd1a87f9a53a">Interface::getFlights</a></div><div class="ttdeci">void getFlights()</div><div class="ttdef"><b>Definition:</b> Interface.cpp:54</div></div>
-<div class="ttc" id="aclass_interface_html_a4093ff931d12a9261cbcb181cbe418e5"><div class="ttname"><a href="class_interface.html#a4093ff931d12a9261cbcb181cbe418e5">Interface::welcomePage</a></div><div class="ttdeci">void welcomePage()</div><div class="ttdef"><b>Definition:</b> Interface.cpp:15</div></div>
-<div class="ttc" id="aclass_interface_html_a8f8ebc689d935f6964fa3520959b101c"><div class="ttname"><a href="class_interface.html#a8f8ebc689d935f6964fa3520959b101c">Interface::getStatistics</a></div><div class="ttdeci">void getStatistics()</div><div class="ttdef"><b>Definition:</b> Interface.cpp:220</div></div>
-<div class="ttc" id="aclass_interface_html_aafbbf0705fa98058f883b80cf2b14c14"><div class="ttname"><a href="class_interface.html#aafbbf0705fa98058f883b80cf2b14c14">Interface::airportStatistic</a></div><div class="ttdeci">void airportStatistic()</div><div class="ttdef"><b>Definition:</b> Interface.cpp:461</div></div>
-<div class="ttc" id="aclass_interface_html_ab5f991c7438c61cfe569311c27bf294d"><div class="ttname"><a href="class_interface.html#ab5f991c7438c61cfe569311c27bf294d">Interface::airlineStatistic</a></div><div class="ttdeci">void airlineStatistic()</div><div class="ttdef"><b>Definition:</b> Interface.cpp:418</div></div>
-<div class="ttc" id="aclass_interface_html_ab771fb2d15295b77188de9e27ad4e45d"><div class="ttname"><a href="class_interface.html#ab771fb2d15295b77188de9e27ad4e45d">Interface::createVec</a></div><div class="ttdeci">vector&lt; string &gt; createVec()</div><div class="ttdef"><b>Definition:</b> Interface.cpp:602</div></div>
-<div class="ttc" id="aclass_interface_html_abeb9076b5638716dc4386a34061ee4bf"><div class="ttname"><a href="class_interface.html#abeb9076b5638716dc4386a34061ee4bf">Interface::getApMethods</a></div><div class="ttdeci">void getApMethods()</div><div class="ttdef"><b>Definition:</b> Interface.cpp:651</div></div>
-<div class="ttc" id="aclass_interface_html_aeda2dc8fd7f31dff4f4c3f9194ca7323"><div class="ttname"><a href="class_interface.html#aeda2dc8fd7f31dff4f4c3f9194ca7323">Interface::credits</a></div><div class="ttdeci">void credits() const</div><div class="ttdef"><b>Definition:</b> Interface.cpp:572</div></div>
+<div class="ttc" id="aclass_interface_html"><div class="ttname"><a href="class_interface.html">Interface</a></div><div class="ttdef"><b>Definition:</b> Interface.h:8</div></div>
+<div class="ttc" id="aclass_interface_html_a221309fdb8d797aa3fad317a360556e6"><div class="ttname"><a href="class_interface.html#a221309fdb8d797aa3fad317a360556e6">Interface::lastPage</a></div><div class="ttdeci">void lastPage() const</div><div class="ttdef"><b>Definition:</b> Interface.cpp:629</div></div>
+<div class="ttc" id="aclass_interface_html_a228026f980cf710614a42021d68fed6c"><div class="ttname"><a href="class_interface.html#a228026f980cf710614a42021d68fed6c">Interface::exitProgram</a></div><div class="ttdeci">void exitProgram() const</div><div class="ttdef"><b>Definition:</b> Interface.cpp:756</div></div>
+<div class="ttc" id="aclass_interface_html_a2e28f6b162d0095c401ec4c023d4b866"><div class="ttname"><a href="class_interface.html#a2e28f6b162d0095c401ec4c023d4b866">Interface::cityStatistic</a></div><div class="ttdeci">void cityStatistic()</div><div class="ttdef"><b>Definition:</b> Interface.cpp:364</div></div>
+<div class="ttc" id="aclass_interface_html_a320e52d4ad2bde98bb1eab4c75f22317"><div class="ttname"><a href="class_interface.html#a320e52d4ad2bde98bb1eab4c75f22317">Interface::countryStatistic</a></div><div class="ttdeci">void countryStatistic()</div><div class="ttdef"><b>Definition:</b> Interface.cpp:309</div></div>
+<div class="ttc" id="aclass_interface_html_a329aa6afc660a0b2106739b9cf7ec32c"><div class="ttname"><a href="class_interface.html#a329aa6afc660a0b2106739b9cf7ec32c">Interface::globalStatistic</a></div><div class="ttdeci">void globalStatistic()</div><div class="ttdef"><b>Definition:</b> Interface.cpp:261</div></div>
+<div class="ttc" id="aclass_interface_html_a34546161b2d710adf574dd1a87f9a53a"><div class="ttname"><a href="class_interface.html#a34546161b2d710adf574dd1a87f9a53a">Interface::getFlights</a></div><div class="ttdeci">void getFlights()</div><div class="ttdef"><b>Definition:</b> Interface.cpp:53</div></div>
+<div class="ttc" id="aclass_interface_html_a4093ff931d12a9261cbcb181cbe418e5"><div class="ttname"><a href="class_interface.html#a4093ff931d12a9261cbcb181cbe418e5">Interface::welcomePage</a></div><div class="ttdeci">void welcomePage()</div><div class="ttdef"><b>Definition:</b> Interface.cpp:14</div></div>
+<div class="ttc" id="aclass_interface_html_a44c0fa09b7e398fd9e3d5e3b98c89e74"><div class="ttname"><a href="class_interface.html#a44c0fa09b7e398fd9e3d5e3b98c89e74">Interface::otherInfo</a></div><div class="ttdeci">void otherInfo()</div><div class="ttdef"><b>Definition:</b> Interface.cpp:505</div></div>
+<div class="ttc" id="aclass_interface_html_a8f8ebc689d935f6964fa3520959b101c"><div class="ttname"><a href="class_interface.html#a8f8ebc689d935f6964fa3520959b101c">Interface::getStatistics</a></div><div class="ttdeci">void getStatistics()</div><div class="ttdef"><b>Definition:</b> Interface.cpp:218</div></div>
+<div class="ttc" id="aclass_interface_html_aafbbf0705fa98058f883b80cf2b14c14"><div class="ttname"><a href="class_interface.html#aafbbf0705fa98058f883b80cf2b14c14">Interface::airportStatistic</a></div><div class="ttdeci">void airportStatistic()</div><div class="ttdef"><b>Definition:</b> Interface.cpp:458</div></div>
+<div class="ttc" id="aclass_interface_html_ab5f991c7438c61cfe569311c27bf294d"><div class="ttname"><a href="class_interface.html#ab5f991c7438c61cfe569311c27bf294d">Interface::airlineStatistic</a></div><div class="ttdeci">void airlineStatistic()</div><div class="ttdef"><b>Definition:</b> Interface.cpp:415</div></div>
+<div class="ttc" id="aclass_interface_html_ab771fb2d15295b77188de9e27ad4e45d"><div class="ttname"><a href="class_interface.html#ab771fb2d15295b77188de9e27ad4e45d">Interface::createVec</a></div><div class="ttdeci">vector&lt; string &gt; createVec()</div><div class="ttdef"><b>Definition:</b> Interface.cpp:604</div></div>
+<div class="ttc" id="aclass_interface_html_abeb9076b5638716dc4386a34061ee4bf"><div class="ttname"><a href="class_interface.html#abeb9076b5638716dc4386a34061ee4bf">Interface::getApMethods</a></div><div class="ttdeci">void getApMethods()</div><div class="ttdef"><b>Definition:</b> Interface.cpp:652</div></div>
+<div class="ttc" id="aclass_interface_html_aeda2dc8fd7f31dff4f4c3f9194ca7323"><div class="ttname"><a href="class_interface.html#aeda2dc8fd7f31dff4f4c3f9194ca7323">Interface::credits</a></div><div class="ttdeci">void credits() const</div><div class="ttdef"><b>Definition:</b> Interface.cpp:574</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -72,56 +72,52 @@ $(function() {
   <div class="headertitle"><div class="title">ApMethods.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by User on 27/12/2022.</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef AEDP2_APMETHODS_H</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define AEDP2_APMETHODS_H</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;Airport.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;Graph.h&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;Data.h&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">using namespace </span>std;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_ap_methods.html">   14</a></span><span class="keyword">class </span><a class="code hl_class" href="class_ap_methods.html">ApMethods</a> {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="class_data.html">Data</a> d_ ;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_class" href="class_graph.html">Graph</a>* g_ = <span class="keyword">new</span> <a class="code hl_class" href="class_graph.html">Graph</a>(1);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_class" href="class_ap_methods.html">ApMethods</a>();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_class" href="class_ap_methods.html">ApMethods</a>(<a class="code hl_class" href="class_data.html">Data</a> d, <a class="code hl_class" href="class_graph.html">Graph</a>* g);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">void</span> setGraph(<a class="code hl_class" href="class_graph.html">Graph</a>* g);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> setData(<a class="code hl_class" href="class_data.html">Data</a> d);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_ap_methods.html#a0679be2f02d8ce55f3e110a88af1d220">nFlightsAirport</a>(<span class="keywordtype">string</span> code); <span class="comment">//Quantos voos existem a partir de um dado aeroporto?</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_ap_methods.html#a0db6b41a77fcc08d56aeb31acb0bc412">nAirlines</a> (<span class="keywordtype">string</span> code); <span class="comment">// De quantas companhias aéreas diferentes?</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_ap_methods.html#af0e71020cfcdf24f2f7fbb1a1c472589">nCities</a> (<span class="keywordtype">string</span> code); <span class="comment">//Para quantos destinos diferentes?</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_ap_methods.html#a9e6dad4dbf2acbe376fe21d447728832">nCountries</a> (<span class="keywordtype">string</span> code); <span class="comment">//De quantos países diferentes?</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_ap_methods.html#add5523dea7cf4c80e4736a9764f40a22">nAirportsWithMaxFlights</a>(<span class="keywordtype">string</span> code, <span class="keywordtype">int</span> y);<span class="comment">//Quantos aeroportos, cidades ou países são atingíveis usando um máximo de Y voos?</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_ap_methods.html#a2b47e0312a9bad479aea0d9c6de28f6d">nCitiesWithMaxFlights</a>(<span class="keywordtype">string</span> code, <span class="keywordtype">int</span> y);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_ap_methods.html#a22ecb60aa61e9b7bd2c4f38b66d95b5d">nCountriesWithMaxFlights</a>(<span class="keywordtype">string</span> code, <span class="keywordtype">int</span> y);</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>};</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">#endif </span><span class="comment">//AEDP2_APMETHODS_H</span></div>
-<div class="ttc" id="aclass_ap_methods_html"><div class="ttname"><a href="class_ap_methods.html">ApMethods</a></div><div class="ttdef"><b>Definition:</b> ApMethods.h:14</div></div>
-<div class="ttc" id="aclass_ap_methods_html_a0679be2f02d8ce55f3e110a88af1d220"><div class="ttname"><a href="class_ap_methods.html#a0679be2f02d8ce55f3e110a88af1d220">ApMethods::nFlightsAirport</a></div><div class="ttdeci">int nFlightsAirport(string code)</div><div class="ttdef"><b>Definition:</b> ApMethods.cpp:15</div></div>
-<div class="ttc" id="aclass_ap_methods_html_a0db6b41a77fcc08d56aeb31acb0bc412"><div class="ttname"><a href="class_ap_methods.html#a0db6b41a77fcc08d56aeb31acb0bc412">ApMethods::nAirlines</a></div><div class="ttdeci">int nAirlines(string code)</div><div class="ttdef"><b>Definition:</b> ApMethods.cpp:21</div></div>
-<div class="ttc" id="aclass_ap_methods_html_a22ecb60aa61e9b7bd2c4f38b66d95b5d"><div class="ttname"><a href="class_ap_methods.html#a22ecb60aa61e9b7bd2c4f38b66d95b5d">ApMethods::nCountriesWithMaxFlights</a></div><div class="ttdeci">int nCountriesWithMaxFlights(string code, int y)</div><div class="ttdef"><b>Definition:</b> ApMethods.cpp:68</div></div>
-<div class="ttc" id="aclass_ap_methods_html_a2b47e0312a9bad479aea0d9c6de28f6d"><div class="ttname"><a href="class_ap_methods.html#a2b47e0312a9bad479aea0d9c6de28f6d">ApMethods::nCitiesWithMaxFlights</a></div><div class="ttdeci">int nCitiesWithMaxFlights(string code, int y)</div><div class="ttdef"><b>Definition:</b> ApMethods.cpp:57</div></div>
-<div class="ttc" id="aclass_ap_methods_html_a9e6dad4dbf2acbe376fe21d447728832"><div class="ttname"><a href="class_ap_methods.html#a9e6dad4dbf2acbe376fe21d447728832">ApMethods::nCountries</a></div><div class="ttdeci">int nCountries(string code)</div><div class="ttdef"><b>Definition:</b> ApMethods.cpp:40</div></div>
-<div class="ttc" id="aclass_ap_methods_html_add5523dea7cf4c80e4736a9764f40a22"><div class="ttname"><a href="class_ap_methods.html#add5523dea7cf4c80e4736a9764f40a22">ApMethods::nAirportsWithMaxFlights</a></div><div class="ttdeci">int nAirportsWithMaxFlights(string code, int y)</div><div class="ttdef"><b>Definition:</b> ApMethods.cpp:51</div></div>
-<div class="ttc" id="aclass_ap_methods_html_af0e71020cfcdf24f2f7fbb1a1c472589"><div class="ttname"><a href="class_ap_methods.html#af0e71020cfcdf24f2f7fbb1a1c472589">ApMethods::nCities</a></div><div class="ttdeci">int nCities(string code)</div><div class="ttdef"><b>Definition:</b> ApMethods.cpp:30</div></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef AEDP2_APMETHODS_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define AEDP2_APMETHODS_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;Airport.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;Graph.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Data.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_ap_methods.html">   10</a></span><span class="keyword">class </span><a class="code hl_class" href="class_ap_methods.html">ApMethods</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_class" href="class_data.html">Data</a> d_ ;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_class" href="class_graph.html">Graph</a>* g_ = <span class="keyword">new</span> <a class="code hl_class" href="class_graph.html">Graph</a>(1);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="class_ap_methods.html">ApMethods</a>();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_class" href="class_ap_methods.html">ApMethods</a>(<a class="code hl_class" href="class_data.html">Data</a> d, <a class="code hl_class" href="class_graph.html">Graph</a>* g);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">void</span> setGraph(<a class="code hl_class" href="class_graph.html">Graph</a>* g);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">void</span> setData(<a class="code hl_class" href="class_data.html">Data</a> d);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_ap_methods.html#a0679be2f02d8ce55f3e110a88af1d220">nFlightsAirport</a>(<span class="keywordtype">string</span> code);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_ap_methods.html#a0db6b41a77fcc08d56aeb31acb0bc412">nAirlines</a> (<span class="keywordtype">string</span> code);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_ap_methods.html#af0e71020cfcdf24f2f7fbb1a1c472589">nCities</a> (<span class="keywordtype">string</span> code);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_ap_methods.html#a9e6dad4dbf2acbe376fe21d447728832">nCountries</a> (<span class="keywordtype">string</span> code);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_ap_methods.html#add5523dea7cf4c80e4736a9764f40a22">nAirportsWithMaxFlights</a>(<span class="keywordtype">string</span> code, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_ap_methods.html#a2b47e0312a9bad479aea0d9c6de28f6d">nCitiesWithMaxFlights</a>(<span class="keywordtype">string</span> code, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_ap_methods.html#a22ecb60aa61e9b7bd2c4f38b66d95b5d">nCountriesWithMaxFlights</a>(<span class="keywordtype">string</span> code, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>};</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#endif </span><span class="comment">//AEDP2_APMETHODS_H</span></div>
+<div class="ttc" id="aclass_ap_methods_html"><div class="ttname"><a href="class_ap_methods.html">ApMethods</a></div><div class="ttdef"><b>Definition:</b> ApMethods.h:10</div></div>
+<div class="ttc" id="aclass_ap_methods_html_a0679be2f02d8ce55f3e110a88af1d220"><div class="ttname"><a href="class_ap_methods.html#a0679be2f02d8ce55f3e110a88af1d220">ApMethods::nFlightsAirport</a></div><div class="ttdeci">int nFlightsAirport(string code)</div><div class="ttdef"><b>Definition:</b> ApMethods.cpp:10</div></div>
+<div class="ttc" id="aclass_ap_methods_html_a0db6b41a77fcc08d56aeb31acb0bc412"><div class="ttname"><a href="class_ap_methods.html#a0db6b41a77fcc08d56aeb31acb0bc412">ApMethods::nAirlines</a></div><div class="ttdeci">int nAirlines(string code)</div><div class="ttdef"><b>Definition:</b> ApMethods.cpp:14</div></div>
+<div class="ttc" id="aclass_ap_methods_html_a22ecb60aa61e9b7bd2c4f38b66d95b5d"><div class="ttname"><a href="class_ap_methods.html#a22ecb60aa61e9b7bd2c4f38b66d95b5d">ApMethods::nCountriesWithMaxFlights</a></div><div class="ttdeci">int nCountriesWithMaxFlights(string code, int y)</div><div class="ttdef"><b>Definition:</b> ApMethods.cpp:60</div></div>
+<div class="ttc" id="aclass_ap_methods_html_a2b47e0312a9bad479aea0d9c6de28f6d"><div class="ttname"><a href="class_ap_methods.html#a2b47e0312a9bad479aea0d9c6de28f6d">ApMethods::nCitiesWithMaxFlights</a></div><div class="ttdeci">int nCitiesWithMaxFlights(string code, int y)</div><div class="ttdef"><b>Definition:</b> ApMethods.cpp:49</div></div>
+<div class="ttc" id="aclass_ap_methods_html_a9e6dad4dbf2acbe376fe21d447728832"><div class="ttname"><a href="class_ap_methods.html#a9e6dad4dbf2acbe376fe21d447728832">ApMethods::nCountries</a></div><div class="ttdeci">int nCountries(string code)</div><div class="ttdef"><b>Definition:</b> ApMethods.cpp:33</div></div>
+<div class="ttc" id="aclass_ap_methods_html_add5523dea7cf4c80e4736a9764f40a22"><div class="ttname"><a href="class_ap_methods.html#add5523dea7cf4c80e4736a9764f40a22">ApMethods::nAirportsWithMaxFlights</a></div><div class="ttdeci">int nAirportsWithMaxFlights(string code, int y)</div><div class="ttdef"><b>Definition:</b> ApMethods.cpp:43</div></div>
+<div class="ttc" id="aclass_ap_methods_html_af0e71020cfcdf24f2f7fbb1a1c472589"><div class="ttname"><a href="class_ap_methods.html#af0e71020cfcdf24f2f7fbb1a1c472589">ApMethods::nCities</a></div><div class="ttdeci">int nCities(string code)</div><div class="ttdef"><b>Definition:</b> ApMethods.cpp:23</div></div>
 <div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdef"><b>Definition:</b> Data.h:24</div></div>
 <div class="ttc" id="aclass_graph_html"><div class="ttname"><a href="class_graph.html">Graph</a></div><div class="ttdef"><b>Definition:</b> Graph.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->

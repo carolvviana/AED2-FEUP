@@ -198,7 +198,7 @@ Complexidade\+: O(n$^\wedge$2(n+e))
 
 Retorna um set de strings que são os codigos de companhias aéreas diferentes que partem do aeroporto dado.
 
-COMPLEXIDADE\+: O(n)
+COMPLEXIDADE\+: O(n log(n))
 
 
 \begin{DoxyParams}{Parameters}
@@ -216,7 +216,7 @@ set de strings de codigos das diferentes companhias aereas nesse aeroporto
 
 Retorna um set de strings que são os codigos dos aeroportos diferentes atingiveis pelo aeroporto dado.
 
-COMPLEXIDADE\+: O(n)
+COMPLEXIDADE\+: O(n log(n))
 
 
 \begin{DoxyParams}{Parameters}
@@ -234,7 +234,7 @@ set de strings de codigos dos aeroportos diferentes atingiveis pelo aeroporto da
 
 Retorna o numero de companhias aereas a partir do país dado.
 
-COMPLEXIDADE\+: O(n) 
+COMPLEXIDADE\+: O(n$^\wedge$2log(n)) 
 \begin{DoxyParams}{Parameters}
 {\em country} & string nome do país a considerar na contagem \\
 \hline
@@ -250,7 +250,7 @@ inteiro que indica o numero de companhias aereas a partir do país dado.
 
 Retorna o numero de companhias aereas a partir da cidade dada.
 
-COMPLEXIDADE\+: O(n) 
+COMPLEXIDADE\+: O(n$^\wedge$2log(n)) 
 \begin{DoxyParams}{Parameters}
 {\em city} & string nome da cidade a considerar na contagem \\
 \hline
@@ -266,7 +266,7 @@ inteiro que indica o numero de companhias aereas a partir da cidade dada.
 
 Retorna o numero de companhias aereas presentes no aeroporto dado.
 
-COMPLEXIDADE\+: O(1) 
+COMPLEXIDADE\+: O(n log(n)) 
 \begin{DoxyParams}{Parameters}
 {\em airport} & codigo do aeroporto que será considerado na contagem \\
 \hline
@@ -282,7 +282,7 @@ inteiro que indica o numero de companhias aereas presentes no aeroporto dado.
 
 Retorna o numero de aeroportos presentes no país dado.
 
-COMPLEXIDADE\+: O(n) 
+COMPLEXIDADE\+: O(n$^\wedge$2) 
 \begin{DoxyParams}{Parameters}
 {\em country} & string nome do país a considerar na contagem \\
 \hline
@@ -298,7 +298,7 @@ inteiro que indica o numero de aeroportos presentes no país dado.
 
 Retorna o numero de aeroportos presentes na cidade dada.
 
-COMPLEXIDADE\+: O(n) 
+COMPLEXIDADE\+: O(1) 
 \begin{DoxyParams}{Parameters}
 {\em city} & string nome da cidade a considerar na contagem \\
 \hline
@@ -314,7 +314,7 @@ inteiro que indica o numero de aeroportos presentes na cidade dada.
 
 Retorna o numero de cidades presentes no país dado.
 
-COMPLEXIDADE\+: O(n) 
+COMPLEXIDADE\+: O(1) 
 \begin{DoxyParams}{Parameters}
 {\em country} & string nome do país a considerar na contagem \\
 \hline
@@ -330,7 +330,7 @@ inteiro que indica o numero de cidades presentes no país dado.
 
 Retorna o numero de destinos alcançaveis (aeroportos) a partir do país dado.
 
-COMPLEXIDADE\+: O(n) 
+COMPLEXIDADE\+: O(n$^\wedge$2log(n)) 
 \begin{DoxyParams}{Parameters}
 {\em country} & string nome do país a considerar na contagem \\
 \hline
@@ -346,7 +346,7 @@ inteiro que indica o numero de destinos alcançaveis (aeroportos) a partir do pa
 
 Retorna o numero de destinos alcancaveis(aeroportos) a partir da cidade dada.
 
-COMPLEXIDADE\+: O(n) 
+COMPLEXIDADE\+: O(n$^\wedge$2log(n)) 
 \begin{DoxyParams}{Parameters}
 {\em city} & string nome da cidade a considerar na contagem \\
 \hline
@@ -362,7 +362,7 @@ inteiro que indica o numero de destinos alcancaveis a partir da cidade dada.
 
 Retorna o numero de destinos (aeroportos) alcançaveis a partir do aeroporto dado.
 
-COMPLEXIDADE\+: O(1) 
+COMPLEXIDADE\+: O(n log(n)) 
 \begin{DoxyParams}{Parameters}
 {\em airport} & codigo do aeroporto que será considerado na contagem \\
 \hline
@@ -394,7 +394,7 @@ inteiro que indica o numero de destinos alcançaveis (aeroportos) utilizando com
 
 Retorna o numero de voos a partir do país dado.
 
-COMPLEXIDADE\+: O(n) 
+COMPLEXIDADE\+: O(n$^\wedge$2) 
 \begin{DoxyParams}{Parameters}
 {\em country} & string nome do país a considerar na contagem \\
 \hline

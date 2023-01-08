@@ -27,9 +27,6 @@ void {\bfseries unnum} ()
 \mbox{\Hypertarget{class_graph_ac282eae2f170f0bf1ae765ebb9443ad8}\label{class_graph_ac282eae2f170f0bf1ae765ebb9443ad8}} 
 void {\bfseries unstack} ()
 \item 
-\mbox{\Hypertarget{class_graph_afa5971483d2d3c19dc9c2fd343110b3c}\label{class_graph_afa5971483d2d3c19dc9c2fd343110b3c}} 
-void {\bfseries undir} ()
-\item 
 void \mbox{\hyperlink{class_graph_ac6192a41101102ca8aa6acca607c84f3}{clear}} ()
 \item 
 int \mbox{\hyperlink{class_graph_ae915ab985390de33e1019259422a2d60}{distance}} (string origin, string dest)
@@ -42,12 +39,11 @@ void \mbox{\hyperlink{class_graph_a5ba8d1c1ad53a410a6ee87fb1573f69f}{bfs\+With\+
 \item 
 set$<$ string $>$ \mbox{\hyperlink{class_graph_ab86ffda6ef14bfe8cb7d86936150f342}{ap\+Methods\+Helper}} (int y)
 \item 
-vector$<$ string $>$ \mbox{\hyperlink{class_graph_a1763ed062d8c7b75cfc293bfd8e36464}{dfs\+\_\+articulation\+Points}} (Node \&c\+Ap, vector$<$ string $>$ \&art\+Points, stack$<$ Node $>$ \&s, int \&index)
+void \mbox{\hyperlink{class_graph_a16d8c6464233d981e6a301ebf0dd95a4}{dfs\+\_\+articulation\+Points}} (Node \&c\+Ap, vector$<$ string $>$ \&art\+Points, stack$<$ Node $>$ \&s, int \&index)
 \item 
-vector$<$ string $>$ \mbox{\hyperlink{class_graph_a0c4806154cb2284ad51a1dc68a32a76b}{dfs\+\_\+articulation\+Points\+With\+Airline}} (const string \&c\+Ap, bool first\+Iteration, vector$<$ string $>$ \&art\+Points, stack$<$ string $>$ \&s, int \&index, vector$<$ string $>$ airlines)
+void \mbox{\hyperlink{class_graph_acd38aa0fe0d70ec2e4125aa1dea7cecc}{dfs\+\_\+articulation\+Points\+With\+Airline}} (const string \&c\+Ap, vector$<$ string $>$ \&art\+Points, stack$<$ string $>$ \&s, int \&index, vector$<$ string $>$ airlines)
 \item 
-\mbox{\Hypertarget{class_graph_a8a7fd3440b6ecb536117f4e83de6c3a9}\label{class_graph_a8a7fd3440b6ecb536117f4e83de6c3a9}} 
-void {\bfseries print\+Art\+Points} ()
+void \mbox{\hyperlink{class_graph_a5907c9d2a80636eb2455ccb2461bfd8a}{print\+Art\+Points}} (vector$<$ string $>$ airlines)
 \end{DoxyCompactItemize}
 
 
@@ -140,43 +136,19 @@ COMPLEXIDADE\+: O(V+\+E+N), sendo V o numero de nós do grafo e E o numero de ar
 
 Limpa o grafo.
 
-COMPLEXIDADE\+: O(\+V) sendo V o numero de nós do grafo \mbox{\Hypertarget{class_graph_a1763ed062d8c7b75cfc293bfd8e36464}\label{class_graph_a1763ed062d8c7b75cfc293bfd8e36464}} 
+COMPLEXIDADE\+: O(\+V) sendo V o numero de nós do grafo \mbox{\Hypertarget{class_graph_a16d8c6464233d981e6a301ebf0dd95a4}\label{class_graph_a16d8c6464233d981e6a301ebf0dd95a4}} 
 \index{Graph@{Graph}!dfs\_articulationPoints@{dfs\_articulationPoints}}
 \index{dfs\_articulationPoints@{dfs\_articulationPoints}!Graph@{Graph}}
 \doxysubsubsection{\texorpdfstring{dfs\_articulationPoints()}{dfs\_articulationPoints()}}
-{\footnotesize\ttfamily vector$<$ string $>$ Graph\+::dfs\+\_\+articulation\+Points (\begin{DoxyParamCaption}\item[{Node \&}]{c\+Ap,  }\item[{vector$<$ string $>$ \&}]{art\+Points,  }\item[{stack$<$ Node $>$ \&}]{s,  }\item[{int \&}]{index }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Graph\+::dfs\+\_\+articulation\+Points (\begin{DoxyParamCaption}\item[{Node \&}]{c\+Ap,  }\item[{vector$<$ string $>$ \&}]{art\+Points,  }\item[{stack$<$ Node $>$ \&}]{s,  }\item[{int \&}]{index }\end{DoxyParamCaption})}
 
-Realiza a Depth-\/\+First search no grafo preenchido com os voos e destinos.
-
-COMPLEXIDADE\+: O($\vert$\+V$\vert$ + $\vert$\+E$\vert$), $\vert$\+V$\vert$ sendo o número de nós do grafo e $\vert$\+E$\vert$ o número de arestas (edges) do grafo
-
-
-\begin{DoxyParams}{Parameters}
-{\em c\+Ap} & string codigo do aeroporto \\
-\hline
-{\em first\+Iteration} & valor booleano que indica se é a primeira iteração ou não \\
-\hline
-{\em distance} & valor inteiro \\
-\hline
-{\em path} & \\
-\hline
-{\em paths} & \\
-\hline
-{\em dest\+Ap} & \\
-\hline
-{\em d} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
 Realiza a Depth-\/\+First search no grafo preenchido com os voos e destinos, assinalando os Pontos de Articulação da Rede.
-\end{DoxyReturn}
+
 COMPLEXIDADE\+: O($\vert$\+V$\vert$ + $\vert$\+E$\vert$), $\vert$\+V$\vert$ sendo o número de nós do grafo e $\vert$\+E$\vert$ o número de arestas (edges) do grafo
 
 
 \begin{DoxyParams}{Parameters}
-{\em c\+Ap} & string codigo do aeroporto de partida \\
-\hline
-{\em first\+Iteration} & valor booleano que indica se é a primeira iteração ou não \\
+{\em c\+Ap} & Node de partida \\
 \hline
 {\em art\+Points} & pontos de articulação identificados \\
 \hline
@@ -185,14 +157,11 @@ COMPLEXIDADE\+: O($\vert$\+V$\vert$ + $\vert$\+E$\vert$), $\vert$\+V$\vert$ send
 {\em index} & ordem de visita dos nodes \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-vector de strings com os nomes dos pontos de articulação do grafo (Aeroportos) 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_graph_a0c4806154cb2284ad51a1dc68a32a76b}\label{class_graph_a0c4806154cb2284ad51a1dc68a32a76b}} 
+\mbox{\Hypertarget{class_graph_acd38aa0fe0d70ec2e4125aa1dea7cecc}\label{class_graph_acd38aa0fe0d70ec2e4125aa1dea7cecc}} 
 \index{Graph@{Graph}!dfs\_articulationPointsWithAirline@{dfs\_articulationPointsWithAirline}}
 \index{dfs\_articulationPointsWithAirline@{dfs\_articulationPointsWithAirline}!Graph@{Graph}}
 \doxysubsubsection{\texorpdfstring{dfs\_articulationPointsWithAirline()}{dfs\_articulationPointsWithAirline()}}
-{\footnotesize\ttfamily vector$<$ string $>$ Graph\+::dfs\+\_\+articulation\+Points\+With\+Airline (\begin{DoxyParamCaption}\item[{const string \&}]{c\+Ap,  }\item[{bool}]{first\+Iteration,  }\item[{vector$<$ string $>$ \&}]{art\+Points,  }\item[{stack$<$ string $>$ \&}]{s,  }\item[{int \&}]{index,  }\item[{vector$<$ string $>$}]{airlines }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Graph\+::dfs\+\_\+articulation\+Points\+With\+Airline (\begin{DoxyParamCaption}\item[{const string \&}]{c\+Ap,  }\item[{vector$<$ string $>$ \&}]{art\+Points,  }\item[{stack$<$ string $>$ \&}]{s,  }\item[{int \&}]{index,  }\item[{vector$<$ string $>$}]{airlines }\end{DoxyParamCaption})}
 
 Realiza a Depth-\/\+First search no grafo preenchido com os voos e destinos, assinalando os Pontos de Articulação da Rede considerando apenas um subconjunto de companhias.
 
@@ -201,8 +170,6 @@ COMPLEXIDADE\+: O($\vert$\+V$\vert$ + $\vert$\+E$\vert$), $\vert$\+V$\vert$ send
 
 \begin{DoxyParams}{Parameters}
 {\em c\+Ap} & string codigo do aeroporto de partida \\
-\hline
-{\em first\+Iteration} & valor booleano que indica se é a primeira iteração ou não \\
 \hline
 {\em art\+Points} & pontos de articulação identificados \\
 \hline
@@ -213,9 +180,6 @@ COMPLEXIDADE\+: O($\vert$\+V$\vert$ + $\vert$\+E$\vert$), $\vert$\+V$\vert$ send
 {\em airlines} & companhias selecionadas pelo utilizador \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-vector de strings com os nomes dos pontos de articulação do grafo (Aeroportos) 
-\end{DoxyReturn}
 \mbox{\Hypertarget{class_graph_ae915ab985390de33e1019259422a2d60}\label{class_graph_ae915ab985390de33e1019259422a2d60}} 
 \index{Graph@{Graph}!distance@{distance}}
 \index{distance@{distance}!Graph@{Graph}}
@@ -260,6 +224,21 @@ COMPLEXIDADE\+: O(1)
 \begin{DoxyReturn}{Returns}
 o node associado à chave fornecida 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_a5907c9d2a80636eb2455ccb2461bfd8a}\label{class_graph_a5907c9d2a80636eb2455ccb2461bfd8a}} 
+\index{Graph@{Graph}!printArtPoints@{printArtPoints}}
+\index{printArtPoints@{printArtPoints}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{printArtPoints()}{printArtPoints()}}
+{\footnotesize\ttfamily void Graph\+::print\+Art\+Points (\begin{DoxyParamCaption}\item[{vector$<$ string $>$}]{airlines }\end{DoxyParamCaption})}
+
+Identifica os pontos de articulação do grafo, quer com filtros de airlines, quer sem filtros.
+
+COMPLEXIDADE\+: O($\vert$\+V$\vert$$\ast$($\vert$\+V$\vert$ + $\vert$\+E$\vert$)), $\vert$\+V$\vert$ sendo o número de nós do grafo e $\vert$\+E$\vert$ o número de arestas (edges) do grafo
+
+
+\begin{DoxyParams}{Parameters}
+{\em airlines} & companhias selecionadas pelo utilizador; vetor vazio caso não haja filtros \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_graph_a5163b622007e0efbed041248d9605c7d}\label{class_graph_a5163b622007e0efbed041248d9605c7d}} 
 \index{Graph@{Graph}!printPath@{printPath}}
 \index{printPath@{printPath}!Graph@{Graph}}

@@ -1,35 +1,31 @@
 \hypertarget{_coordinate_8h_source}{}\doxysection{Coordinate.\+h}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{comment}{//}}
-\DoxyCodeLine{2 \textcolor{comment}{// Created by carol on 13/12/2022.}}
-\DoxyCodeLine{3 \textcolor{comment}{//}}
-\DoxyCodeLine{4 }
-\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef AEDP2\_COORDINATE\_H}}
-\DoxyCodeLine{6 \textcolor{preprocessor}{\#define AEDP2\_COORDINATE\_H}}
-\DoxyCodeLine{7 }
-\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <ostream>}}
-\DoxyCodeLine{9 }
-\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_coordinate}{Coordinate}} \{}
-\DoxyCodeLine{11     \textcolor{keywordtype}{double} lati;}
-\DoxyCodeLine{12     \textcolor{keywordtype}{double} longi;}
-\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef AEDP2\_COORDINATE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define AEDP2\_COORDINATE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <ostream>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_coordinate}{Coordinate}} \{}
+\DoxyCodeLine{7     \textcolor{keywordtype}{double} lati;}
+\DoxyCodeLine{8     \textcolor{keywordtype}{double} longi;}
+\DoxyCodeLine{9 \textcolor{keyword}{public}:}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \mbox{\hyperlink{class_coordinate}{Coordinate}}(\textcolor{keywordtype}{double} lati, \textcolor{keywordtype}{double} longi);}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     \mbox{\hyperlink{class_coordinate}{Coordinate}}();}
 \DoxyCodeLine{14 }
-\DoxyCodeLine{15     \mbox{\hyperlink{class_coordinate}{Coordinate}}(\textcolor{keywordtype}{double} lati, \textcolor{keywordtype}{double} longi);}
-\DoxyCodeLine{16 }
-\DoxyCodeLine{17     \mbox{\hyperlink{class_coordinate}{Coordinate}}();}
+\DoxyCodeLine{15     \textcolor{keywordtype}{double} getLati() \textcolor{keyword}{const};}
+\DoxyCodeLine{16     \textcolor{keywordtype}{double} getLongi() \textcolor{keyword}{const};}
+\DoxyCodeLine{17 }
 \DoxyCodeLine{18 }
-\DoxyCodeLine{19     \textcolor{keywordtype}{double} getLati() \textcolor{keyword}{const};}
-\DoxyCodeLine{20     \textcolor{keywordtype}{double} getLongi() \textcolor{keyword}{const};}
-\DoxyCodeLine{21 }
-\DoxyCodeLine{22 }
-\DoxyCodeLine{31     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_coordinate_a5c5518b8e95f9dd25327b5b883702b79}{distance\_between\_coordinates}}(\mbox{\hyperlink{class_coordinate}{Coordinate}} cord2) \textcolor{keyword}{const};}
-\DoxyCodeLine{32 }
-\DoxyCodeLine{33 }
-\DoxyCodeLine{43     \textcolor{keyword}{friend} std::ostream \&\mbox{\hyperlink{class_coordinate_a0549481fe7f2f4289a1ad2c539923439}{operator<<}}(std::ostream \&os, \textcolor{keyword}{const} \mbox{\hyperlink{class_coordinate}{Coordinate}} \&coordinate);}
-\DoxyCodeLine{44 }
-\DoxyCodeLine{45 \};}
-\DoxyCodeLine{46 }
-\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//AEDP2\_COORDINATE\_H}}
+\DoxyCodeLine{27     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_coordinate_a5c5518b8e95f9dd25327b5b883702b79}{distance\_between\_coordinates}}(\mbox{\hyperlink{class_coordinate}{Coordinate}} cord2) \textcolor{keyword}{const};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{39     \textcolor{keyword}{friend} std::ostream \&\mbox{\hyperlink{class_coordinate_a0549481fe7f2f4289a1ad2c539923439}{operator<<}}(std::ostream \&os, \textcolor{keyword}{const} \mbox{\hyperlink{class_coordinate}{Coordinate}} \&coordinate);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//AEDP2\_COORDINATE\_H}}
 
 \end{DoxyCode}
