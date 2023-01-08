@@ -15,24 +15,19 @@ private:
     string code_;
     string name_;
     string city_;
-    //City city_;
     Coordinate coordinate_;
 
 public:
-    //Airport(string code, string name, City city, double lati, double longi, int index);
     Airport(string code, string name, string city, double lati, double longi);
     string getCode();
     string getName();
-    //City getCity();
     string getCity();
     Coordinate getCoordinate();
-    //int getIndex();
     void setCode(string code);
     void setName(string name);
-    //void setCity(City city);
     void setCity(string city);
     void setCoordinate(double lati, double longi);
-    //void setIndex(int index);
+
     /**
      * Mostra ao utilizador informaçao relevante sobre o aeroporto (código e nome).
      *

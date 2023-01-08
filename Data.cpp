@@ -1,6 +1,3 @@
-//
-// Created by carol on 13/12/2022.
-//
 #include "Data.h"
 #include <algorithm>
 
@@ -28,15 +25,14 @@ Graph* Data::getFlightG(){
 
  void Data :: readFile_airlines() {
 
-    //variables
+
     string code, name, callSign, countryName;
     vector <string> v;
-    //open file
     ifstream input(AIRLINES);
     if (input.is_open()) {
 
         string line;
-        getline(input, line); //skips first line
+        getline(input, line);
         while (getline(input, line)) {
             stringstream iss(line);
 

@@ -1,6 +1,4 @@
-//
-// Created by Guilherme Monteiro on 30/12/2022.
-//
+
 #include "Data.h"
 #include "Graph.h"
 //aux
@@ -40,8 +38,6 @@ set<string> Data::getDifDestinations(string airport){
 }
 
 //globais
-//doc
-
 /**
    * Retorna o numero de aeroportos presentes no grafo.
    *
@@ -88,7 +84,6 @@ int Data::totalAirlines(){return airlines_.size();}
 int Data::totalFlights(){return nf;}
 
 //airports
-
 /**
    * Retorna o numero de voos presentes no aeroporto dado.
    *
@@ -117,7 +112,6 @@ int Data::nAirlines3(string airport){return getDifAirlines(airport).size();}
 int Data::nDestinations3(string airport){return getDifDestinations(airport).size();}
 
 //city
-//doc
 /**
    * Retorna o numero de aeroportos presentes na cidade dada.
    *
@@ -171,8 +165,8 @@ int Data::nDestinations2(string city){
     }
     return s.size();
 }
-//country
 
+//country
 /**
    * Retorna o numero de cidades presentes no país dado.
    *
@@ -237,8 +231,6 @@ int Data::nDestinations1(string country){
 }
 
 //airline
-
-
 /**
    * Retorna o numero de voos que a companhia dada tem.
    *
@@ -288,7 +280,7 @@ int Data::nDestinations4(std::string airline) { // quantos destinos diferentes t
     else cout<<"Could not open the file\n";
 }
 
-//as duas de cima
+
 
 /**
    * Retorna o numero de voos a partir de um dado aeroporto de uma ou mais companhias aéreas.

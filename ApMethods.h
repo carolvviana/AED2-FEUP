@@ -1,7 +1,3 @@
-//
-// Created by User on 27/12/2022.
-//
-
 #ifndef AEDP2_APMETHODS_H
 #define AEDP2_APMETHODS_H
 #include "Airport.h"
@@ -30,7 +26,7 @@ public:
      * @param code string código do aeroporto
      * @return inteiro que indica o numero de voos
      */
-    int nFlightsAirport(string code); //Quantos voos existem a partir de um dado aeroporto?
+    int nFlightsAirport(string code);
 
     /**
      * Indica quantas companhias aéreas existem num dado aeroporto.
@@ -41,7 +37,7 @@ public:
      * @param code string código do aeroporto
      * @return inteiro que indica o numero de companhias aereas
      */
-    int nAirlines (string code); // De quantas companhias aéreas diferentes?
+    int nAirlines (string code);
 
     /**
      * Indica quantas cidades (destinos) se atingem a partir de um dado aeroporto.
@@ -51,7 +47,7 @@ public:
      * @param code string código do aeroporto
      * @return inteiro que indica o numero de cidades (destinos) que se atingem a partir de um dado aeroporto.
      */
-    int nCities (string code); //Para quantos destinos diferentes?
+    int nCities (string code);
 
     /**
      * Indica quantos paises se atingem a partir de um dado aeroporto.
@@ -61,7 +57,7 @@ public:
      * @param code string código do aeroporto
      * @return inteiro que indica o numero de paises que se atingem a partir de um dado aeroporto.
      */
-    int nCountries (string code); //De quantos países diferentes?
+    int nCountries (string code);
 
     /**
      * Indica quantos aeroportos são alcançaveis com um máximo de Y voos a partir de um dado aeroporto.
@@ -72,7 +68,7 @@ public:
      * @param y inteiro que indica o valor maximo de voos
      * @return inteiro que indica o numero de aeroportos alcançaveis com um máximo de Y voos a partir de um dado aeroporto.
      */
-    int nAirportsWithMaxFlights(string code, int y);//Quantos aeroportos, cidades ou países são atingíveis usando um máximo de Y voos?
+    int nAirportsWithMaxFlights(string code, int y);
 
     /**
      * Indica quantas cidades (destinos) são alcançaveis com um máximo de Y voos a partir de um dado aeroporto.

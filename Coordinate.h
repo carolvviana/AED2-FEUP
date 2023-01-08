@@ -1,7 +1,3 @@
-//
-// Created by carol on 13/12/2022.
-//
-
 #ifndef AEDP2_COORDINATE_H
 #define AEDP2_COORDINATE_H
 
