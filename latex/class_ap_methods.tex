@@ -1,0 +1,169 @@
+\hypertarget{class_ap_methods}{}\doxysection{Ap\+Methods Class Reference}
+\label{class_ap_methods}\index{ApMethods@{ApMethods}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ap_methods_a54c3dec9d0148e9ded698412fcae707c}\label{class_ap_methods_a54c3dec9d0148e9ded698412fcae707c}} 
+{\bfseries Ap\+Methods} (\mbox{\hyperlink{class_data}{Data}} d, \mbox{\hyperlink{class_graph}{Graph}} $\ast$g)
+\item 
+\mbox{\Hypertarget{class_ap_methods_ac84d7d363f37bad8414686684c9b5367}\label{class_ap_methods_ac84d7d363f37bad8414686684c9b5367}} 
+void {\bfseries set\+Graph} (\mbox{\hyperlink{class_graph}{Graph}} $\ast$g)
+\item 
+\mbox{\Hypertarget{class_ap_methods_aa66a14d0c2fcee77a67ffccca2e66678}\label{class_ap_methods_aa66a14d0c2fcee77a67ffccca2e66678}} 
+void {\bfseries set\+Data} (\mbox{\hyperlink{class_data}{Data}} d)
+\item 
+int \mbox{\hyperlink{class_ap_methods_a0679be2f02d8ce55f3e110a88af1d220}{n\+Flights\+Airport}} (string code)
+\item 
+int \mbox{\hyperlink{class_ap_methods_a0db6b41a77fcc08d56aeb31acb0bc412}{n\+Airlines}} (string code)
+\item 
+int \mbox{\hyperlink{class_ap_methods_af0e71020cfcdf24f2f7fbb1a1c472589}{n\+Cities}} (string code)
+\item 
+int \mbox{\hyperlink{class_ap_methods_a9e6dad4dbf2acbe376fe21d447728832}{n\+Countries}} (string code)
+\item 
+int \mbox{\hyperlink{class_ap_methods_add5523dea7cf4c80e4736a9764f40a22}{n\+Airports\+With\+Max\+Flights}} (string code, int y)
+\item 
+int \mbox{\hyperlink{class_ap_methods_a2b47e0312a9bad479aea0d9c6de28f6d}{n\+Cities\+With\+Max\+Flights}} (string code, int y)
+\item 
+int \mbox{\hyperlink{class_ap_methods_a22ecb60aa61e9b7bd2c4f38b66d95b5d}{n\+Countries\+With\+Max\+Flights}} (string code, int y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ap_methods_a0db6b41a77fcc08d56aeb31acb0bc412}\label{class_ap_methods_a0db6b41a77fcc08d56aeb31acb0bc412}} 
+\index{ApMethods@{ApMethods}!nAirlines@{nAirlines}}
+\index{nAirlines@{nAirlines}!ApMethods@{ApMethods}}
+\doxysubsubsection{\texorpdfstring{nAirlines()}{nAirlines()}}
+{\footnotesize\ttfamily int Ap\+Methods\+::n\+Airlines (\begin{DoxyParamCaption}\item[{string}]{code }\end{DoxyParamCaption})}
+
+Indica quantas companhias aéreas existem num dado aeroporto.
+
+COMPLEXIDADE\+: O(n)
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & string código do aeroporto \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de companhias aereas 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ap_methods_add5523dea7cf4c80e4736a9764f40a22}\label{class_ap_methods_add5523dea7cf4c80e4736a9764f40a22}} 
+\index{ApMethods@{ApMethods}!nAirportsWithMaxFlights@{nAirportsWithMaxFlights}}
+\index{nAirportsWithMaxFlights@{nAirportsWithMaxFlights}!ApMethods@{ApMethods}}
+\doxysubsubsection{\texorpdfstring{nAirportsWithMaxFlights()}{nAirportsWithMaxFlights()}}
+{\footnotesize\ttfamily int Ap\+Methods\+::n\+Airports\+With\+Max\+Flights (\begin{DoxyParamCaption}\item[{string}]{code,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Indica quantos aeroportos são alcançaveis com um máximo de Y voos a partir de um dado aeroporto.
+
+COMPLEXIDADE\+: O($\vert$\+V$\vert$+$\vert$\+E$\vert$), sendo V o numero de nodes e E o numero de arestas do grafo
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & string código do aeroporto \\
+\hline
+{\em y} & inteiro que indica o valor maximo de voos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de aeroportos alcançaveis com um máximo de Y voos a partir de um dado aeroporto. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ap_methods_af0e71020cfcdf24f2f7fbb1a1c472589}\label{class_ap_methods_af0e71020cfcdf24f2f7fbb1a1c472589}} 
+\index{ApMethods@{ApMethods}!nCities@{nCities}}
+\index{nCities@{nCities}!ApMethods@{ApMethods}}
+\doxysubsubsection{\texorpdfstring{nCities()}{nCities()}}
+{\footnotesize\ttfamily int Ap\+Methods\+::n\+Cities (\begin{DoxyParamCaption}\item[{string}]{code }\end{DoxyParamCaption})}
+
+Indica quantas cidades (destinos) se atingem a partir de um dado aeroporto.
+
+COMPLEXIDADE\+: O(n)
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & string código do aeroporto \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de cidades (destinos) que se atingem a partir de um dado aeroporto. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ap_methods_a2b47e0312a9bad479aea0d9c6de28f6d}\label{class_ap_methods_a2b47e0312a9bad479aea0d9c6de28f6d}} 
+\index{ApMethods@{ApMethods}!nCitiesWithMaxFlights@{nCitiesWithMaxFlights}}
+\index{nCitiesWithMaxFlights@{nCitiesWithMaxFlights}!ApMethods@{ApMethods}}
+\doxysubsubsection{\texorpdfstring{nCitiesWithMaxFlights()}{nCitiesWithMaxFlights()}}
+{\footnotesize\ttfamily int Ap\+Methods\+::n\+Cities\+With\+Max\+Flights (\begin{DoxyParamCaption}\item[{string}]{code,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Indica quantas cidades (destinos) são alcançaveis com um máximo de Y voos a partir de um dado aeroporto.
+
+COMPLEXIDADE\+: O($\vert$\+V$\vert$+$\vert$\+E$\vert$), sendo V o numero de nodes e E o numero de arestas do grafo
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & string código do aeroporto \\
+\hline
+{\em y} & inteiro que indica o valor maximo de voos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de cidades (destinos) alcançaveis com um máximo de Y voos a partir de um dado aeroporto. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ap_methods_a9e6dad4dbf2acbe376fe21d447728832}\label{class_ap_methods_a9e6dad4dbf2acbe376fe21d447728832}} 
+\index{ApMethods@{ApMethods}!nCountries@{nCountries}}
+\index{nCountries@{nCountries}!ApMethods@{ApMethods}}
+\doxysubsubsection{\texorpdfstring{nCountries()}{nCountries()}}
+{\footnotesize\ttfamily int Ap\+Methods\+::n\+Countries (\begin{DoxyParamCaption}\item[{string}]{code }\end{DoxyParamCaption})}
+
+Indica quantos paises se atingem a partir de um dado aeroporto.
+
+COMPLEXIDADE\+: O(n)
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & string código do aeroporto \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de paises que se atingem a partir de um dado aeroporto. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ap_methods_a22ecb60aa61e9b7bd2c4f38b66d95b5d}\label{class_ap_methods_a22ecb60aa61e9b7bd2c4f38b66d95b5d}} 
+\index{ApMethods@{ApMethods}!nCountriesWithMaxFlights@{nCountriesWithMaxFlights}}
+\index{nCountriesWithMaxFlights@{nCountriesWithMaxFlights}!ApMethods@{ApMethods}}
+\doxysubsubsection{\texorpdfstring{nCountriesWithMaxFlights()}{nCountriesWithMaxFlights()}}
+{\footnotesize\ttfamily int Ap\+Methods\+::n\+Countries\+With\+Max\+Flights (\begin{DoxyParamCaption}\item[{string}]{code,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Indica quantos países são alcançaveis com um máximo de Y voos a partir de um dado aeroporto.
+
+COMPLEXIDADE\+: O($\vert$\+V$\vert$+$\vert$\+E$\vert$), sendo V o numero de nodes e E o numero de arestas do grafo
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & string código do aeroporto \\
+\hline
+{\em y} & inteiro que indica o valor maximo de voos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de paises alcançaveis com um máximo de Y voos a partir de um dado aeroporto. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ap_methods_a0679be2f02d8ce55f3e110a88af1d220}\label{class_ap_methods_a0679be2f02d8ce55f3e110a88af1d220}} 
+\index{ApMethods@{ApMethods}!nFlightsAirport@{nFlightsAirport}}
+\index{nFlightsAirport@{nFlightsAirport}!ApMethods@{ApMethods}}
+\doxysubsubsection{\texorpdfstring{nFlightsAirport()}{nFlightsAirport()}}
+{\footnotesize\ttfamily int Ap\+Methods\+::n\+Flights\+Airport (\begin{DoxyParamCaption}\item[{string}]{code }\end{DoxyParamCaption})}
+
+Indica quantos voos existem a partir de um dado aeroporto.
+
+COMPLEXIDADE\+: O(1)
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & string código do aeroporto \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inteiro que indica o numero de voos 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Ap\+Methods.\+h\item 
+Ap\+Methods.\+cpp\end{DoxyCompactItemize}

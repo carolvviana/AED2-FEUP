@@ -1,0 +1,106 @@
+\hypertarget{_data_8h_source}{}\doxysection{Data.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef AEDP2\_DATA\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define AEDP2\_DATA\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}Airline.h"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}Airport.h"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}City.h"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}Graph.h"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define AIRLINES "{}../csv/airlines.csv"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define AIRPORTS "{}../csv/airports.csv"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define FLIGHTS "{}../csv/flights.csv"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{class_data}{Data}}\{}
+\DoxyCodeLine{25 \textcolor{keyword}{private}:}
+\DoxyCodeLine{26     \textcolor{keywordtype}{int} nf = 0;}
+\DoxyCodeLine{27     unordered\_map <string, Airline*> airlines\_ ;}
+\DoxyCodeLine{28     unordered\_map <string, City*> cities\_;}
+\DoxyCodeLine{29     unordered\_map <string, Airport*> airports\_;}
+\DoxyCodeLine{30     unordered\_map <string, Country*> countries\_;}
+\DoxyCodeLine{31     \mbox{\hyperlink{class_graph}{Graph}} *flightG = \textcolor{keyword}{new} \mbox{\hyperlink{class_graph}{Graph}}(1);}
+\DoxyCodeLine{32     vector<pair<string, Coordinate>> airportCoord\_;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{public}:}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \mbox{\hyperlink{class_data}{Data}}();}
+\DoxyCodeLine{37     unordered\_map <string, Airport*> getAirports();}
+\DoxyCodeLine{38     unordered\_map <string, Airline*> getAirlines();}
+\DoxyCodeLine{39     unordered\_map <string, City*> getCities();}
+\DoxyCodeLine{40     unordered\_map <string, Country*> getCountries();}
+\DoxyCodeLine{41     \mbox{\hyperlink{class_graph}{Graph}}* getFlightG();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_data_ada480eb9722e7a24ab33353426620b0a}{readFile\_airlines}}();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_data_a4cd22ae183274891a2204bee61676265}{readFile\_airports}}();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_data_ad9c53da28c787ceeffa4c15c637a876d}{readFile\_flights}}();}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{73     vector<string> \mbox{\hyperlink{class_data_a94159701aa282df027b4ed6f7516efdc}{city2Airport}}(\textcolor{keywordtype}{string} city);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{82     vector<string> \mbox{\hyperlink{class_data_af0fea4846f24c7544632cd807a288274}{country2Airport}}(\textcolor{keywordtype}{string} country);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{91     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_data_a7a7b8aa72f4f8e8fdb9b166c2fddad1a}{coord2Airport}}(\textcolor{keywordtype}{string} c);}
+\DoxyCodeLine{100     vector<string> \mbox{\hyperlink{class_data_aeb9227bae4207c2b88579d0345b801d4}{coord2AirportWithDistance}}(\textcolor{keywordtype}{string} c, \textcolor{keywordtype}{int} x);}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{114     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_data_af31006a4c3bb3732667a566b93b528d0}{flight}}(\textcolor{keywordtype}{string} origin, \textcolor{keywordtype}{string} dest, \textcolor{keywordtype}{int} oType, \textcolor{keywordtype}{int} dType,vector<string>\& filters,  \textcolor{keywordtype}{int} oRadius, \textcolor{keywordtype}{int} dRadius);}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     \textcolor{comment}{/*STATISTICS*/}}
+\DoxyCodeLine{118     \textcolor{comment}{//global}}
+\DoxyCodeLine{119     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_aff07f5d7306e497e1927e91e58008575}{totalAirports}}();}
+\DoxyCodeLine{120     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_af25ae6a920137e1724d40d8ff0fe5e3c}{totalCities}}();}
+\DoxyCodeLine{121     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_a6d6954a683593e59938a34dddeead81a}{totalCountries}}();}
+\DoxyCodeLine{122     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_ae4e05fd5fe530fb422b7fb4d69500318}{totalAirlines}}();}
+\DoxyCodeLine{123     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_ab383dceb6f21b16bff75e809d23470eb}{totalFlights}}();}
+\DoxyCodeLine{124     \textcolor{comment}{//country}}
+\DoxyCodeLine{125     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_acdb96c187c958dba5103c798e937a8b4}{nCities1}}(\textcolor{keywordtype}{string} country);}
+\DoxyCodeLine{126     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_afb1fcf03bb2a124cb38afa5d4882d3a5}{nAirports1}}(\textcolor{keywordtype}{string} country);}
+\DoxyCodeLine{127     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_a5e731af731d4afc5982367d180bddc47}{nFlights1}}(\textcolor{keywordtype}{string} country);}
+\DoxyCodeLine{128     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_aaac623a4ca26498bbc8e600b50a1aaa1}{nAirlines1}}(\textcolor{keywordtype}{string} country);}
+\DoxyCodeLine{129     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_acbca7e362954f89f7b6dff14bc836777}{nDestinations1}}(\textcolor{keywordtype}{string} country);}
+\DoxyCodeLine{130     \textcolor{comment}{//city}}
+\DoxyCodeLine{131     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_a1f0ba854de9309ba81cd4202d4652a15}{nAirports2}}(\textcolor{keywordtype}{string} city);}
+\DoxyCodeLine{132     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_a6ae3c8baaf596f9f4e5827f1cbc9157d}{nFlights2}}(\textcolor{keywordtype}{string} city);}
+\DoxyCodeLine{133     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_adf8b01732b77d971f4d451cc34ca97a6}{nAirlines2}}(\textcolor{keywordtype}{string} city);}
+\DoxyCodeLine{134     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_afc724ca40dab51ac2eccd90498c8c5c2}{nDestinations2}}(\textcolor{keywordtype}{string} city);}
+\DoxyCodeLine{135     \textcolor{comment}{//airports}}
+\DoxyCodeLine{136     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_a4fb06f18d55855c33bbcce34713809d8}{nFlights3}}(\textcolor{keywordtype}{string} airport);}
+\DoxyCodeLine{137     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_a307c4b439059426b3595ddc8c4f47ec6}{nAirlines3}}(\textcolor{keywordtype}{string} airport);}
+\DoxyCodeLine{138     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_ab4e406eeac4676f63460b3a477c1bd6e}{nDestinations3}}(\textcolor{keywordtype}{string} airport);}
+\DoxyCodeLine{139     \textcolor{comment}{//airline}}
+\DoxyCodeLine{140     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_af5bed2aa6ef9791cdcf517ac69427b9f}{nFlights4}}(\textcolor{keywordtype}{string} airline);}
+\DoxyCodeLine{141     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_a982ec0beb9914f42afd1ec0477fa7284}{nDestinations4}}(\textcolor{keywordtype}{string} airline);}
+\DoxyCodeLine{142     \textcolor{comment}{//aux}}
+\DoxyCodeLine{143     set<string> \mbox{\hyperlink{class_data_a7df22752d364b84d38f45cde77382fc3}{getDifAirlines}}(\textcolor{keywordtype}{string} airport);}
+\DoxyCodeLine{144     set<string> \mbox{\hyperlink{class_data_af19af469e597b60b7ae479850b48e28f}{getDifDestinations}}(\textcolor{keywordtype}{string} airport);}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_ae17d78f1df21dbb390e87f5f838f6a68}{nFlightsFromAirportWithAirlines}}(\textcolor{keywordtype}{string} airport, set<string> airline);}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 }
+\DoxyCodeLine{155     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_af613823a01d5df69f2fe632a20b2a7ce}{diameter}}();}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 }
+\DoxyCodeLine{164     vector<string> \mbox{\hyperlink{class_data_ac668078e7be6f2e44b972579ff61263a}{topKairports}}(\textcolor{keywordtype}{int} k);}
+\DoxyCodeLine{165     \textcolor{keywordtype}{void} printArtPoints(vector<string> airlines);}
+\DoxyCodeLine{166 \};}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//AEDP2\_DATA\_H}}
+
+\end{DoxyCode}

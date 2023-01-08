@@ -1,0 +1,71 @@
+\hypertarget{class_coordinate}{}\doxysection{Coordinate Class Reference}
+\label{class_coordinate}\index{Coordinate@{Coordinate}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_coordinate_ab8c4ba28967b1db93d4282b3606c3564}\label{class_coordinate_ab8c4ba28967b1db93d4282b3606c3564}} 
+{\bfseries Coordinate} (double lati, double longi)
+\item 
+\mbox{\Hypertarget{class_coordinate_a695c7fcca3aafd6321ee945ce383a4ed}\label{class_coordinate_a695c7fcca3aafd6321ee945ce383a4ed}} 
+double {\bfseries get\+Lati} () const
+\item 
+\mbox{\Hypertarget{class_coordinate_a285c1eb4134c1a4ea0e6ec15f7227f57}\label{class_coordinate_a285c1eb4134c1a4ea0e6ec15f7227f57}} 
+double {\bfseries get\+Longi} () const
+\item 
+double \mbox{\hyperlink{class_coordinate_a5c5518b8e95f9dd25327b5b883702b79}{distance\+\_\+between\+\_\+coordinates}} (\mbox{\hyperlink{class_coordinate}{Coordinate}} cord2) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_coordinate_a0549481fe7f2f4289a1ad2c539923439}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_coordinate}{Coordinate}} \&coordinate)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_coordinate_a5c5518b8e95f9dd25327b5b883702b79}\label{class_coordinate_a5c5518b8e95f9dd25327b5b883702b79}} 
+\index{Coordinate@{Coordinate}!distance\_between\_coordinates@{distance\_between\_coordinates}}
+\index{distance\_between\_coordinates@{distance\_between\_coordinates}!Coordinate@{Coordinate}}
+\doxysubsubsection{\texorpdfstring{distance\_between\_coordinates()}{distance\_between\_coordinates()}}
+{\footnotesize\ttfamily double Coordinate\+::distance\+\_\+between\+\_\+coordinates (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_coordinate}{Coordinate}}}]{cord2 }\end{DoxyParamCaption}) const}
+
+Calcula a distancia entre duas coordenadas.
+
+COMPLEXIDADE\+: O(1)
+
+
+\begin{DoxyParams}{Parameters}
+{\em cord2} & coodenada com a qual a funçao calcula a distancia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+valor double que indica a distancia entre as coordenadas 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_coordinate_a0549481fe7f2f4289a1ad2c539923439}\label{class_coordinate_a0549481fe7f2f4289a1ad2c539923439}} 
+\index{Coordinate@{Coordinate}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Coordinate@{Coordinate}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{class_coordinate}{Coordinate}} \&}]{coordinate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Mostra ao utilizador informaçao relevante sobre a coordenada.
+
+COMPLEXIDADE\+: O(1)
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & ostream que recebe o output \\
+\hline
+{\em coordinate} & Coordenada constante que será utilizada para dispor informação \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ostream que será o output para o utilizador 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Coordinate.\+h\item 
+Coordinate.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,292 @@
+\hypertarget{class_graph}{}\doxysection{Graph Class Reference}
+\label{class_graph}\index{Graph@{Graph}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_graph_a8037abe2b5ebff1ca625ef75dfc75155}\label{class_graph_a8037abe2b5ebff1ca625ef75dfc75155}} 
+{\bfseries Graph} (int nodes, bool dir=true)
+\item 
+void \mbox{\hyperlink{class_graph_a11a4e38da93120bfd7b5ec2cc0b67bc9}{add\+Node}} (const string \&airport\+Code, \mbox{\hyperlink{class_airport}{Airport}} $\ast$airport)
+\item 
+void \mbox{\hyperlink{class_graph_a7b3ce997e815c33c03214a44cafc9822}{add\+Edge}} (const string \&airport\+CodeO, const string \&airport\+CodeD, const string \&airline\+Code)
+\item 
+void \mbox{\hyperlink{class_graph_aefcff5f2e134c24aad0bb3f38c5b639c}{bfs}} (const string \&airport\+Code)
+\item 
+Node \& \mbox{\hyperlink{class_graph_a73e1e0125c9fbfe78d541592b39de511}{node\+At}} (const string \&key)
+\item 
+void \mbox{\hyperlink{class_graph_a2d9a438873de3939d8cdec5e6aaf743f}{unvisit}} ()
+\item 
+void \mbox{\hyperlink{class_graph_a9694db5e3efacb456bae56da236660d6}{undistance}} ()
+\item 
+\mbox{\Hypertarget{class_graph_a5b3ae9ff4ccbb915f6d22a86f652c35d}\label{class_graph_a5b3ae9ff4ccbb915f6d22a86f652c35d}} 
+void {\bfseries unlow} ()
+\item 
+\mbox{\Hypertarget{class_graph_a69ee6899bee9048a2880ca3848e4c229}\label{class_graph_a69ee6899bee9048a2880ca3848e4c229}} 
+void {\bfseries unnum} ()
+\item 
+\mbox{\Hypertarget{class_graph_ac282eae2f170f0bf1ae765ebb9443ad8}\label{class_graph_ac282eae2f170f0bf1ae765ebb9443ad8}} 
+void {\bfseries unstack} ()
+\item 
+\mbox{\Hypertarget{class_graph_afa5971483d2d3c19dc9c2fd343110b3c}\label{class_graph_afa5971483d2d3c19dc9c2fd343110b3c}} 
+void {\bfseries undir} ()
+\item 
+void \mbox{\hyperlink{class_graph_ac6192a41101102ca8aa6acca607c84f3}{clear}} ()
+\item 
+int \mbox{\hyperlink{class_graph_ae915ab985390de33e1019259422a2d60}{distance}} (string origin, string dest)
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{class_graph_abf015e71b028d5bc84962b838659e44c}{make\+Path}} (string origin, string destination, vector$<$ string $>$ \&airlines)
+\item 
+void \mbox{\hyperlink{class_graph_a5163b622007e0efbed041248d9605c7d}{print\+Path}} (vector$<$ string $>$ path)
+\item 
+void \mbox{\hyperlink{class_graph_a5ba8d1c1ad53a410a6ee87fb1573f69f}{bfs\+With\+Filters}} (const string \&airport\+Code, vector$<$ string $>$ \&airlines)
+\item 
+set$<$ string $>$ \mbox{\hyperlink{class_graph_ab86ffda6ef14bfe8cb7d86936150f342}{ap\+Methods\+Helper}} (int y)
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{class_graph_a1763ed062d8c7b75cfc293bfd8e36464}{dfs\+\_\+articulation\+Points}} (Node \&c\+Ap, vector$<$ string $>$ \&art\+Points, stack$<$ Node $>$ \&s, int \&index)
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{class_graph_a0c4806154cb2284ad51a1dc68a32a76b}{dfs\+\_\+articulation\+Points\+With\+Airline}} (const string \&c\+Ap, bool first\+Iteration, vector$<$ string $>$ \&art\+Points, stack$<$ string $>$ \&s, int \&index, vector$<$ string $>$ airlines)
+\item 
+\mbox{\Hypertarget{class_graph_a8a7fd3440b6ecb536117f4e83de6c3a9}\label{class_graph_a8a7fd3440b6ecb536117f4e83de6c3a9}} 
+void {\bfseries print\+Art\+Points} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_graph_a7b3ce997e815c33c03214a44cafc9822}\label{class_graph_a7b3ce997e815c33c03214a44cafc9822}} 
+\index{Graph@{Graph}!addEdge@{addEdge}}
+\index{addEdge@{addEdge}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{addEdge()}{addEdge()}}
+{\footnotesize\ttfamily void Graph\+::add\+Edge (\begin{DoxyParamCaption}\item[{const string \&}]{airport\+CodeO,  }\item[{const string \&}]{airport\+CodeD,  }\item[{const string \&}]{airline\+Code }\end{DoxyParamCaption})}
+
+Adiciona uma aresta conectando dois nós do grafo, a que está associado o codigo do aeroporto de origem, o codigo do aeroporto de destino e o codigo da companhia aerea de conexão dos dois.
+
+COMPLEXIDADE\+: O(n) 
+\begin{DoxyParams}{Parameters}
+{\em airport\+CodeO} & string codigo do aeroporto de origem desta aresta \\
+\hline
+{\em airport\+CodeD} & string codigo do aeroporto de destino desta aresta \\
+\hline
+{\em airline\+Code} & string codigo da companhia aerea associada a essa aresta de conexão \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_graph_a11a4e38da93120bfd7b5ec2cc0b67bc9}\label{class_graph_a11a4e38da93120bfd7b5ec2cc0b67bc9}} 
+\index{Graph@{Graph}!addNode@{addNode}}
+\index{addNode@{addNode}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{addNode()}{addNode()}}
+{\footnotesize\ttfamily void Graph\+::add\+Node (\begin{DoxyParamCaption}\item[{const string \&}]{airport\+Code,  }\item[{\mbox{\hyperlink{class_airport}{Airport}} $\ast$}]{airport }\end{DoxyParamCaption})}
+
+Adiciona um node a este grafo, usando o código de aeroporto como a key e o aeroporto como value.
+
+COMPLEXIDADE\+: O(1)
+
+
+\begin{DoxyParams}{Parameters}
+{\em airport\+Code} & string codigo do aeroporto a ser usado como key \\
+\hline
+{\em airport} & pointer do aeroporto a ser adicionado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_graph_ab86ffda6ef14bfe8cb7d86936150f342}\label{class_graph_ab86ffda6ef14bfe8cb7d86936150f342}} 
+\index{Graph@{Graph}!apMethodsHelper@{apMethodsHelper}}
+\index{apMethodsHelper@{apMethodsHelper}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{apMethodsHelper()}{apMethodsHelper()}}
+{\footnotesize\ttfamily set$<$ string $>$ Graph\+::ap\+Methods\+Helper (\begin{DoxyParamCaption}\item[{int}]{y }\end{DoxyParamCaption})}
+
+Retorna uma set de strings de codigos de aeroportos cuja distancia é menor ou igual do que y (e maior do que zero), em numero de voos. É uma funçao auxiliar às funções da classe \mbox{\hyperlink{class_ap_methods}{Ap\+Methods}}.
+
+COMPLEXIDADE\+: O(\+V), sendo V o numero de nós do grafo 
+\begin{DoxyParams}{Parameters}
+{\em y} & numero de voos a considerar na contagem \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+set de strings de codigos de aeroportos que se encontram a uma distancia maxima de Y voos do aeroporto de origem, definido anteriormente noutra função 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_aefcff5f2e134c24aad0bb3f38c5b639c}\label{class_graph_aefcff5f2e134c24aad0bb3f38c5b639c}} 
+\index{Graph@{Graph}!bfs@{bfs}}
+\index{bfs@{bfs}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{bfs()}{bfs()}}
+{\footnotesize\ttfamily void Graph\+::bfs (\begin{DoxyParamCaption}\item[{const string \&}]{airport\+Code }\end{DoxyParamCaption})}
+
+Realiza a Breadth-\/\+First search no grafo preenchido com os voos e destinos.
+
+COMPLEXIDADE\+: O($\vert$\+V$\vert$ + $\vert$\+E$\vert$), $\vert$\+V$\vert$ sendo o número de nós do grafo e $\vert$\+E$\vert$ o número de arestas (edges) do grafo
+
+
+\begin{DoxyParams}{Parameters}
+{\em airport\+Code} & string código do aeroporto de partida \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_graph_a5ba8d1c1ad53a410a6ee87fb1573f69f}\label{class_graph_a5ba8d1c1ad53a410a6ee87fb1573f69f}} 
+\index{Graph@{Graph}!bfsWithFilters@{bfsWithFilters}}
+\index{bfsWithFilters@{bfsWithFilters}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{bfsWithFilters()}{bfsWithFilters()}}
+{\footnotesize\ttfamily void Graph\+::bfs\+With\+Filters (\begin{DoxyParamCaption}\item[{const string \&}]{airport\+Code,  }\item[{vector$<$ string $>$ \&}]{airlines }\end{DoxyParamCaption})}
+
+Realiza a Breadth-\/\+First search no grafo preenchido com os voos e destinos, apenas com a restrição de só utilizar as compnhias aéreas escolhidas pelo utilizador.
+
+COMPLEXIDADE\+: O(V+\+E+N), sendo V o numero de nós do grafo e E o numero de arestas do grafo e N o numero de companhias aereas 
+\begin{DoxyParams}{Parameters}
+{\em airport\+Code} & string codigo do aeroporto de origem \\
+\hline
+{\em airlines} & vector de string(s) de codigo(s) de companhias aereas a considerar na bfs \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_graph_ac6192a41101102ca8aa6acca607c84f3}\label{class_graph_ac6192a41101102ca8aa6acca607c84f3}} 
+\index{Graph@{Graph}!clear@{clear}}
+\index{clear@{clear}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Graph\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Limpa o grafo.
+
+COMPLEXIDADE\+: O(\+V) sendo V o numero de nós do grafo \mbox{\Hypertarget{class_graph_a1763ed062d8c7b75cfc293bfd8e36464}\label{class_graph_a1763ed062d8c7b75cfc293bfd8e36464}} 
+\index{Graph@{Graph}!dfs\_articulationPoints@{dfs\_articulationPoints}}
+\index{dfs\_articulationPoints@{dfs\_articulationPoints}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{dfs\_articulationPoints()}{dfs\_articulationPoints()}}
+{\footnotesize\ttfamily vector$<$ string $>$ Graph\+::dfs\+\_\+articulation\+Points (\begin{DoxyParamCaption}\item[{Node \&}]{c\+Ap,  }\item[{vector$<$ string $>$ \&}]{art\+Points,  }\item[{stack$<$ Node $>$ \&}]{s,  }\item[{int \&}]{index }\end{DoxyParamCaption})}
+
+Realiza a Depth-\/\+First search no grafo preenchido com os voos e destinos.
+
+COMPLEXIDADE\+: O($\vert$\+V$\vert$ + $\vert$\+E$\vert$), $\vert$\+V$\vert$ sendo o número de nós do grafo e $\vert$\+E$\vert$ o número de arestas (edges) do grafo
+
+
+\begin{DoxyParams}{Parameters}
+{\em c\+Ap} & string codigo do aeroporto \\
+\hline
+{\em first\+Iteration} & valor booleano que indica se é a primeira iteração ou não \\
+\hline
+{\em distance} & valor inteiro \\
+\hline
+{\em path} & \\
+\hline
+{\em paths} & \\
+\hline
+{\em dest\+Ap} & \\
+\hline
+{\em d} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Realiza a Depth-\/\+First search no grafo preenchido com os voos e destinos, assinalando os Pontos de Articulação da Rede.
+\end{DoxyReturn}
+COMPLEXIDADE\+: O($\vert$\+V$\vert$ + $\vert$\+E$\vert$), $\vert$\+V$\vert$ sendo o número de nós do grafo e $\vert$\+E$\vert$ o número de arestas (edges) do grafo
+
+
+\begin{DoxyParams}{Parameters}
+{\em c\+Ap} & string codigo do aeroporto de partida \\
+\hline
+{\em first\+Iteration} & valor booleano que indica se é a primeira iteração ou não \\
+\hline
+{\em art\+Points} & pontos de articulação identificados \\
+\hline
+{\em s} & stack auxiliar para o dfs \\
+\hline
+{\em index} & ordem de visita dos nodes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector de strings com os nomes dos pontos de articulação do grafo (Aeroportos) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_a0c4806154cb2284ad51a1dc68a32a76b}\label{class_graph_a0c4806154cb2284ad51a1dc68a32a76b}} 
+\index{Graph@{Graph}!dfs\_articulationPointsWithAirline@{dfs\_articulationPointsWithAirline}}
+\index{dfs\_articulationPointsWithAirline@{dfs\_articulationPointsWithAirline}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{dfs\_articulationPointsWithAirline()}{dfs\_articulationPointsWithAirline()}}
+{\footnotesize\ttfamily vector$<$ string $>$ Graph\+::dfs\+\_\+articulation\+Points\+With\+Airline (\begin{DoxyParamCaption}\item[{const string \&}]{c\+Ap,  }\item[{bool}]{first\+Iteration,  }\item[{vector$<$ string $>$ \&}]{art\+Points,  }\item[{stack$<$ string $>$ \&}]{s,  }\item[{int \&}]{index,  }\item[{vector$<$ string $>$}]{airlines }\end{DoxyParamCaption})}
+
+Realiza a Depth-\/\+First search no grafo preenchido com os voos e destinos, assinalando os Pontos de Articulação da Rede considerando apenas um subconjunto de companhias.
+
+COMPLEXIDADE\+: O($\vert$\+V$\vert$ + $\vert$\+E$\vert$), $\vert$\+V$\vert$ sendo o número de nós do grafo e $\vert$\+E$\vert$ o número de arestas (edges) do grafo
+
+
+\begin{DoxyParams}{Parameters}
+{\em c\+Ap} & string codigo do aeroporto de partida \\
+\hline
+{\em first\+Iteration} & valor booleano que indica se é a primeira iteração ou não \\
+\hline
+{\em art\+Points} & pontos de articulação identificados \\
+\hline
+{\em s} & stack auxiliar para o dfs \\
+\hline
+{\em index} & ordem de visita dos nodes \\
+\hline
+{\em airlines} & companhias selecionadas pelo utilizador \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector de strings com os nomes dos pontos de articulação do grafo (Aeroportos) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_ae915ab985390de33e1019259422a2d60}\label{class_graph_ae915ab985390de33e1019259422a2d60}} 
+\index{Graph@{Graph}!distance@{distance}}
+\index{distance@{distance}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{distance()}{distance()}}
+{\footnotesize\ttfamily int Graph\+::distance (\begin{DoxyParamCaption}\item[{string}]{origin,  }\item[{string}]{dest }\end{DoxyParamCaption})}
+
+Retorna a distancia entre uma origem e um destino.
+
+COMPLEXIDADE\+: O(V+E), sendo V o numero de nós do grafo e E o numero de arestas do grafo 
+\begin{DoxyParams}{Parameters}
+{\em dest} & string código do aeroporto de destino \\
+\hline
+{\em origin} & string código do aeroporto de origem \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+distancia em valor inteiro entre os dois aeroportos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_abf015e71b028d5bc84962b838659e44c}\label{class_graph_abf015e71b028d5bc84962b838659e44c}} 
+\index{Graph@{Graph}!makePath@{makePath}}
+\index{makePath@{makePath}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{makePath()}{makePath()}}
+{\footnotesize\ttfamily vector$<$ string $>$ Graph\+::make\+Path (\begin{DoxyParamCaption}\item[{string}]{origin,  }\item[{string}]{destination,  }\item[{vector$<$ string $>$ \&}]{airlines }\end{DoxyParamCaption})}
+
+Retorna o vetor com o percurso mais adequado entre o aeroporto de origem e de destino
+
+COMPLEXIDADE\+: O(V+E), sendo V o numero de nós do grafo e E o numero de arestas do grafo \mbox{\Hypertarget{class_graph_a73e1e0125c9fbfe78d541592b39de511}\label{class_graph_a73e1e0125c9fbfe78d541592b39de511}} 
+\index{Graph@{Graph}!nodeAt@{nodeAt}}
+\index{nodeAt@{nodeAt}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{nodeAt()}{nodeAt()}}
+{\footnotesize\ttfamily Graph\+::\+Node \& Graph\+::node\+At (\begin{DoxyParamCaption}\item[{const string \&}]{key }\end{DoxyParamCaption})}
+
+Retorna um nó associado a uma dada chave.
+
+COMPLEXIDADE\+: O(1)
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & string chave do node que retornará \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+o node associado à chave fornecida 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_a5163b622007e0efbed041248d9605c7d}\label{class_graph_a5163b622007e0efbed041248d9605c7d}} 
+\index{Graph@{Graph}!printPath@{printPath}}
+\index{printPath@{printPath}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{printPath()}{printPath()}}
+{\footnotesize\ttfamily void Graph\+::print\+Path (\begin{DoxyParamCaption}\item[{vector$<$ string $>$}]{path }\end{DoxyParamCaption})}
+
+Imprime o percurso entre o aeroporto de origem e de destino
+
+COMPLEXIDADE\+: O(n) \mbox{\Hypertarget{class_graph_a9694db5e3efacb456bae56da236660d6}\label{class_graph_a9694db5e3efacb456bae56da236660d6}} 
+\index{Graph@{Graph}!undistance@{undistance}}
+\index{undistance@{undistance}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{undistance()}{undistance()}}
+{\footnotesize\ttfamily void Graph\+::undistance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Coloca todos os nós com distancia igual a -\/1..
+
+COMPLEXIDADE\+: O(\+V) sendo V o numero de nós do grafo \mbox{\Hypertarget{class_graph_a2d9a438873de3939d8cdec5e6aaf743f}\label{class_graph_a2d9a438873de3939d8cdec5e6aaf743f}} 
+\index{Graph@{Graph}!unvisit@{unvisit}}
+\index{unvisit@{unvisit}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{unvisit()}{unvisit()}}
+{\footnotesize\ttfamily void Graph\+::unvisit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Coloca todos os nós como não visitados.
+
+COMPLEXIDADE\+: O(\+V) sendo V o numero de nós do grafo 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Graph.\+h\item 
+Graph.\+cpp\end{DoxyCompactItemize}
