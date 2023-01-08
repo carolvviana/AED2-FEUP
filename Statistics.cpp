@@ -101,7 +101,7 @@ int Data::nFlights3(string airport){return flightG->nodeAt(airport).adj.size();}
 /**
    * Retorna o numero de companhias aereas presentes no aeroporto dado.
    *
-   * COMPLEXIDADE: O(1)
+   * COMPLEXIDADE: O(n)
    * @param airport codigo do aeroporto que será considerado na contagem
    * @return inteiro que indica o numero de companhias aereas presentes no aeroporto dado.
    */
@@ -110,7 +110,7 @@ int Data::nAirlines3(string airport){return getDifAirlines(airport).size();}
 /**
    * Retorna o numero de destinos (aeroportos) alcançaveis a partir do aeroporto dado.
    *
-   * COMPLEXIDADE: O(1)
+   * COMPLEXIDADE: O(n)
    * @param airport codigo do aeroporto que será considerado na contagem
    * @return inteiro que indica o numero de destinos (aeroportos) alcançaveis a partir do aeroporto dado.
    */
