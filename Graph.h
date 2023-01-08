@@ -106,6 +106,10 @@ public:
      * COMPLEXIDADE: O(V) sendo V o numero de nós do grafo
      */
     void undistance();
+    void unlow();
+    void unnum();
+    void unstack();
+    void undir();
 
     /**
      * Limpa o grafo.
@@ -189,7 +193,7 @@ public:
  * @param index ordem de visita dos nodes
  * @return vector de strings com os nomes dos pontos de articulação do grafo (Aeroportos)
  */
-    vector<string> dfs_articulationPoints(const string& cAp, bool firstIteration, vector<string>& artPoints, stack<string>& s, int& index);
+    vector<string> dfs_articulationPoints(Node& cAp, vector<string>& artPoints, stack<Node>& s, int& index);
 
     /**
 * Realiza a Depth-First search no grafo preenchido com os voos e destinos, assinalando os Pontos de Articulação da Rede considerando apenas um subconjunto de companhias.
@@ -205,7 +209,7 @@ public:
 * @return vector de strings com os nomes dos pontos de articulação do grafo (Aeroportos)
 */
     vector<string> dfs_articulationPointsWithAirline(const string& cAp, bool firstIteration, vector<string>& artPoints, stack<string>& s, int& index, vector<string> airlines);
-
+    void printArtPoints(/*vector<string> airlines*/);
 };
 
 

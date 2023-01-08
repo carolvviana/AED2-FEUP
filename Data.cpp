@@ -271,12 +271,15 @@ vector<string> Data :: topKairports(int k){
 }
 
 void Data :: printArtPoints(vector<string> airlines){
-    if (airlines.empty()){
+   /* if (airlines.empty()){
         vector<string> artPoints;
         stack<string> s; int index = 1;
+
+        flightG->unvisit();
+        flightG->unlow(); flightG->unnum(); flightG->unstack(); flightG->undir();
         for (auto p: airports_){
             if (!flightG->nodeAt(p.first).visited){
-                flightG->dfs_articulationPoints(p.first, true, artPoints, s, index);
+                flightG->dfs_articulationPoints(p.first, artPoints, s, index);
             }
         }
         cout << "Number of articulation points: " << artPoints.size() << endl;
@@ -288,8 +291,12 @@ void Data :: printArtPoints(vector<string> airlines){
     else{
         vector<string> artPoints;
         stack<string> s; int index = 1;
+
+        flightG->unvisit();
+        flightG->unlow(); flightG->unnum(); flightG->unstack();
+
         for (auto p: airports_){
-            if (!flightG->nodeAt(p.first).visited){
+            if (flightG->nodeAt(p.first).visited == false){
                 flightG->dfs_articulationPointsWithAirline(p.first, true, artPoints, s, index, airlines);
             }
         }
@@ -298,5 +305,6 @@ void Data :: printArtPoints(vector<string> airlines){
         for (int i = 0; i<artPoints.size(); i++){
             cout << artPoints[i] << " | ";
         }
-    }
+    }*/
+   flightG->printArtPoints(/*airlines*/);
 }

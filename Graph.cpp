@@ -308,21 +308,18 @@ vector<string> Graph::dfs(const string& cAp, bool firstIteration, int& distance,
             dfs(dAp, false, distance, path, paths, destAp, d);
     }
 }*/
-vector<string> Graph::dfs_articulationPoints(const string& cAp, bool firstIteration, vector<string>& artPoints, stack<string>& s, int& index) {
-    if (firstIteration) { this->unvisit();}
-    bool art_point = false;
-
-    Node& cNode = nodes[cAp];
-    cNode.visited = true; cNode.num = index; cNode.low = index; s.push(cAp); cNode.stacked = true; index++;
+vector<string> Graph::dfs_articulationPoints(Node& cNode, vector<string>& artPoints, stack<Node>& s, int& index) {
+    cNode.visited = true; cNode.num = cNode.low = index; s.push(cNode); cNode.stacked = true; index++;
 
     int children = 0;
+    bool art_point = false;
 
-    for (const auto& e : cNode.adj) {
+    for (auto& e : cNode.adj) {
         string dAp = e.dest;
         Node& dNode = nodes[dAp];
         if (!dNode.visited){
             children++;
-            dfs_articulationPoints(dAp, false, artPoints, s, index);
+            dfs_articulationPoints(dNode,artPoints, s, index);
             cNode.low = min(cNode.low, dNode.low);
             if (dNode.low >= cNode.num){
                 art_point = true;
@@ -330,8 +327,14 @@ vector<string> Graph::dfs_articulationPoints(const string& cAp, bool firstIterat
         }
         else if (dNode.stacked){ cNode.low = min(cNode.low, dNode.num);}
     }
-    if ((cNode.num == cNode.low && children > 1) || (cNode.num != cNode.low && art_point)){
-        artPoints.push_back(cNode.airport->getName());
+    if ((cNode.num == 1 && children > 1) || (cNode.num > 1 && art_point)){
+        Node t;
+        do {
+            t = s.top();
+            s.pop();
+            cNode.stacked = false;
+        } while (t.airport->getName() != cNode.airport->getName());
+        artPoints.push_back(t.airport->getName());
     }
 }
 vector<string> Graph::dfs_articulationPointsWithAirline(const string& cAp, bool firstIteration, vector<string>& artPoints, stack<string>& s, int& index, vector<string> airlines) {
@@ -373,3 +376,53 @@ set<string> Graph:: apMethodsHelper(int y) {
     }
     return aux;
 }
+
+void Graph:: unlow(){
+    for (auto& node : nodes) node.second.low = 0;
+}
+void Graph:: unnum(){
+    for (auto& node : nodes) node.second.num = 0;
+}
+void Graph:: unstack(){
+    for (auto& node : nodes) node.second.stacked = false;
+}
+void Graph:: undir(){
+    hasDir = false;
+}
+void Graph :: printArtPoints(/*vector<string> airlines*/){
+    /*if (airlines.empty()){*/
+        vector<string> artPoints;
+        stack<Node> s; int index = 1;
+
+        unvisit();
+        unlow(); unnum(); unstack(); undir();
+        for (auto p: nodes){
+            if (!p.second.visited){
+                dfs_articulationPoints(p.second, artPoints, s, index);
+            }
+        }
+        cout << "Number of articulation points: " << artPoints.size() << endl;
+        cout << "The articulation points are: ";
+        for (int i = 0; i<artPoints.size(); i++){
+            cout << artPoints[i] << " | ";
+        }
+    }
+    /*else{
+        vector<string> artPoints;
+        stack<string> s; int index = 1;
+
+        flightG->unvisit();
+        flightG->unlow(); flightG->unnum(); flightG->unstack();
+
+        for (auto p: airports_){
+            if (flightG->nodeAt(p.first).visited == false){
+                flightG->dfs_articulationPointsWithAirline(p.first, true, artPoints, s, index, airlines);
+            }
+        }
+        cout << "Number of articulation points with airline filters: " << artPoints.size() << endl;
+        cout << "The articulation points are: ";
+        for (int i = 0; i<artPoints.size(); i++){
+            cout << artPoints[i] << " | ";
+        }*/
+    //}
+//}
