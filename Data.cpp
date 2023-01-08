@@ -306,5 +306,5 @@ void Data :: printArtPoints(vector<string> airlines){
             cout << artPoints[i] << " | ";
         }
     }*/
-   flightG->printArtPoints(/*airlines*/);
+   flightG->printArtPoints(airlines);
 }
