@@ -134,36 +134,6 @@ vector<string> Data::country2Airport(string country){
     return aps;
 }
 
-/*
-string Data :: coord2Airport(string c){
-    vector<pair<string, Coordinate>> airportCoord(airportCoord_);
-    string v = ",";
-    size_t pos = c.find(v);
-    Coordinate co = Coordinate(stod(c.substr(0, pos)), stod(c.substr(pos+1)));
-
-    sort(airportCoord.begin(), airportCoord.end(), compByLat);
-
-    int positionLowBoundLati = binarySearchLowBoundLati(airportCoord, co);
-    int positionHighBoundLati = binarySearchHighBoundLati(airportCoord, co);
-    airportCoord.erase(airportCoord.begin(), airportCoord.begin()+positionLowBoundLati);
-    airportCoord.erase(airportCoord.begin()+positionHighBoundLati);
-
-    sort(airportCoord.begin(), airportCoord.end(), compByLong);
-
-    int positionLowBoundLongi = binarySearchLowBoundLongi(airportCoord, co);
-    int positionHighBoundLongi = binarySearchHighBoundLongi(airportCoord, co);
-    airportCoord.erase(airportCoord.begin(), airportCoord.begin()+positionLowBoundLongi);
-    airportCoord.erase(airportCoord.begin()+positionHighBoundLongi);
-
-    double dist_min = airportCoord[0].second.distance_between_coordinates(co);
-    double dist_max = airportCoord[1].second.distance_between_coordinates(co);
-
-    if (dist_min < dist_max){
-        return airportCoord[0].first;
-    }
-    else return airportCoord[1].first;
-
-}*/
 string Data :: coord2Airport(string c){
     string v = ",";
     size_t pos = c.find(v);
@@ -267,40 +237,5 @@ vector<string> Data :: topKairports(int k){
 }
 
 void Data :: printArtPoints(vector<string> airlines){
-   /* if (airlines.empty()){
-        vector<string> artPoints;
-        stack<string> s; int index = 1;
-
-        flightG->unvisit();
-        flightG->unlow(); flightG->unnum(); flightG->unstack(); flightG->undir();
-        for (auto p: airports_){
-            if (!flightG->nodeAt(p.first).visited){
-                flightG->dfs_articulationPoints(p.first, artPoints, s, index);
-            }
-        }
-        cout << "Number of articulation points: " << artPoints.size() << endl;
-        cout << "The articulation points are: ";
-        for (int i = 0; i<artPoints.size(); i++){
-            cout << artPoints[i] << " | ";
-        }
-    }
-    else{
-        vector<string> artPoints;
-        stack<string> s; int index = 1;
-
-        flightG->unvisit();
-        flightG->unlow(); flightG->unnum(); flightG->unstack();
-
-        for (auto p: airports_){
-            if (flightG->nodeAt(p.first).visited == false){
-                flightG->dfs_articulationPointsWithAirline(p.first, true, artPoints, s, index, airlines);
-            }
-        }
-        cout << "Number of articulation points with airline filters: " << artPoints.size() << endl;
-        cout << "The articulation points are: ";
-        for (int i = 0; i<artPoints.size(); i++){
-            cout << artPoints[i] << " | ";
-        }
-    }*/
    flightG->printArtPoints(airlines);
 }

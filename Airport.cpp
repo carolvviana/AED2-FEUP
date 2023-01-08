@@ -1,5 +1,4 @@
 #include "Airport.h"
-#include "City.h"
 
 Airport :: Airport(string code, string name, string city, double lati, double longi){
     code_ = code; name_ = name; city_ = city; coordinate_ = Coordinate(lati, longi);

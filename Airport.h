@@ -1,12 +1,7 @@
-//
-// Created by carol on 26/12/2022.
-//
-
 #ifndef AEDP2_AIRPORT_H
 #define AEDP2_AIRPORT_H
 #include <iostream>
 #include "Coordinate.h"
-//class City;
 
 using namespace std;
 

@@ -1,7 +1,3 @@
-//
-// Created by carol on 13/12/2022.
-//
-
 #ifndef AEDP2_INTERFACE_H
 #define AEDP2_INTERFACE_H
 
@@ -18,10 +14,7 @@ public:
     void setData(Data d){d_ = d;}
     void setApm(ApMethods apm){apm_=apm;}
     Interface();
-    //Data getData(){return d;}
-    //0
     void welcomePage();
-    //1
     void getFlights();
     void credits() const;
 

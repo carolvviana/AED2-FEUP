@@ -3,11 +3,10 @@
 #include "Graph.h"
 //aux
 //returns different airlines at an airport
-
     /**
      * Retorna um set de strings que são os codigos de companhias aéreas diferentes que partem do aeroporto dado.
      *
-     * COMPLEXIDADE: O(n)
+     * COMPLEXIDADE: O(n log(n))
      *
      * @param airport codigo do aeroporto que queremos contar o numero de companhias aereas
      * @return set de strings de codigos das diferentes companhias aereas nesse aeroporto
@@ -24,7 +23,7 @@ set<string> Data::getDifAirlines(string airport){
     /**
      * Retorna um set de strings que são os codigos dos aeroportos diferentes atingiveis pelo aeroporto dado.
      *
-     * COMPLEXIDADE: O(n)
+     * COMPLEXIDADE: O(n log(n))
      *
      * @param airport codigo do aeroporto que queremos contar o numero de companhias aereas
      * @return set de strings de codigos dos aeroportos diferentes atingiveis pelo aeroporto dado.
@@ -96,7 +95,7 @@ int Data::nFlights3(string airport){return flightG->nodeAt(airport).adj.size();}
 /**
    * Retorna o numero de companhias aereas presentes no aeroporto dado.
    *
-   * COMPLEXIDADE: O(n)
+   * COMPLEXIDADE: O(n log(n))
    * @param airport codigo do aeroporto que será considerado na contagem
    * @return inteiro que indica o numero de companhias aereas presentes no aeroporto dado.
    */
@@ -105,7 +104,7 @@ int Data::nAirlines3(string airport){return getDifAirlines(airport).size();}
 /**
    * Retorna o numero de destinos (aeroportos) alcançaveis a partir do aeroporto dado.
    *
-   * COMPLEXIDADE: O(n)
+   * COMPLEXIDADE: O(n log(n))
    * @param airport codigo do aeroporto que será considerado na contagem
    * @return inteiro que indica o numero de destinos (aeroportos) alcançaveis a partir do aeroporto dado.
    */
@@ -115,7 +114,7 @@ int Data::nDestinations3(string airport){return getDifDestinations(airport).size
 /**
    * Retorna o numero de aeroportos presentes na cidade dada.
    *
-   * COMPLEXIDADE: O(n)
+   * COMPLEXIDADE: O(1)
    * @param city string nome da cidade a considerar na contagem
    * @return inteiro que indica o numero de aeroportos presentes na cidade dada.
    */
@@ -137,7 +136,7 @@ int Data::nFlights2(string city){
 /**
    * Retorna o numero de companhias aereas a partir da cidade dada.
    *
-   * COMPLEXIDADE: O(n)
+   * COMPLEXIDADE: O(n^2log(n))
    * @param city string nome da cidade a considerar na contagem
    * @return inteiro que indica o numero de companhias aereas a partir da cidade dada.
    */
@@ -153,7 +152,7 @@ int Data::nAirlines2(string city){
 /**
    * Retorna o numero de destinos alcancaveis(aeroportos) a partir da cidade dada.
    *
-   * COMPLEXIDADE: O(n)
+   * COMPLEXIDADE: O(n^2log(n))
    * @param city string nome da cidade a considerar na contagem
    * @return inteiro que indica o numero de destinos alcancaveis a partir da cidade dada.
    */
@@ -170,7 +169,7 @@ int Data::nDestinations2(string city){
 /**
    * Retorna o numero de cidades presentes no país dado.
    *
-   * COMPLEXIDADE: O(n)
+   * COMPLEXIDADE: O(1)
    * @param country string nome do país a considerar na contagem
    * @return inteiro que indica o numero de cidades presentes no país dado.
    */
@@ -179,7 +178,7 @@ int Data::nCities1(string country){return countries_[country]->cities_.size();}
 /**
    * Retorna o numero de aeroportos presentes no país dado.
    *
-   * COMPLEXIDADE: O(n)
+   * COMPLEXIDADE: O(n^2)
    * @param country string nome do país a considerar na contagem
    * @return inteiro que indica o numero de aeroportos presentes no país dado.
    */
@@ -188,7 +187,7 @@ int Data::nAirports1(string country){return country2Airport(country).size();}
 /**
    * Retorna o numero de voos a partir do país dado.
    *
-   * COMPLEXIDADE: O(n)
+   * COMPLEXIDADE: O(n^2)
    * @param country string nome do país a considerar na contagem
    * @return inteiro que indica o numero de voos a partir do país dado.
    */
@@ -201,7 +200,7 @@ int Data::nFlights1(string country){
 /**
    * Retorna o numero de companhias aereas a partir do país dado.
    *
-   * COMPLEXIDADE: O(n)
+   * COMPLEXIDADE: O(n^2log(n))
    * @param country string nome do país a considerar na contagem
    * @return inteiro que indica o numero de companhias aereas a partir do país dado.
    */
@@ -217,7 +216,7 @@ int Data::nAirlines1(string country){
 /**
    * Retorna o numero de destinos alcançaveis (aeroportos) a partir do país dado.
    *
-   * COMPLEXIDADE: O(n)
+   * COMPLEXIDADE: O(n^2log(n))
    * @param country string nome do país a considerar na contagem
    * @return inteiro que indica o numero de destinos alcançaveis (aeroportos) a partir do país dado.
    */
@@ -279,8 +278,6 @@ int Data::nDestinations4(std::string airline) { // quantos destinos diferentes t
     }
     else cout<<"Could not open the file\n";
 }
-
-
 
 /**
    * Retorna o numero de voos a partir de um dado aeroporto de uma ou mais companhias aéreas.

@@ -1,7 +1,6 @@
 #include "Interface.h"
 #include <iostream>
 #include <regex>
-//FAZER COUTS PARA CADA FUNÇÃO
 
 using namespace std;
 
@@ -80,14 +79,13 @@ void Interface::getFlights() {
                     cout << "\nNot a valid city...\nTry again!\n\n";
                     getFlights();
                 }
-                //cin >> inputOrigin;
+
                 flag = 0;
                 break;
 
             case ('3'):
                 cout << endl << "Insert origin country:" << endl;
                 getline(cin >>ws, inputOrigin);
-                //cin >> inputOrigin;
                 if (d_.getCountries().find(inputOrigin) == d_.getCountries().end()){
                     cout << "\nNot a valid country...\nTry again!\n\n";
                     getFlights();
@@ -137,7 +135,7 @@ void Interface::getFlights() {
                 cin >> inputDestination;
                 if (d_.getAirports().find(inputDestination) == d_.getAirports().end()){
                     cout << "\nNot a valid airport...\nTry again!\n\n";
-                    getFlights(); //tentar utilizar o while loop.
+                    getFlights();
                 }
                 flag2 = 0;
                 break;
@@ -240,7 +238,6 @@ void Interface::getStatistics(){
             case ('4'):
                 airlineStatistic();
                 return getStatistics();
-                break;
             case ('5'):
                 airportStatistic();
                 return getStatistics();
@@ -500,7 +497,12 @@ void Interface::airportStatistic(){ //DONE
         }
     }
 }
-void Interface::otherInfo(){ //DONE
+/**
+ * Função imprime outras informações pertinentes para o utilizador, nomeadamente o diametro do grafo, top-K aeroportos com mais voos e pontos de articulação
+ *
+ * COMPLEXIDADE: O(n)
+ */
+void Interface::otherInfo(){
     cout << endl << "=========OTHER INFORMATIONS=========" << endl;
     cout << endl;
 
@@ -619,7 +621,6 @@ vector<string> Interface::createVec() {
 }
 
 
-//extra
 /**
  * Função que representa a ultima pagina do menu. Dispoe de duas ultimas opções - voltar atrás e fechar o programa.
  *

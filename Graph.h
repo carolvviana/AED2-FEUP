@@ -12,21 +12,16 @@
 using namespace std;
 
 class Graph {
-    /**
-     * An edge between 2 nodes on this graph.
-     */
+
     struct Edge {
         string dest;
         string airline;
     };
 
-    /**
-     * A node on the graph.
-     */
     struct Node {
         Airport* airport;
-        list<Edge> adj; // The list of outgoing edges (to adjacent nodes)
-        bool visited; // As the node been visited on a search?
+        list<Edge> adj;
+        bool visited; // --> o node foi visitado ou não no grafo?
         int distance;
         string parent;
         int num;
@@ -36,7 +31,6 @@ class Graph {
     int n;
     bool hasDir; // false: undirect; true: directed
     unordered_map<string, Node> nodes;
-    //vector<vector<string>> paths = {}; //caminhos para chegar ao destino
 
 public:
     // Constructor: nr nodes and direction (default: directed)
@@ -63,16 +57,6 @@ public:
      * @param airlineCode string codigo da companhia aerea associada a essa aresta de conexão
      */
     void addEdge(const string& airportCodeO, const string& airportCodeD, const string& airlineCode);
-/*
-    /**
-     * Performs a Depth-First search on the entire graph. Uses a SSSP methodology
-     *
-     * Time complexity: O(|V| + |E|), with |V| being the number of nodes in the graph and |E| the collected number of edges in the graph
-     *
-     * @param cStop the single source from which to perform the DFS
-     * @param firstIteration since this method is recursive, used to verify the first call
-
-    void dfs(const std::string& cStop, bool firstIteration = true);*/
 
     /**
      * Realiza a Breadth-First search no grafo preenchido com os voos e destinos.
@@ -109,7 +93,6 @@ public:
     void unlow();
     void unnum();
     void unstack();
-    void undir();
 
     /**
      * Limpa o grafo.
@@ -151,11 +134,7 @@ public:
      * @param airportCode string codigo do aeroporto de origem
      * @param airlines vector de string(s) de codigo(s) de companhias aereas a considerar na bfs
      */
-    void bfsWithFilters(const string& airportCode, vector<string>& airlines); //ainda não faças disto, complexidade vai alterar
-    //void printShortestDistance(string src, string dest, int v);
-    //bool BFS(string src, string dest, int v, unordered_map <string, vector<string>> predi, unordered_map <string, int> disti);
-    //vector<string> dfs(const std::string& cStop, bool firstIteration);
-
+    void bfsWithFilters(const string& airportCode, vector<string>& airlines);
     /**
      * Retorna uma set de strings de codigos de aeroportos cuja distancia é menor ou igual do que y (e maior do que zero), em numero de voos. É uma funçao auxiliar às funções da classe ApMethods.
      *
@@ -165,33 +144,16 @@ public:
      */
     set<string> apMethodsHelper(int y);
 
-    /**
-     * Realiza a Depth-First search no grafo preenchido com os voos e destinos.
-     *
-     * COMPLEXIDADE: O(|V| + |E|),  |V| sendo o número de nós do grafo e |E| o número de arestas (edges) do grafo
-     *
-     * @param cAp string codigo do aeroporto
-     * @param firstIteration valor booleano que indica se é a primeira iteração ou não
-     * @param distance valor inteiro
-     * @param path
-     * @param paths
-     * @param destAp
-     * @param d
-     * @return
-     */
-    //vector<string> dfs(const string& cAp, bool firstIteration, int& distance, vector<string>& path, vector<vector<string>>& paths, const string& destAp, int d);
 
     /**
  * Realiza a Depth-First search no grafo preenchido com os voos e destinos, assinalando os Pontos de Articulação da Rede.
  *
  * COMPLEXIDADE: O(|V| + |E|),  |V| sendo o número de nós do grafo e |E| o número de arestas (edges) do grafo
  *
- * @param cAp string codigo do aeroporto de partida
- * @param firstIteration valor booleano que indica se é a primeira iteração ou não
+ * @param cAp Node de partida
  * @param artPoints pontos de articulação identificados
  * @param s stack auxiliar para o dfs
  * @param index ordem de visita dos nodes
- * @return vector de strings com os nomes dos pontos de articulação do grafo (Aeroportos)
  */
     void dfs_articulationPoints(Node& cAp, vector<string>& artPoints, stack<Node>& s, int& index);
 
@@ -201,14 +163,20 @@ public:
 * COMPLEXIDADE: O(|V| + |E|),  |V| sendo o número de nós do grafo e |E| o número de arestas (edges) do grafo
 *
 * @param cAp string codigo do aeroporto de partida
-* @param firstIteration valor booleano que indica se é a primeira iteração ou não
 * @param artPoints pontos de articulação identificados
 * @param s stack auxiliar para o dfs
 * @param index ordem de visita dos nodes
 * @param airlines companhias selecionadas pelo utilizador
-* @return vector de strings com os nomes dos pontos de articulação do grafo (Aeroportos)
 */
     void dfs_articulationPointsWithAirline(const string& cAp, vector<string>& artPoints, stack<string>& s, int& index, vector<string> airlines);
+
+    /**
+* Identifica os pontos de articulação do grafo, quer com filtros de airlines, quer sem filtros.
+*
+* COMPLEXIDADE: O(|V|*(|V| + |E|)),  |V| sendo o número de nós do grafo e |E| o número de arestas (edges) do grafo
+*
+* @param airlines companhias selecionadas pelo utilizador; vetor vazio caso não haja filtros
+*/
     void printArtPoints(vector<string> airlines);
 };
 
